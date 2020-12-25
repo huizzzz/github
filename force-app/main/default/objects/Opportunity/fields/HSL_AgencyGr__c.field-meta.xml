@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HSL_AgencyGr__c</fullName>
+    <externalId>false</externalId>
+    <label>代理店グループ名</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(Iサ本)</fullName>
+                <default>false</default>
+                <label>(Iサ本)</label>
+            </value>
+            <value>
+                <fullName>HHT Gr.</fullName>
+                <default>false</default>
+                <label>HHT Gr.</label>
+            </value>
+            <value>
+                <fullName>HISYS Gr.</fullName>
+                <default>false</default>
+                <label>HISYS Gr.</label>
+            </value>
+            <value>
+                <fullName>他日立Gr.</fullName>
+                <default>false</default>
+                <label>他日立Gr.</label>
+            </value>
+            <value>
+                <fullName>NTT Gr.</fullName>
+                <default>false</default>
+                <label>NTT Gr.</label>
+            </value>
+            <value>
+                <fullName>SoftBank Gr.</fullName>
+                <default>false</default>
+                <label>SoftBank Gr.</label>
+            </value>
+            <value>
+                <fullName>シャープGr.</fullName>
+                <default>false</default>
+                <label>シャープGr.</label>
+            </value>
+            <value>
+                <fullName>三菱 Gr.</fullName>
+                <default>false</default>
+                <label>三菱 Gr.</label>
+            </value>
+            <value>
+                <fullName>ソニー Gr.</fullName>
+                <default>false</default>
+                <label>ソニー Gr.</label>
+            </value>
+            <value>
+                <fullName>富士通 Gr.</fullName>
+                <default>false</default>
+                <label>富士通 Gr.</label>
+            </value>
+            <value>
+                <fullName>NEC Gr.</fullName>
+                <default>false</default>
+                <label>NEC Gr.</label>
+            </value>
+            <value>
+                <fullName>ﾈｯﾄﾜﾝ Gr.</fullName>
+                <default>false</default>
+                <label>ﾈｯﾄﾜﾝ Gr.</label>
+            </value>
+            <value>
+                <fullName>KDDI Gr.</fullName>
+                <default>false</default>
+                <label>KDDI Gr.</label>
+            </value>
+            <value>
+                <fullName>IIJ Gr.</fullName>
+                <default>false</default>
+                <label>IIJ Gr.</label>
+            </value>
+            <value>
+                <fullName>キヤノン Gr.</fullName>
+                <default>false</default>
+                <label>キヤノン Gr.</label>
+            </value>
+            <value>
+                <fullName>大塚商会</fullName>
+                <default>false</default>
+                <label>大塚商会</label>
+            </value>
+            <value>
+                <fullName>その他</fullName>
+                <default>false</default>
+                <label>その他</label>
+            </value>
+            <value>
+                <fullName>直販</fullName>
+                <default>false</default>
+                <label>直販</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

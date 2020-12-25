@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalSalesPrice__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Sales Price</label>
+    <summarizedField>QuoteLineItem.UnitPrice</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.ProductType__c</field>
+        <operation>notEqual</operation>
+        <value>Option</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

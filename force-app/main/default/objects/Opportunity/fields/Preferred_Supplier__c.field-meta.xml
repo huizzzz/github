@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Supplier__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicate the preferred supplier, if known, for this opportunity.</inlineHelpText>
+    <label>Preferred Supplier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Primary_category__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hitachi</fullName>
+                <default>false</default>
+                <label>Hitachi</label>
+            </value>
+            <value>
+                <fullName>JEOL</fullName>
+                <default>false</default>
+                <label>JEOL</label>
+            </value>
+            <value>
+                <fullName>FEI</fullName>
+                <default>false</default>
+                <label>FEI</label>
+            </value>
+            <value>
+                <fullName>Zeiss</fullName>
+                <default>false</default>
+                <label>Zeiss</label>
+            </value>
+            <value>
+                <fullName>Tescan</fullName>
+                <default>false</default>
+                <label>Tescan</label>
+            </value>
+            <value>
+                <fullName>Coxem</fullName>
+                <default>false</default>
+                <label>Coxem</label>
+            </value>
+            <value>
+                <fullName>Phenom</fullName>
+                <default>false</default>
+                <label>Phenom</label>
+            </value>
+            <value>
+                <fullName>Bruker</fullName>
+                <default>false</default>
+                <label>Bruker</label>
+            </value>
+            <value>
+                <fullName>Oxford</fullName>
+                <default>false</default>
+                <label>Oxford</label>
+            </value>
+            <value>
+                <fullName>NT-MDT</fullName>
+                <default>false</default>
+                <label>NT-MDT</label>
+            </value>
+            <value>
+                <fullName>Park</fullName>
+                <default>false</default>
+                <label>Park</label>
+            </value>
+            <value>
+                <fullName>JPK</fullName>
+                <default>false</default>
+                <label>JPK</label>
+            </value>
+            <value>
+                <fullName>Gatan</fullName>
+                <default>false</default>
+                <label>Gatan</label>
+            </value>
+            <value>
+                <fullName>Delmic</fullName>
+                <default>false</default>
+                <label>Delmic</label>
+            </value>
+            <value>
+                <fullName>Leica</fullName>
+                <default>false</default>
+                <label>Leica</label>
+            </value>
+            <value>
+                <fullName>Quorum</fullName>
+                <default>false</default>
+                <label>Quorum</label>
+            </value>
+            <value>
+                <fullName>Thermo</fullName>
+                <default>false</default>
+                <label>Thermo</label>
+            </value>
+            <value>
+                <fullName>EDAX</fullName>
+                <default>false</default>
+                <label>EDAX</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SIMS</controllingFieldValue>
+            <controllingFieldValue>XRF</controllingFieldValue>
+            <controllingFieldValue>XPS</controllingFieldValue>
+            <controllingFieldValue>AFM</controllingFieldValue>
+            <controllingFieldValue>TA</controllingFieldValue>
+            <controllingFieldValue>EDXRF</controllingFieldValue>
+            <controllingFieldValue>Prep IonBeam</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>CD-SEM</controllingFieldValue>
+            <controllingFieldValue>DR-SEM</controllingFieldValue>
+            <controllingFieldValue>Optical Wafer Inspection</controllingFieldValue>
+            <controllingFieldValue>SEM FE</controllingFieldValue>
+            <controllingFieldValue>SEM W</controllingFieldValue>
+            <controllingFieldValue>SEM TM</controllingFieldValue>
+            <controllingFieldValue>TEM 120kV</controllingFieldValue>
+            <controllingFieldValue>(S)TEM 200/300kV</controllingFieldValue>
+            <controllingFieldValue>FIB-SEM</controllingFieldValue>
+            <controllingFieldValue>FIB</controllingFieldValue>
+            <controllingFieldValue>Sample prep</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Hitachi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>XRD</controllingFieldValue>
+            <controllingFieldValue>XRF</controllingFieldValue>
+            <controllingFieldValue>AFM</controllingFieldValue>
+            <controllingFieldValue>EDXRF</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>EDS</controllingFieldValue>
+            <controllingFieldValue>EBSD</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Bruker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>XRF</controllingFieldValue>
+            <controllingFieldValue>AFM</controllingFieldValue>
+            <controllingFieldValue>EDXRF</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>EDS</controllingFieldValue>
+            <controllingFieldValue>EBSD</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Oxford</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>XRF</controllingFieldValue>
+            <controllingFieldValue>EDXRF</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>EDS</controllingFieldValue>
+            <controllingFieldValue>EBSD</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Thermo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CL</controllingFieldValue>
+            <controllingFieldValue>Cryo</controllingFieldValue>
+            <controllingFieldValue>Prep IonBeam</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>Sample prep</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Gatan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CL</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Delmic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cryo</controllingFieldValue>
+            <controllingFieldValue>Prep IonBeam</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>Sample prep</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Leica</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cryo</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>Sample prep</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Quorum</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AFM</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>NT-MDT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AFM</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Park</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AFM</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>JPK</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EDXRF</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>EDS</controllingFieldValue>
+            <controllingFieldValue>EBSD</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>EDAX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prep IonBeam</controllingFieldValue>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>SEM FE</controllingFieldValue>
+            <controllingFieldValue>SEM W</controllingFieldValue>
+            <controllingFieldValue>SEM TM</controllingFieldValue>
+            <controllingFieldValue>TEM 120kV</controllingFieldValue>
+            <controllingFieldValue>(S)TEM 200/300kV</controllingFieldValue>
+            <controllingFieldValue>FIB-SEM</controllingFieldValue>
+            <controllingFieldValue>FIB</controllingFieldValue>
+            <controllingFieldValue>EDS</controllingFieldValue>
+            <controllingFieldValue>Sample prep</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>JEOL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>SEM FE</controllingFieldValue>
+            <controllingFieldValue>SEM W</controllingFieldValue>
+            <controllingFieldValue>TEM 120kV</controllingFieldValue>
+            <controllingFieldValue>(S)TEM 200/300kV</controllingFieldValue>
+            <controllingFieldValue>FIB-SEM</controllingFieldValue>
+            <controllingFieldValue>FIB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>FEI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>SEM FE</controllingFieldValue>
+            <controllingFieldValue>SEM W</controllingFieldValue>
+            <controllingFieldValue>FIB-SEM</controllingFieldValue>
+            <controllingFieldValue>FIB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Zeiss</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>SEM TM</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Coxem</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Used Instrument</controllingFieldValue>
+            <controllingFieldValue>SEM TM</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Phenom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SEM FE</controllingFieldValue>
+            <controllingFieldValue>SEM W</controllingFieldValue>
+            <controllingFieldValue>FIB-SEM</controllingFieldValue>
+            <controllingFieldValue>FIB</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Tescan</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

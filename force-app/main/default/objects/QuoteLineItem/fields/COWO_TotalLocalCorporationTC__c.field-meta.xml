@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_TotalLocalCorporationTC__c</fullName>
+    <description>現法TC×数量
+トリガにて計算を実施、ページレイアウトで編集不可とすること</description>
+    <externalId>false</externalId>
+    <label>総現法TC</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounting_Reference__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>A1：出荷基準、
+B1：通関/船積基準、
+C1：据付完了基準、
+D1：検収/リース基準（DDP・DDU・DAP・DAT）、
+E1：工事進行基準、
+F1：期間計上基準（レンタル・保守）、
+G1：役務基準（作業のみ）</inlineHelpText>
+    <label>計上基準</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A1</fullName>
+                <default>false</default>
+                <label>A1</label>
+            </value>
+            <value>
+                <fullName>B1</fullName>
+                <default>false</default>
+                <label>B1</label>
+            </value>
+            <value>
+                <fullName>C1</fullName>
+                <default>false</default>
+                <label>C1</label>
+            </value>
+            <value>
+                <fullName>D1</fullName>
+                <default>false</default>
+                <label>D1</label>
+            </value>
+            <value>
+                <fullName>E1</fullName>
+                <default>false</default>
+                <label>E1</label>
+            </value>
+            <value>
+                <fullName>F1</fullName>
+                <default>false</default>
+                <label>F1</label>
+            </value>
+            <value>
+                <fullName>G1</fullName>
+                <default>false</default>
+                <label>G1</label>
+            </value>
+            <value>
+                <fullName>Default</fullName>
+                <default>false</default>
+                <label>Default</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

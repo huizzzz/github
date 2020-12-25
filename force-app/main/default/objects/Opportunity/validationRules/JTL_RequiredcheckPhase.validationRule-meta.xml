@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JTL_RequiredcheckPhase</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+       ISPICKVAL(StageName, &apos;請求依頼（作業完了）&apos; ),
+       ISBLANK(WorkReportURL__c),
+       OR(
+RecordType.DeveloperName = &apos;HHT_JTL&apos;,
+RecordType.DeveloperName = &apos;JTL&apos;
+)
+)</errorConditionFormula>
+    <errorDisplayField>WorkReportURL__c</errorDisplayField>
+    <errorMessage>報告書をBOXに保存した後、BOXのURLを記載してください。</errorMessage>
+</ValidationRule>

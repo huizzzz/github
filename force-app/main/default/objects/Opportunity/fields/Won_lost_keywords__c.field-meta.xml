@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_lost_keywords__c</fullName>
+    <externalId>false</externalId>
+    <label>Won/lost keywords</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3D functions</fullName>
+                <default>false</default>
+                <label>3D functions</label>
+            </value>
+            <value>
+                <fullName>3D measurement</fullName>
+                <default>false</default>
+                <label>3D measurement</label>
+            </value>
+            <value>
+                <fullName>BF-STEM imaging</fullName>
+                <default>false</default>
+                <label>BF-STEM imaging</label>
+            </value>
+            <value>
+                <fullName>BSE imaging</fullName>
+                <default>false</default>
+                <label>BSE imaging</label>
+            </value>
+            <value>
+                <fullName>chamber geometry</fullName>
+                <default>false</default>
+                <label>chamber geometry</label>
+            </value>
+            <value>
+                <fullName>chamber size</fullName>
+                <default>false</default>
+                <label>chamber size</label>
+            </value>
+            <value>
+                <fullName>charging samples</fullName>
+                <default>false</default>
+                <label>charging samples</label>
+            </value>
+            <value>
+                <fullName>correlative microscopy</fullName>
+                <default>false</default>
+                <label>correlative microscopy</label>
+            </value>
+            <value>
+                <fullName>delivery</fullName>
+                <default>false</default>
+                <label>delivery</label>
+            </value>
+            <value>
+                <fullName>demonstration</fullName>
+                <default>false</default>
+                <label>demonstration</label>
+            </value>
+            <value>
+                <fullName>design</fullName>
+                <default>false</default>
+                <label>design</label>
+            </value>
+            <value>
+                <fullName>DF-STEM imaging</fullName>
+                <default>false</default>
+                <label>DF-STEM imaging</label>
+            </value>
+            <value>
+                <fullName>ease of use</fullName>
+                <default>false</default>
+                <label>ease of use</label>
+            </value>
+            <value>
+                <fullName>EBSD integration</fullName>
+                <default>false</default>
+                <label>EBSD integration</label>
+            </value>
+            <value>
+                <fullName>EDS integration</fullName>
+                <default>false</default>
+                <label>EDS integration</label>
+            </value>
+            <value>
+                <fullName>emitter lifetime</fullName>
+                <default>false</default>
+                <label>emitter lifetime</label>
+            </value>
+            <value>
+                <fullName>flexibility</fullName>
+                <default>false</default>
+                <label>flexibility</label>
+            </value>
+            <value>
+                <fullName>high pressure function</fullName>
+                <default>false</default>
+                <label>high pressure function</label>
+            </value>
+            <value>
+                <fullName>in-lens&amp;VP</fullName>
+                <default>false</default>
+                <label>in-lens&amp;VP</label>
+            </value>
+            <value>
+                <fullName>in-lens imaging</fullName>
+                <default>false</default>
+                <label>in-lens imaging</label>
+            </value>
+            <value>
+                <fullName>integration with analysis</fullName>
+                <default>false</default>
+                <label>integration with analysis</label>
+            </value>
+            <value>
+                <fullName>late contact</fullName>
+                <default>false</default>
+                <label>late contact</label>
+            </value>
+            <value>
+                <fullName>macros and automation</fullName>
+                <default>false</default>
+                <label>macros and automation</label>
+            </value>
+            <value>
+                <fullName>magnetic samples</fullName>
+                <default>false</default>
+                <label>magnetic samples</label>
+            </value>
+            <value>
+                <fullName>observable area</fullName>
+                <default>false</default>
+                <label>observable area</label>
+            </value>
+            <value>
+                <fullName>oil free vacuum</fullName>
+                <default>false</default>
+                <label>oil free vacuum</label>
+            </value>
+            <value>
+                <fullName>optical camera integration</fullName>
+                <default>false</default>
+                <label>optical camera integration</label>
+            </value>
+            <value>
+                <fullName>other</fullName>
+                <default>false</default>
+                <label>other</label>
+            </value>
+            <value>
+                <fullName>package deal</fullName>
+                <default>false</default>
+                <label>package deal</label>
+            </value>
+            <value>
+                <fullName>performance</fullName>
+                <default>false</default>
+                <label>performance</label>
+            </value>
+            <value>
+                <fullName>price</fullName>
+                <default>false</default>
+                <label>price</label>
+            </value>
+            <value>
+                <fullName>probe current</fullName>
+                <default>false</default>
+                <label>probe current</label>
+            </value>
+            <value>
+                <fullName>probe stability</fullName>
+                <default>false</default>
+                <label>probe stability</label>
+            </value>
+            <value>
+                <fullName>pumping time</fullName>
+                <default>false</default>
+                <label>pumping time</label>
+            </value>
+            <value>
+                <fullName>references</fullName>
+                <default>false</default>
+                <label>references</label>
+            </value>
+            <value>
+                <fullName>relationship</fullName>
+                <default>false</default>
+                <label>relationship</label>
+            </value>
+            <value>
+                <fullName>reliability</fullName>
+                <default>false</default>
+                <label>reliability</label>
+            </value>
+            <value>
+                <fullName>resolution</fullName>
+                <default>false</default>
+                <label>resolution</label>
+            </value>
+            <value>
+                <fullName>sales</fullName>
+                <default>false</default>
+                <label>sales</label>
+            </value>
+            <value>
+                <fullName>sample contamination</fullName>
+                <default>false</default>
+                <label>sample contamination</label>
+            </value>
+            <value>
+                <fullName>sample height</fullName>
+                <default>false</default>
+                <label>sample height</label>
+            </value>
+            <value>
+                <fullName>sample size</fullName>
+                <default>false</default>
+                <label>sample size</label>
+            </value>
+            <value>
+                <fullName>sample weight</fullName>
+                <default>false</default>
+                <label>sample weight</label>
+            </value>
+            <value>
+                <fullName>service</fullName>
+                <default>false</default>
+                <label>service</label>
+            </value>
+            <value>
+                <fullName>service cost</fullName>
+                <default>false</default>
+                <label>service cost</label>
+            </value>
+            <value>
+                <fullName>signal-to-noise</fullName>
+                <default>false</default>
+                <label>signal-to-noise</label>
+            </value>
+            <value>
+                <fullName>size</fullName>
+                <default>false</default>
+                <label>size</label>
+            </value>
+            <value>
+                <fullName>solution</fullName>
+                <default>false</default>
+                <label>solution</label>
+            </value>
+            <value>
+                <fullName>stage size</fullName>
+                <default>false</default>
+                <label>stage size</label>
+            </value>
+            <value>
+                <fullName>stage tilt</fullName>
+                <default>false</default>
+                <label>stage tilt</label>
+            </value>
+            <value>
+                <fullName>training</fullName>
+                <default>false</default>
+                <label>training</label>
+            </value>
+            <value>
+                <fullName>vacuum level</fullName>
+                <default>false</default>
+                <label>vacuum level</label>
+            </value>
+            <value>
+                <fullName>warranty</fullName>
+                <default>false</default>
+                <label>warranty</label>
+            </value>
+            <value>
+                <fullName>WDS integration</fullName>
+                <default>false</default>
+                <label>WDS integration</label>
+            </value>
+            <value>
+                <fullName>wet samples</fullName>
+                <default>false</default>
+                <label>wet samples</label>
+            </value>
+            <value>
+                <fullName>specifications</fullName>
+                <default>false</default>
+                <label>specifications</label>
+            </value>
+            <value>
+                <fullName>speed</fullName>
+                <default>false</default>
+                <label>speed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

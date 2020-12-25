@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InstallationWarranty__c</fullName>
+    <description>Costs for installation, training and warranty (in addition to items in the product list).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Costs for installation, training and warranty (in addition to items in the product list).</inlineHelpText>
+    <label>Installation &amp; Warranty</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Currency</type>
+</CustomField>

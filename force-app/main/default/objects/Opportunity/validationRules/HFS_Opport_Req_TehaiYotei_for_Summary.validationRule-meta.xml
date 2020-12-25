@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HFS_Opport_Req_TehaiYotei_for_Summary</fullName>
+    <active>true</active>
+    <description>[総括表織込みFLG]が&quot;TRUE&quot;の場合、[手配予定日]を必須化する。</description>
+    <errorConditionFormula>AND( 
+RecordType.DeveloperName = &apos;HFS_Opportunites&apos;,
+SummaryTable_WeavingFlag__c = true, 
+ISBLANK( TehaiYoteiDate__c )
+)</errorConditionFormula>
+    <errorDisplayField>TehaiYoteiDate__c</errorDisplayField>
+    <errorMessage>[手配予定日]を選択してください。</errorMessage>
+</ValidationRule>

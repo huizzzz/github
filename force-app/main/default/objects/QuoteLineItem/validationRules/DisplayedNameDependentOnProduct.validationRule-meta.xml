@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DisplayedNameDependentOnProduct</fullName>
+    <active>true</active>
+    <description>If the product is not marked as &quot;Main&quot; then, the the Quote Line Item Displayed Name cannot be shown as &quot;Main&quot;.</description>
+    <errorConditionFormula>AND(NOT(Product2.MainProduct__c  = True) ,   ISPICKVAL( ProductType__c , &quot;Main&quot;))</errorConditionFormula>
+    <errorMessage>Related product is not marked as &quot;Main&quot;, therefore Quote Line Item cannot be marked as &quot;Main&quot;.</errorMessage>
+</ValidationRule>

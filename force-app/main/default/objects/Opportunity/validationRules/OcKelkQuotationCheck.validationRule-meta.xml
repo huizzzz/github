@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OcKelkQuotationCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+BEGINS(RecordType.DeveloperName, &apos;OC_KELK&apos;), 
+ISPICKVAL(PRIORVALUE(StageName) , &apos;見積提案&apos;) , 
+ISPICKVAL(StageName , &apos;(顧客へ)見積提案&apos;),
+!INCLUDES(KelkContent__c, &apos;EAU&apos;) 
+)</errorConditionFormula>
+    <errorMessage>Please upload Quotation(EAU) file.</errorMessage>
+</ValidationRule>

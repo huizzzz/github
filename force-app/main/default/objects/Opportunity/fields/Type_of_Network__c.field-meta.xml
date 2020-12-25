@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Network__c</fullName>
+    <description>PON
+5G Mobile Front Haul
+5G Mobile Back Haul
+Inside of Data Center
+Data Center Interconnect
+Mid/Long Haul
+Unknown/Others</description>
+    <externalId>false</externalId>
+    <label>Type of Network</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PON</fullName>
+                <default>false</default>
+                <label>PON</label>
+            </value>
+            <value>
+                <fullName>5G Mobile Front Haul</fullName>
+                <default>false</default>
+                <label>5G Mobile Front Haul</label>
+            </value>
+            <value>
+                <fullName>5G Mobile Back Haul</fullName>
+                <default>false</default>
+                <label>5G Mobile Back Haul</label>
+            </value>
+            <value>
+                <fullName>Inside of Data Center</fullName>
+                <default>false</default>
+                <label>Inside of Data Center</label>
+            </value>
+            <value>
+                <fullName>Data Center Interconnect</fullName>
+                <default>false</default>
+                <label>Data Center Interconnect</label>
+            </value>
+            <value>
+                <fullName>Mid/Long Haul</fullName>
+                <default>false</default>
+                <label>Mid/Long Haul</label>
+            </value>
+            <value>
+                <fullName>Unknown/Others</fullName>
+                <default>false</default>
+                <label>Unknown/Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

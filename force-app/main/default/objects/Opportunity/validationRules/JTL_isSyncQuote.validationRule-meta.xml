@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JTL_isSyncQuote</fullName>
+    <active>true</active>
+    <description>JTL案件で請求依頼（作業完了）となった際に、同期された見積が存在しない場合チェックエラーとする。</description>
+    <errorConditionFormula>AND( RecordType.DeveloperName = &apos;HHT_JTL&apos; ,
+ ISPICKVAL(StageName, &apos;請求依頼（作業完了）&apos;) ,
+ ISBLANK( SyncedQuote.Name ) 
+)</errorConditionFormula>
+    <errorMessage>同期されている見積が存在しません。見積を同期してください。</errorMessage>
+</ValidationRule>

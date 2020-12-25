@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subtotal__c</fullName>
+    <externalId>false</externalId>
+    <formula>UnitPrice * Quantity</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Subtotal (Sales price x Quantity). The standard Subtotal field cannot be included in rollups, hence this field.</inlineHelpText>
+    <label>Subtotal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

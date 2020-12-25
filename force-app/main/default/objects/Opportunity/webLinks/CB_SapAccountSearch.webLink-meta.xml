@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CB_SapAccountSearch</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>SAP得意先検索</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/35.0/connection.js&apos;)};
+{!REQUIRESCRIPT(&apos;/soap/ajax/35.0/apex.js&apos;)}; 
+query = &quot;SELECT Id, (SELECT Id, updateProductFlg__c FROM OpportunityLineItems WHERE updateProductFlg__c = true) FROM Opportunity WHERE Id=&apos;{!CASESAFEID(Opportunity.Id)}&apos;&quot;,
+records = sforce.connection.query(query).getArray(&apos;records&apos;); 
+
+if({!$Setup.ProfileConfig__c.ApexAccessRestriction__c}){ 
+alert(&apos;{!$Label.AP00_MSG_0004}&apos;);
+}else if(records[0].OpportunityLineItems != null){
+alert(&apos;{!$Label.AP30_LBL_0004}&apos;);
+} else{
+location.href = &apos;/apex/SapAccountSearch?id={!Opportunity.Id}&amp;accid={!Opportunity.AccountId}&amp;orgcd={!Opportunity.OrganizationCode__c}&amp;custmercd={!Opportunity.TokuisakiCode__c}&amp;proc_mode={!$Label.AP30_CONST_0001}&apos;;
+}</url>
+</WebLink>

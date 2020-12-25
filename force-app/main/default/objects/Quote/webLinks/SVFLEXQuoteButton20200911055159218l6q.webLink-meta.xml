@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SVFLEXQuoteButton20200911055159218l6q</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>見積書出力(HTA)</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/svfcloud__PreviewPage?appId=Quote&amp;id={!Quote.Id}&amp;buttonFullName=SVFQuoteButton20200911055159218l6q</url>
+</WebLink>

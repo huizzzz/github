@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SyousyahinFlgDisp__c</fullName>
+    <description>受注検討表用(案件)に
+初期値0
+型式に、商社品が含まれていない⇒商社品フラグに1
+型式に、商社品が含まれている⇒商社品フラグに2
+を設定</description>
+    <externalId>false</externalId>
+    <formula>IF (CONTAINS( katashiki__c  ,&quot;商社品&quot;)  , 2, 1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>商社品フラグ(帳票用)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

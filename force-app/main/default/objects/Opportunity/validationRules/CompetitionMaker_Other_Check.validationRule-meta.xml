@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompetitionMaker_Other_Check</fullName>
+    <active>true</active>
+    <description>競合メーカー名が「複数社」の場合、入力を必須とする。</description>
+    <errorConditionFormula>AND(
+AND(
+$User.ProfileId &lt;&gt; &apos;00e28000000NYLs&apos; /* システム管理者(移行用) */
+,$User.ProfileId &lt;&gt; &apos;00e28000001yZWZ&apos; /* 営業 */ 
+,$User.ProfileId &lt;&gt; &apos;00e28000001yZWb&apos; /* 在庫管理営業 */ 
+,$User.ProfileId &lt;&gt; &apos;00e28000001yZWa&apos; /* 在庫管理倉庫 */ 
+,$User.ProfileId &lt;&gt; &apos;00e28000001yZWc&apos; /* 設計 */ 
+),
+AND( ISPICKVAL( CompetitionMaker__c , &apos;複数社&apos;) , ISBLANK(CompetitionMaker_Other__c) )
+)</errorConditionFormula>
+    <errorDisplayField>CompetitionMaker_Other__c</errorDisplayField>
+    <errorMessage>競合メーカー名が「複数社」の場合入力は必須です。</errorMessage>
+</ValidationRule>

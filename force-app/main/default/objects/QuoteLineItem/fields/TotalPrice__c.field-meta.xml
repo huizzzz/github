@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalPrice__c</fullName>
+    <description>Total Price is not available in formulas. This formula calculates Total Price, allowing it to be used in Rollups.</description>
+    <externalId>false</externalId>
+    <formula>(UnitPrice *  Quantity ) * (1- Discount )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

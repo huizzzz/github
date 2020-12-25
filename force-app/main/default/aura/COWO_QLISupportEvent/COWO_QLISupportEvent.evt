@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Event of COWOQuoteLineItemBulkEdit">
+    <aura:attribute name="quoteLineItemId" type="String" />
+    <aura:attribute name="description" type="String"/>
+</aura:event>

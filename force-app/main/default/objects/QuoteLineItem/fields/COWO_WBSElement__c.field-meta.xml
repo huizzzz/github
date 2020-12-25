@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_WBSElement__c</fullName>
+    <description>S4連携項目</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(COWO_ItemNumber__c &gt; 0,
+        OR( COWO_PlantCode__c  == &apos;1010&apos; ,COWO_PlantCode__c == &apos;1020&apos;, COWO_PlantCode__c == &apos;1030&apos;,COWO_ItemNumber__c &gt; 0 ) ),
+     &quot;01&quot; &amp;
+    IF(COWO_PlantCode__c == &apos;1010&apos;,&apos;A&apos;,
+    IF(COWO_PlantCode__c == &apos;1020&apos;,&apos;B&apos;,
+    IF(COWO_PlantCode__c == &apos;1030&apos;,&apos;C&apos;,&apos;&apos; ) ) )
+    &amp;  Quote.Opportunity.OpportunityNo__c  &amp; &quot;-&quot; &amp;
+    LPAD(text(COWO_ItemNumber__c), 3,&apos;0&apos;)
+    ,&apos;&apos;
+)</formula>
+    <label>WBS要素</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

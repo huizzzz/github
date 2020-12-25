@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HHS_PartialFullDeliveryPart__c</fullName>
+    <defaultValue>&quot;1：完納&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>分納完納区分</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1：完納</fullName>
+                <default>false</default>
+                <label>1：完納</label>
+            </value>
+            <value>
+                <fullName>2：分納計上可能</fullName>
+                <default>false</default>
+                <label>2：分納計上可能</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

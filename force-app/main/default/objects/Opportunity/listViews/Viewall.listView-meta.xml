@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Viewall</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.CURRENCY_ISO_CODE</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <columns>SAWO_S4Cooperation__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>すべての案件</label>
+    <sharedTo>
+        <group>HFS_Opportunity_Shared_grope</group>
+        <group>JTLBusinessGroup</group>
+        <roleAndSubordinates>HFS</roleAndSubordinates>
+        <roleAndSubordinatesInternal>JAPAN_TESTING_LABORATORIES</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>UserRole_zairyo_chubu</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

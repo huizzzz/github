@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>checkCompletionFlg</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+RecordType.DeveloperName = &apos;HHT_JTL&apos;, 
+SyncedQuote.JTLReportExportCheck__c =true, 
+OR($Profile.Name = &apos;JTL&apos;,$Profile.Name = &apos;システム管理者（バッチ用）&apos;,$Profile.Name = &apos;システム管理者(移行用)&apos;) 
+)</errorConditionFormula>
+    <errorMessage>売上計上済みの商談の為、保存できません。</errorMessage>
+</ValidationRule>

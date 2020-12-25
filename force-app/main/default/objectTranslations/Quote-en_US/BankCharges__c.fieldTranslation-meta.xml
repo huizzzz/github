@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Bank Charges = Bank Charges Rate * Total Customer Price --></help>
+    <label><!-- Bank Charges --></label>
+    <name>BankCharges__c</name>
+</CustomFieldTranslation>

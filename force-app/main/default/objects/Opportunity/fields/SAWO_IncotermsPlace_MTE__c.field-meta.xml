@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_IncotermsPlace_MTE__c</fullName>
+    <description>S4連携用項目</description>
+    <externalId>false</externalId>
+    <label>インコタームズ場所(MTE)</label>
+    <length>70</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

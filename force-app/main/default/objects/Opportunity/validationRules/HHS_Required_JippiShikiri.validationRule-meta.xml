@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HHS_Required_JippiShikiri</fullName>
+    <active>true</active>
+    <description>購買通貨が「JPY」以外の時、必須にする</description>
+    <errorConditionFormula>AND(
+OR(
+$Profile.Name = &apos;HHS_ラボ&apos; /* HHS_ラボ */
+,$Profile.Name = &apos;HHS_営業&apos; /* HHS_営業 */
+,$Profile.Name = &apos;HHS_事業推進&apos;/* HHS_事業推進 */
+,$Profile.Name = &apos;HHS_小山&apos; /* HHS_小山 */
+,$Profile.Name = &apos;HHS_代理店&apos; /* HHS_代理店 */
+,$Profile.Name = &apos;HHS_那珂&apos; /* HHS_那珂 */
+,$Profile.Name = &apos;HHS_サービス&apos; /* HHS_サービス */
+)
+,HHS_PurchaseCurrency__c  &lt;&gt; &quot;JPY&quot;
+, ISPICKVAL( HHS_JippiShikiri__c , &quot;&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>HHS_JippiShikiri__c</errorDisplayField>
+    <errorMessage>実費／仕切を入力して下さい。</errorMessage>
+</ValidationRule>

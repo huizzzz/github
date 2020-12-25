@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_Order_BPcode_MTE__c</fullName>
+    <description>取引先のBPコード項目から数式で参照するよう変更する可能性あり。
+「Account.DX_BPCode__c」</description>
+    <externalId>false</externalId>
+    <label>受注先（BPコード）(MTE)</label>
+    <length>10</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

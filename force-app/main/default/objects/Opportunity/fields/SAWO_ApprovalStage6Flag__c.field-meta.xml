@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_ApprovalStage6Flag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>DX要件で追加</description>
+    <externalId>false</externalId>
+    <label>ステージ６承認フラグ</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

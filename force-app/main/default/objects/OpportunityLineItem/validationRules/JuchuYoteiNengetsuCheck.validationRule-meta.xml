@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JuchuYoteiNengetsuCheck</fullName>
+    <active>false</active>
+    <errorConditionFormula>if ( LEN(JuchuYoteiNengetsu__c) &lt;&gt; 0,
+	or ( 
+		if(LEN(JuchuYoteiNengetsu__c) &lt;&gt; 7, true, false), 
+		if(MID(JuchuYoteiNengetsu__c,5,1) &lt;&gt; &quot;/&quot;, 
+			true, 
+			if(VALUE(MID(JuchuYoteiNengetsu__c,1,4)) &lt;= 0,
+				true,
+				if(VALUE(MID(JuchuYoteiNengetsu__c,6,2)) &lt;= 0,
+					true,
+					if(VALUE(MID(JuchuYoteiNengetsu__c,6,2)) &gt;12,
+						true,
+						false
+					)
+				)
+			)
+		)
+	),
+	false
+)</errorConditionFormula>
+    <errorMessage>ｙｙｙｙ/mmで入力してください</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OcKelkRequiredCheckByNew</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+BEGINS(RecordType.DeveloperName, &apos;OC_KELK&apos;), 
+!ISPICKVAL( StageName ,&apos;引合入手＆仕様検討&apos;) ,
+ISNEW() 
+)</errorConditionFormula>
+    <errorMessage>新規の場合はフェーズを「引合入手＆仕様検討」に選択してください。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,53 @@
+.THIS .slds-modal-container {
+    width: 100%;
+    max-width: 1182.4px;
+    min-width: 842.4px;
+}
+/* レスポンシブ対応 start */
+/* @media (min-width:768px){
+    .THIS .slds-modal__container{
+        margin:0 auto;
+        width:100%;
+        max-width:1128px;
+        min-width:750px;
+    }
+}
+@media (max-width:768px){
+    .THIS .slds-modal__container{
+        margin:0px;
+        padding:0px;
+        width:100%;
+        max-width:1128px;
+        min-width:750px;
+    }
+}
+@media (max-height:544px){
+    .THIS .slds-modal__container{
+        padding:0px;
+    }
+} */
+/* レスポンシブ対応 end */
+.THIS .button_small__c{
+    font-size: xx-small;
+}
+.THIS .slds-button.slds-button_neutral{
+    line-height: 15px;
+    font-size: xx-small;
+}
+/* ボタン高さ start */
+.THIS .slds-modal__container__app__c .button_small__c{
+    line-height: 25px;
+}
+.THIS .button_small__c{
+    line-height: 15px;
+}
+.THIS .slds-select{
+    height: 17px;
+}
+.THIS .slds-form-element__label{
+    font-size: xx-small;
+}
+.THIS .lightning-spinner__c {
+    top: 40px;
+    bottom: 55px;
+}

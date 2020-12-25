@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TEC_Bias__c</fullName>
+    <externalId>false</externalId>
+    <label>TEC Bias</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wire Bond Pad</fullName>
+                <default>false</default>
+                <label>Wire Bond Pad</label>
+            </value>
+            <value>
+                <fullName>Post</fullName>
+                <default>false</default>
+                <label>Post</label>
+            </value>
+            <value>
+                <fullName>Leadwire</fullName>
+                <default>false</default>
+                <label>Leadwire</label>
+            </value>
+            <value>
+                <fullName>Flip Chip BGA</fullName>
+                <default>false</default>
+                <label>Flip Chip BGA</label>
+            </value>
+            <value>
+                <fullName>Unknown/Others</fullName>
+                <default>false</default>
+                <label>Unknown/Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

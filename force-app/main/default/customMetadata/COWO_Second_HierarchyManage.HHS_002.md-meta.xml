@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>HHS_EA</label>
+    <protected>false</protected>
+    <values>
+        <field>COWO_PriceBook_Name__c</field>
+        <value xsi:type="xsd:string">HHS価格表</value>
+    </values>
+    <values>
+        <field>COWO_SecondHierarchyText__c</field>
+        <value xsi:type="xsd:string">EA</value>
+    </values>
+    <values>
+        <field>COWO_ThirdHierarchyText__c</field>
+        <value xsi:type="xsd:string">EA1000VX_AIII（国内）,EA1000VX_AIII（海外）,EA1000VX_AIII（欧州）,EA1200VX（国内）,EA1200VX（海外）,EA1200VX（欧州）,EA1300VX（国内）,EA1400（国内),EA1400（海外）,EA6000VX（国内）,EA6000VX（海外）,EA6000VX（欧州）,EA8000（国内）,EA8000（海外）,EA8000（欧州）,EAその他,EA標準物質と共通品（国内）,EA標準物質と共通品（海外）,EA標準物質と共通品（欧州）,サービス（点検、保証、保守）_EA</value>
+    </values>
+</CustomMetadata>

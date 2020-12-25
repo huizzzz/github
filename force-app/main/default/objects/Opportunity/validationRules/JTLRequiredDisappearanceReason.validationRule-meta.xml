@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JTLRequiredDisappearanceReason</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(StageName, &apos;案件消滅&apos;),
+OR(
+RecordType.DeveloperName = &apos;JTL&apos;,
+RecordType.DeveloperName = &apos;HHT_JTL&apos;
+),
+ISBLANK(disappearanceReason__c)
+)</errorConditionFormula>
+    <errorDisplayField>disappearanceReason__c</errorDisplayField>
+    <errorMessage>案件消滅の場合には、理由を記載してください。</errorMessage>
+</ValidationRule>

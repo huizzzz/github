@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accessories__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select accessories for this opportunity</inlineHelpText>
+    <label>Accessories</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EDS</fullName>
+                <default>false</default>
+                <label>EDS</label>
+            </value>
+            <value>
+                <fullName>EBSD</fullName>
+                <default>false</default>
+                <label>EBSD</label>
+            </value>
+            <value>
+                <fullName>CL</fullName>
+                <default>false</default>
+                <label>CL</label>
+            </value>
+            <value>
+                <fullName>Cryo stage</fullName>
+                <default>false</default>
+                <label>Cryo stage</label>
+            </value>
+            <value>
+                <fullName>Cool stage</fullName>
+                <default>false</default>
+                <label>Cool stage</label>
+            </value>
+            <value>
+                <fullName>Heating stage</fullName>
+                <default>false</default>
+                <label>Heating stage</label>
+            </value>
+            <value>
+                <fullName>Tensile stage</fullName>
+                <default>false</default>
+                <label>Tensile stage</label>
+            </value>
+            <value>
+                <fullName>WDS</fullName>
+                <default>false</default>
+                <label>WDS</label>
+            </value>
+            <value>
+                <fullName>uXRF</fullName>
+                <default>false</default>
+                <label>uXRF</label>
+            </value>
+            <value>
+                <fullName>EBIC</fullName>
+                <default>false</default>
+                <label>EBIC</label>
+            </value>
+            <value>
+                <fullName>STEM</fullName>
+                <default>false</default>
+                <label>STEM</label>
+            </value>
+            <value>
+                <fullName>Chamber cleaner</fullName>
+                <default>false</default>
+                <label>Chamber cleaner</label>
+            </value>
+            <value>
+                <fullName>Raman</fullName>
+                <default>false</default>
+                <label>Raman</label>
+            </value>
+            <value>
+                <fullName>CLEM (integrated)</fullName>
+                <default>false</default>
+                <label>CLEM (integrated)</label>
+            </value>
+            <value>
+                <fullName>CLEM (transfer)</fullName>
+                <default>false</default>
+                <label>CLEM (transfer)</label>
+            </value>
+            <value>
+                <fullName>3View</fullName>
+                <default>false</default>
+                <label>3View</label>
+            </value>
+            <value>
+                <fullName>Ionic Liquid</fullName>
+                <default>false</default>
+                <label>Ionic Liquid</label>
+            </value>
+            <value>
+                <fullName>STEM corrector</fullName>
+                <default>false</default>
+                <label>STEM corrector</label>
+            </value>
+            <value>
+                <fullName>TEM corrector</fullName>
+                <default>false</default>
+                <label>TEM corrector</label>
+            </value>
+            <value>
+                <fullName>Monochromator</fullName>
+                <default>false</default>
+                <label>Monochromator</label>
+            </value>
+            <value>
+                <fullName>Precession diffraction</fullName>
+                <default>false</default>
+                <label>Precession diffraction</label>
+            </value>
+            <value>
+                <fullName>EELS</fullName>
+                <default>false</default>
+                <label>EELS</label>
+            </value>
+            <value>
+                <fullName>GIF</fullName>
+                <default>false</default>
+                <label>GIF</label>
+            </value>
+            <value>
+                <fullName>Tomography</fullName>
+                <default>false</default>
+                <label>Tomography</label>
+            </value>
+            <value>
+                <fullName>Standard PP</fullName>
+                <default>false</default>
+                <label>Standard PP</label>
+            </value>
+            <value>
+                <fullName>High Res PP</fullName>
+                <default>false</default>
+                <label>High Res PP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

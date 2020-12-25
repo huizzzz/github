@@ -1,0 +1,8 @@
+<aura:event type="COMPONENT" description="Event of QuoteLineItemBulkEdit">
+    <aura:attribute name="pricebook2Id" type="String" />
+    <aura:attribute name="selectedProducts" type="List" />
+    <aura:attribute name="quoteId" type="String" />
+    <aura:attribute name="tcGokeiProduct2" type="Decimal" />
+    <aura:attribute name="shokeiAddProduct2" type="Decimal" />
+    <aura:attribute name="isPSGHHTUser" type="Boolean" />
+</aura:event>

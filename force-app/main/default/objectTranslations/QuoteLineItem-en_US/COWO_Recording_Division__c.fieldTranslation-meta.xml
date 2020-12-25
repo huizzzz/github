@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>classification of accounts</label>
+    <name>COWO_Recording_Division__c</name>
+    <picklistValues>
+        <masterLabel>Z0:完納</masterLabel>
+        <translation>Z0: Complete payment</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z1:分納</masterLabel>
+        <translation>Z1: Split payment</translation>
+    </picklistValues>
+</CustomFieldTranslation>

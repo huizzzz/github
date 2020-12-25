@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_RequiredCheck_Fail_Memo</fullName>
+    <active>false</active>
+    <description>DXレコードタイプ、フェーズ06.失注
+の場合、失注メモを必須入力とする</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;SAWO_DX_Opportunity&apos;,
+ISPICKVAL( SAWO_Loss_Reason__c, &quot;Other&quot;),
+ISBLANK( SAWO_Fail_Memo__c )
+)</errorConditionFormula>
+    <errorDisplayField>SAWO_Fail_Memo__c</errorDisplayField>
+    <errorMessage>失注理由にその他を選択した場合、[失注メモ] を入力してください。</errorMessage>
+</ValidationRule>

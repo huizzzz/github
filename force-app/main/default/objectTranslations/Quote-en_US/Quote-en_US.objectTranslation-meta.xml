@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- soclone --></label>
+        <name>soclone</name>
+    </fieldSets>
+    <layouts>
+        <layout>COWO_DX_Quote</layout>
+        <sections>
+            <label><!-- HTA --></label>
+            <section>HTA</section>
+        </sections>
+        <sections>
+            <label><!-- ※一時的に表示　帳票用項目 --></label>
+            <section>※一時的に表示　帳票用項目</section>
+        </sections>
+        <sections>
+            <label>Note</label>
+            <section>備考</section>
+        </sections>
+        <sections>
+            <label><!-- 帳票備考 --></label>
+            <section>帳票備考</section>
+        </sections>
+        <sections>
+            <label>Information for report</label>
+            <section>帳票用情報</section>
+        </sections>
+        <sections>
+            <label>Amount Information</label>
+            <section>金額情報</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- DX --></label>
+        <name>COWO_DX_Quote</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- HHT_JTL --></label>
+        <name>HHT_JTL</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- JTL --></label>
+        <name>JTL</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Submit Quote for Approval to change status to &quot;Approved&quot; or &quot;Sent (Customer)&quot;. --></errorMessage>
+        <name>ApprovedFalseApprovedOrSentStat</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot modify approved Quote --></errorMessage>
+        <name>CannotChangeApprovedQuote</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot modify Quote sent to Customer --></errorMessage>
+        <name>CannotChangeSentQuote</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>The record type you select must match the record type of the opportunity</errorMessage>
+        <name>JTL_Recordtypecheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>We cannot save it because we have already booked sales.</errorMessage>
+        <name>checkCompletionFlg</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- AddProducts --></label>
+        <name>AddProducts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone --></label>
+        <name>Clone</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CloneQuote --></label>
+        <name>CloneQuote</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CustomEmailQuote --></label>
+        <name>CustomEmailQuote</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- EditProducts --></label>
+        <name>EditProducts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- EmailQuote --></label>
+        <name>EmailQuote</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Contract --></label>
+        <name>Generate_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Order --></label>
+        <name>Generate_Order</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generate_Order_Contract --></label>
+        <name>Generate_Order_Contract</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- QuotePdf --></label>
+        <name>QuotePdf</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output _ JTL (With tax)</label>
+        <name>SVFLEXQuoteButton20180917065727587y2E</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output _ JTL (No Tax)</label>
+        <name>SVFLEXQuoteButton20180917065754911IOC</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFLEXQuoteButton20200511061030559Rsf --></label>
+        <name>SVFLEXQuoteButton20200511061030559Rsf</name>
+    </webLinks>
+    <webLinks>
+        <label>Order Review List /Price Contact Form</label>
+        <name>SVFLEXQuoteButton202006190027329662LX</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output (HTA)</label>
+        <name>SVFLEXQuoteButton20200911055159218l6q</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output _ JTL (With tax)</label>
+        <name>SVFLEXQuoteListButton20180917065727587y2E</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output _ JTL (No Tax)</label>
+        <name>SVFLEXQuoteListButton20180917065754911IOC</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SVFLEXQuoteListButton20200511061030559Rsf --></label>
+        <name>SVFLEXQuoteListButton20200511061030559Rsf</name>
+    </webLinks>
+    <webLinks>
+        <label>Order Review List /Price Contact Form</label>
+        <name>SVFLEXQuoteListButton202006190027329662LX</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output (HTA)</label>
+        <name>SVFLEXQuoteListButton20200911055159218l6q</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output _ JTL (With tax)</label>
+        <name>SVFQuoteButton20180917065727587y2E</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output _ JTL (No Tax)</label>
+        <name>SVFQuoteButton20180917065754911IOC</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output _ JTL (With tax)</label>
+        <name>SVFQuoteListButton20180917065727587y2E</name>
+    </webLinks>
+    <webLinks>
+        <label>Quote Output _ JTL (No Tax)</label>
+        <name>SVFQuoteListButton20180917065754911IOC</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SaveQuotePdf --></label>
+        <name>SaveQuotePdf</name>
+    </webLinks>
+</CustomObjectTranslation>

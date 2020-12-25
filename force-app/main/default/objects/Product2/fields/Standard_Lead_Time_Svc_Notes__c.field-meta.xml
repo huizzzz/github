@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_Lead_Time_Svc_Notes__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Additional notes to the standard lead time.</inlineHelpText>
+    <label>Standard Lead Time Svc Notes</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

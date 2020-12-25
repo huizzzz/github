@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OcKelkZumenCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+BEGINS(RecordType.DeveloperName, &apos;OC_KELK&apos;), 
+ISPICKVAL(PRIORVALUE(StageName) , &apos;図面提案&apos;) , 
+ISPICKVAL(StageName , &apos;図面承認&apos;), 
+!OR(
+INCLUDES(KelkContent__c, &apos;KCM&apos;),
+INCLUDES(KelkContent__c, &apos;-AK-&apos;)
+)
+)</errorConditionFormula>
+    <errorMessage>Please upload at least one file from ex. 
+(EX: KCM, AK)</errorMessage>
+</ValidationRule>

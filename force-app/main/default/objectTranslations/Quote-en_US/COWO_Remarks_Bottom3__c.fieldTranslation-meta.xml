@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Enter the third line in the remarks column in the margin.</help>
+    <label>Note below the table 3</label>
+    <name>COWO_Remarks_Bottom3__c</name>
+</CustomFieldTranslation>

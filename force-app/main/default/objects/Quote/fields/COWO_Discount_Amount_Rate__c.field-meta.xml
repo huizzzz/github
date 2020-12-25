@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_Discount_Amount_Rate__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+OR(
+TotalPrice== 0
+, ISBLANK(TotalPrice)
+, ISNULL(TotalPrice)
+),
+0 ,
+COWO_Discount_Amount__c/ TotalPrice)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>値引率</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>

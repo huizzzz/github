@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HSL_UC_all</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OwnerShokusei__c</field>
+        <operation>equals</operation>
+        <value>B571,B572,B573</value>
+    </filters>
+    <label>HSL_UC全ての案件</label>
+    <language>ja</language>
+    <sharedTo>
+        <roleAndSubordinates>A2C0</roleAndSubordinates>
+    </sharedTo>
+</ListView>

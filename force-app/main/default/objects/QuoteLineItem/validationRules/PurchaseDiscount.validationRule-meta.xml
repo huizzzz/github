@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PurchaseDiscount</fullName>
+    <active>true</active>
+    <description>Purchase Discount [%]  or Purchase Discount [Value] have to be blank.</description>
+    <errorConditionFormula>NOT(
+     OR(
+        ISBLANK(PurchaseDiscountPercent__c),
+        ISBLANK( PurchaseDiscountValue__c )
+       )
+   )</errorConditionFormula>
+    <errorMessage>You can fill in only field Purchase Discount [%] or Purchase Discount [Value].</errorMessage>
+</ValidationRule>

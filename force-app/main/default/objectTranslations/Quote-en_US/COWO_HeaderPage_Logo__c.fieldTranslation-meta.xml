@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- HeaderPage_Logo --></label>
+    <name>COWO_HeaderPage_Logo__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_HHTWholesalePrice__c</fullName>
+    <description>HHTがフロント営業の会社に販売する価格</description>
+    <externalId>false</externalId>
+    <label>仕切価格（HHT）</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

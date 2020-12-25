@@ -1,0 +1,214 @@
+<aura:component controller="COWOQuoteLineItemBulkEditController" 
+                implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" 
+                access="global" >
+
+    <aura:html tag="style">
+        .slds-modal__container {
+            max-width: 1382.4px !important;
+        	padding-top: 0px;
+        	padding-bottom: 0px;
+        }
+        /* レスポンシブ対応 start */
+        @media (min-width:768px){
+            .slds-modal__container{
+                margin:0 auto;
+                width:100%;
+                max-width:40rem;
+                min-width:20rem;
+            }
+        }
+        @media (max-width:768px){
+            .slds-modal__container{
+                margin:0px;
+                padding:0px;
+                width:100%;
+                max-width:40rem;
+                min-width:20rem;
+            }
+        }
+        @media (max-height:544px){
+            .slds-modal__container{
+        		/*margin:0px;*/
+                padding:0px;
+            }
+        }
+        /* レスポンシブ対応 end */
+        .size__c .forceStyle .slds-is-editing .slds-form-element {
+            margin-bottom: 0;
+        }
+        .size__c .slds-form-element_horizontal:not(.slds-form-element_readonly) {
+            margin-bottom: 0;
+        }
+    </aura:html>
+    
+    <!-- Privte Attributes -->
+    <!-- attributes -->
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="hasChanged" type="Boolean" default="false" />
+    <aura:attribute name="noSelected" type="Boolean" default="true" />
+    <aura:attribute name="canceled" type="Boolean" default="true" />
+    <aura:attribute name="columns" type="List" default="[]"/>
+    <aura:attribute name="originalData" type="List" default="[]"/>
+    <aura:attribute name="data" type="List" default="[]"/>
+    <aura:attribute name="deletedData" type="List" default="[]"/>
+    <aura:attribute name="keyField" type="String" default="Id"/>
+    <aura:attribute name="hideCheckboxColumn" type="Boolean" default="false"/>
+    <!-- <aura:attribute name="selectedRowsCount" type="Integer" default="0"/> -->
+    <aura:attribute name="selectedRows" type="List" default="[]"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="resizeColumnDisabled" type="Boolean" default="false"/>
+    <aura:attribute name="minColumnWidth" type="Integer"/>
+    <aura:attribute name="maxColumnWidth" type="Integer"/>
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="String"/>
+    <aura:attribute name="defaultSortDirection" type="String"/>
+    <aura:attribute name="showRowNumberColumn" type="Boolean" default="true"/>
+    <aura:attribute name="rowNumberOffset" type="Integer" default="0"/>
+    <aura:attribute name="initialRows" type="Integer" default="10"/>
+    <aura:attribute name="rowsToAdd" type="Integer" default="10"/>
+    <aura:attribute name="dataTableSchema" type="Object"/>
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+    <aura:attribute name="isLoaded" type="Boolean" default="false" />
+    <aura:attribute name="suppressBottomBar" type="Boolean" default="true" />
+    <aura:attribute name="pricebook2Id" type="String"/>
+    <aura:attribute name="currencyIsoCode" type="String"/>
+    <aura:attribute name="digits" type="Decimal" default="2"/>
+    <aura:attribute name="digitsInput" type="Decimal" default="0.01"/>
+    <aura:attribute name="format" type="String"/>
+    <aura:attribute name="symbol" type="String"/>
+    <aura:attribute name="finalAmount" type="Decimal"/>
+    <aura:attribute name="amountSummary" type="Decimal"/>
+    <aura:attribute name="remainAmount" type="Decimal"/>
+    <aura:attribute name="isRemainAmountMinus" type="Boolean" default="false"/>
+    <aura:attribute name="warnMessage" type="String" default=""/>
+    <aura:attribute name="errors" type="Object"/>
+    <aura:attribute name="fertilityDiscount1" type="Decimal"/>
+    <aura:attribute name="fertilityDiscount2" type="Decimal"/>
+    <aura:attribute name="device" type="String" default="DESKTOP" description="ユーザが使用しているデバイスを保持する"/>
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <!-- registerEvent -->
+    <aura:registerEvent name="openCOWOQLISupport" type="c:COWO_QLISupportEvent"/>
+
+    <!-- Component Method -->
+    <aura:method name="open" action="{!c.onOpenCalled}" />
+
+    <div class="panel slds-modal slds-fade-in-open" onkeyup="{!c.formPress}">
+        <div class="{! 'modal-container slds-modal__container' + if(v.device=='DESKTOP', ' slds-modal__container__desktop__c', ' slds-modal__container__app__c')}">
+            <!-- Display spinner -->
+            <lightning:spinner aura:id="spinner" variant="brand" size="large" alternativeText="page loading" class="{! 'lightning-spinner__c' + if(v.showSpinner, '', ' slds-hide')}"/>
+    
+            <!-- Display a header with details -->
+            <div class="slds-modal__header__c">
+                <header class="slds-modal__header">
+                    <!--<lightning:buttonIcon size="large" class="slds-modal__close" iconName="utility:close" variant="bare-inverse" title="close" alternativeText="Close window" onclick="{!c.onCloseClicked}"/>-->
+                    <h2 class="title slds-text-heading--medium slds-hyphenate">{!$Label.c.COWO_LBL_COWOQuoteLineItemBulkEditHeader}</h2>
+                </header>   
+            </div>  
+
+            <div class="input-group input-group__c slds-p-around--x-small slds-modal__content" >
+                <lightning:layout multipleRows="true">
+                    <!--ボタン-->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="5" largeDevicesize="5" flexibility="no-shrink" class="slds-x-medium-size_2-of-5">
+                        <lightning:button class="button_small__c" label="⇈"  onclick="{! c.upSort }" disabled="{! v.noSelected}" />
+                        <lightning:button class="button_small__c" label="↑"  onclick="{! c.upSortOne }" disabled="{! v.noSelected}" />
+                        <lightning:button class="button_small__c" label="↓"  onclick="{! c.underSortOne }" disabled="{! v.noSelected}"/>
+                        <lightning:button class="button_small__c" label="⇊"  onclick="{! c.underSort }" disabled="{! v.noSelected}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_AddRows}" onclick="{! c.addRowsToEnd }"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_DeleteRows}" onclick="{! c.deleteRows }" disabled="{! v.noSelected}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_Summary}" onclick="{! c.doSummary }" disabled="{! v.noSelected}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_ClearAmount}" onclick="{! c.clearAmount}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_ClearQuantity}" onclick="{! c.clearQuantity}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_ItemNumberSet}" onclick="{! c.setItemNumber}"/>
+                    </lightning:layoutItem>
+                    <!--最終金額-->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-x-medium-size_1-of-5">
+                        <div class="slds-grid">
+                            <strong  class="slds-form-element__label label__c">{! $Label.c.COWO_LBL_FinalAmt} </strong>
+                            <div class="slds-col_bump-right">
+                                <ui:inputCurrency value="{! v.finalAmount}" disabled="true" format="{!v.format}" class="label__c" placeholder="0"/>
+                            </div>
+                        </div>       
+                    </lightning:layoutItem>
+                    <!--金額サマリ-->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-x-medium-size_1-of-5">
+                        <div class="slds-grid">
+                            <strong class="slds-form-element__label label__c">{! $Label.c.COWO_LBL_AmtSum} </strong>
+                            <div class="slds-col_bump-right">
+                                <ui:inputCurrency value="{! v.amountSummary}" disabled="true" format="{!v.format}" class="label__c" placeholder="0"/>
+                            </div>
+                        </div>   
+                    </lightning:layoutItem>
+                    <!--差額-->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-x-medium-size_1-of-5">
+                        <div class="slds-grid">
+                            <strong class="slds-form-element__label label__c">{! $Label.c.COWO_LBL_RemainAmount}  </strong>
+                            <div class="slds-col_bump-right">
+                                <ui:inputCurrency value="{! v.remainAmount}" disabled="true" format="{!v.format}" class="label__c" placeholder="0"/>
+                            </div>
+                        </div>    
+                    </lightning:layoutItem>
+                    <!--メッセージ-->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="5" largeDevicesize="5" flexibility="no-shrink" class="slds-x-medium-size_2-of-5">
+                    </lightning:layoutItem>
+                    <!--出精値引き1-->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-x-medium-size_1-of-5">
+                        <div class="slds-grid">
+                            <strong  class="slds-form-element__label label__c">{! $Label.c.COWO_LBL_FertilityDiscount1} </strong>
+                            <div class="slds-col_bump-right">
+                                <ui:inputCurrency value="{! v.fertilityDiscount1}" disabled="true" format="{!v.format}" class="label__c" placeholder="0"/>
+                            </div>
+                        </div>    
+                    </lightning:layoutItem>
+                    <!--出精値引02-->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-x-medium-size_1-of-5">
+                        <div class="slds-grid">
+                            <strong  class="slds-form-element__label label__c">{! $Label.c.COWO_LBL_FertilityDiscount2} </strong>
+                            <div class="slds-col_bump-right">
+                                <ui:inputCurrency value="{! v.fertilityDiscount2}" disabled="true" format="{!v.format}" class="label__c" placeholder="0"/>
+                            </div>
+                        </div>
+                    </lightning:layoutItem>
+                </lightning:layout>
+        </div>
+
+            <!-- the container element determine the height of the datatable -->
+            <div class="div_datatable__c">
+                <lightning:datatable
+                    aura:id="datatable"
+                    columns="{! v.columns }"
+                    data="{! v.data }"
+                    defaultSortDirection="{! v.defaultSortDirection }"
+                    draftValues="{ !v.draftValues }"
+                    errors="{!v.errors}"
+                    hideCheckboxColumn="{! v.hideCheckboxColumn }"
+                    keyField="{! v.keyField }"
+                    minColumnWidth="{! v.minColumnWidth }"
+                    maxColumnWidth="{! v.maxColumnWidth }"
+                    resizeColumnDisabled="{! v.resizeColumnDisabled }"
+                    resizeStep="20"
+                    rowNumberOffset="{! v.rowNumberOffset }"
+                    showRowNumberColumn="{! v.showRowNumberColumn }"
+                    oncancel="{! c.handleCancel }"
+                    oncellchange="{! c.handleCellchange }"
+                    onresize="{! c.storeColumnWidths }"
+                    onrowaction="{! c.handleRowAction }"
+                    onrowselection="{! c.updateSelectedText }"
+                    onsave="{! c.handleSave }"
+                    suppressBottomBar="{! v.suppressBottomBar }" 
+                    wrapTextMaxLines="5"
+                    />
+            </div>
+    
+            <div class="modal-footer slds-modal__footer" >
+                <div class="forceModalActionContainer--footerAction forceModalActionContainer" data-aura-class="forceModalActionContainer--footerAction forceModalActionContainer">
+                    <!-- <lightning:button label="破棄" onclick="{!c.handleCancel}" class="slds-button slds-button- --> <!-- -neutral uiButton forceActionButton" disabled="{! or(!v.hasChanged, v.showSpinner)}"/> -->
+                    <lightning:button label="{! $Label.c.COWO_LBL_Cancel}" onclick="{!c.onCloseClicked}" class="button_small__c slds-button slds-button--neutral uiButton forceActionButton" disabled="{! v.showSpinner}"/>
+                    <lightning:button label="{! $Label.c.COWO_LBL_Save}" onclick="{!c.handleSave}" variant="brand" class="button_small__c slds-button slds-button--neutral uiButton forceActionButton" disabled="{! or(!v.hasChanged, v.showSpinner)}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,23 @@
+
+
+@media (min-width: 768px){
+    .THIS .slds-modal__container {
+        width:30%!important;
+        height:100%!important;
+        margin-left:30%;
+    }
+}
+.THIS .slds-button{
+    line-height: 15px;
+    font-size: xx-small;
+    position:relative;
+}
+.THIS .slds-button_neutral{
+    line-height: 15px;
+    font-size: xx-small;
+    position:relative;
+}
+/* .THIS .slds-modal__footer{
+    height: 30px;
+} */
+

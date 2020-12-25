@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- If selected, Sales Price for this line will be set to 0 and the amount should be included in other line. --></help>
+    <label><!-- Hidden Price --></label>
+    <name>Hidden__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_TotalMC__c</fullName>
+    <description>MC×数量</description>
+    <externalId>false</externalId>
+    <formula>MC__c  *  Quantity</formula>
+    <label>総MC</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

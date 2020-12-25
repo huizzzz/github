@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- soclone --></label>
+        <name>soclone</name>
+    </fieldSets>
+    <validationRules>
+        <errorMessage><!-- Related product is not marked as &quot;Main&quot;, therefore Quote Line Item cannot be marked as &quot;Main&quot;. --></errorMessage>
+        <name>DisplayedNameDependentOnProduct</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can fill in only field Purchase Discount [%] or Purchase Discount [Value]. --></errorMessage>
+        <name>PurchaseDiscount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>We cannot save it because we have already booked sales.</errorMessage>
+        <name>checkCompletionFlg</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- MassProductsUpdate --></label>
+        <name>MassProductsUpdate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SumUpLines --></label>
+        <name>SumUpLines</name>
+    </webLinks>
+</CustomObjectTranslation>

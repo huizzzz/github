@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Place of delivery(University,Government)</label>
+    <name>COWO_DeliveryPlace_Univ_GovtOffice__c</name>
+</CustomFieldTranslation>

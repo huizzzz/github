@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ApprovedFalseApprovedOrSentStat</fullName>
+    <active>true</active>
+    <description>Approved=False and In Review Process, Approved or Sent Status</description>
+    <errorConditionFormula>OR(
+AND(Approved__c = FALSE,ISPICKVAL( Status , &apos;Approved&apos;)),
+AND(Approved__c = FALSE,ISPICKVAL( Status , &apos;Sent (Customer)&apos;)))</errorConditionFormula>
+    <errorMessage>Submit Quote for Approval to change status to &quot;Approved&quot; or &quot;Sent (Customer)&quot;.</errorMessage>
+</ValidationRule>

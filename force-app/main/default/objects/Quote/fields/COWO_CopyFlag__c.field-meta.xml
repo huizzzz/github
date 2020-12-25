@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_CopyFlag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>見積コピー機能を使用して作成された見積の場合Trueとする。
+当項目がTrueである場合AfterInsertトリガが起動されない</description>
+    <externalId>false</externalId>
+    <label>コピーフラグ</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

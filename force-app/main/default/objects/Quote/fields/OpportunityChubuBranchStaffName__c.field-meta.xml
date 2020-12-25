@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OpportunityChubuBranchStaffName__c</fullName>
+    <externalId>false</externalId>
+    <formula>Opportunity.HHTchububranch__r.LastName + &apos; &apos; + Opportunity.HHTchububranch__r.FirstName</formula>
+    <label>商談HHT担当者名</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

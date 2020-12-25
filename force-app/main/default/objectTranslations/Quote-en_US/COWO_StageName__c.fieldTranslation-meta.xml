@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Stage</label>
+    <name>COWO_StageName__c</name>
+    <picklistValues>
+        <masterLabel>00.案件の見込み</masterLabel>
+        <translation>00.Opp Prospect</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>01.案件の見極め</masterLabel>
+        <translation>01.Opp Judgement</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>02.製品価値の訴求</masterLabel>
+        <translation>02.Product Value Proposition</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>03.意思決定者との合意</masterLabel>
+        <translation>03.Agreement With Decision Maker</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>04.受注要件の確定</masterLabel>
+        <translation>04.Product Spec Finalization</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>05.契約締結・調整</masterLabel>
+        <translation>05.Contract Finalization</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>06.受注</masterLabel>
+        <translation>06.Sales Order</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>06.失注</masterLabel>
+        <translation>06.Closed Lost</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Circles__c</fullName>
+    <description>見積レコードタイプが
+・HHT_JTL
+　　　　　　　　の時、
+角印が押された時に丸印も押されるように。
+丸印の印鑑画像ファイル名は数式内で設定している。</description>
+    <externalId>false</externalId>
+    <formula>CASE( RecordType.DeveloperName , &quot;HHT_JTL&quot;, IF ( CompanySeal__c = &quot;&quot;, &quot;&quot;, &quot;中部ザイ_丸印.png&quot;) ,&quot;&quot;)</formula>
+    <label>丸印</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

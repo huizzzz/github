@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JTL_RequiredSAPCode</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;HHT_JTL&apos;,
+OR(
+Account.Sold_to_party__c = &apos;&apos;,
+Account.Terms_of_payment__c = &apos;&apos;
+),
+ISPICKVAL(StageName,&apos;請求依頼（作業完了）&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>取引先の「受注先」、「販売支払条件」を設定してください。</errorMessage>
+</ValidationRule>

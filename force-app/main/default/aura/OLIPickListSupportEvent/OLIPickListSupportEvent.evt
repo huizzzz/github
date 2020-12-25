@@ -1,0 +1,29 @@
+<aura:event type="COMPONENT" description="Event of OpportunityLineItemBulkEdit">
+    <aura:attribute name="oppLineItemId" type="String" />
+    <aura:attribute name="currencyISOCode" type="String" />
+    <aura:attribute name="selectQuantityUnit" type="Object" />
+    <aura:attribute name="selectDetailCategory" type="Object" />
+    <aura:attribute name="selectDetailCategoryMTE" type="Object" />
+    <aura:attribute name="selectRejectionReason" type="Object" />
+    <aura:attribute name="selectPlantCode" type="Object" />
+    <aura:attribute name="selectPlantCodeMTE" type="Object" />
+    <aura:attribute name="selectStorageLocation" type="Object" />
+    <aura:attribute name="selectStorageLocationMTE" type="Object" />
+    <aura:attribute name="selectCurrency" type="Object" />
+    <aura:attribute name="selectRecordingDivision" type="Object" />
+    <aura:attribute name="selectProfitCenter" type="Object" />
+    <aura:attribute name="selectProfitCenterMTE" type="Object" />
+    <aura:attribute name="selectMaterialGroup1" type="Object" />
+    <aura:attribute name="selectSalesUnit" type="Object" />
+    <aura:attribute name="shippingInstructions" type="String" default=""/>
+    <aura:attribute name="salesNoteCustome" type="String" default=""/>
+    <aura:attribute name="conditionRateInsurance" type="Decimal"/>
+    <aura:attribute name="insuranceFee" type="Decimal"/>
+    <aura:attribute name="conditionRateTaxes" type="Decimal"/>
+    <aura:attribute name="freight" type="Decimal"/>
+    <aura:attribute name="conditionDeliveryCost" type="Decimal"/>
+    <aura:attribute name="otherDuties" type="Decimal"/>
+    <aura:attribute name="trgInstRsrvsFixed" type="Decimal"/>
+    <aura:attribute name="reserversFixed" type="Decimal"/>
+    <aura:attribute name="format" type="String" />
+</aura:event>

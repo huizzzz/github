@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_LocalCorporationTC__c</fullName>
+    <description>フロント仕入価格+フロント販売管理費など</description>
+    <externalId>false</externalId>
+    <label>現法TC</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Currency</type>
+</CustomField>

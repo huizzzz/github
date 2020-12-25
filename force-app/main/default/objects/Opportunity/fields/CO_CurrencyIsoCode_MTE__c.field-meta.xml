@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CO_CurrencyIsoCode_MTE__c</fullName>
+    <defaultValue>if( $User.Shokusei__c =&apos;T013&apos;,&apos;JPY&apos;,&apos;USD&apos;)</defaultValue>
+    <externalId>false</externalId>
+    <label>SAP Currency ISO Code (MTE)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>USD</fullName>
+                <default>true</default>
+                <label>USD</label>
+            </value>
+            <value>
+                <fullName>JPY</fullName>
+                <default>false</default>
+                <label>JPY</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

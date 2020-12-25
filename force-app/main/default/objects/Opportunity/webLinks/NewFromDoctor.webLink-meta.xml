@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewFromDoctor</fullName>
+    <availability>online</availability>
+    <description>ドクターの関連リストから案件を新規作成します。</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>新規</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>https://ap.salesforce.com/006/e?00N2800000HQE6W={!Contact.Department}&amp;00N2800000HQE6X={!Contact.Name}</url>
+</WebLink>

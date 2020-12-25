@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_QuantityUnit__c</fullName>
+    <description>S4連携項目</description>
+    <externalId>false</externalId>
+    <label>基本数量単位</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MT</fullName>
+                <default>false</default>
+                <label>後で修正</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ForecastStatus__c</fullName>
+    <externalId>false</externalId>
+    <label>Forecast status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sure</fullName>
+                <default>false</default>
+                <label>Sure</label>
+            </value>
+            <value>
+                <fullName>Good Chance</fullName>
+                <default>false</default>
+                <label>Good Chance</label>
+            </value>
+            <value>
+                <fullName>Difficult</fullName>
+                <default>false</default>
+                <label>Difficult</label>
+            </value>
+            <value>
+                <fullName>Impossible</fullName>
+                <default>false</default>
+                <label>Impossible</label>
+            </value>
+            <value>
+                <fullName>Open competition</fullName>
+                <default>false</default>
+                <label>Open competition</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

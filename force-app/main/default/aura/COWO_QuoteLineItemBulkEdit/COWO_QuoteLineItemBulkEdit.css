@@ -1,0 +1,146 @@
+/* .THIS .input-group .lightningInput {
+    display: inline-block;
+    margin-right: 10px;
+} */
+.THIS .input-group__c {
+    padding-top: 0px;
+    min-height: max-content;
+}
+.THIS .button_small__c{
+    font-size: xx-small;
+}
+.THIS .lightning-spinner__c {
+    top: 111px;
+    bottom: 55px;
+}
+/*DataTable行高さ調整 Begin*/
+.THIS .slds-table th, .THIS .slds-table td{
+    padding:0px;
+}
+.THIS .slds-th__action {
+    padding:0px;
+}
+.THIS .slds-modal__header {
+    min-height: fit-content;
+}
+.THIS .label__c{
+    max-width: 190px;
+    min-width: 130px;
+    font-size: x-small;
+}
+/*DataTable内左詰め*/
+/*.THIS .slds-grid_align-end{
+    justify-content:inherit;
+}*/
+/*DataTable行高さ調整 End*/
+.THIS .slds-modal__footer {
+    min-height: fit-content;
+}
+.THIS .div_datatable__c .slds-input {
+    text-align: left;
+}
+.THIS .div_datatable__c span{
+    font-size: xx-small;
+}
+/* ボタン高さ start */
+.THIS .slds-modal__container__app__c .button_small__c{
+    line-height: 25px;
+}
+.THIS .button_small__c{
+    line-height: 15px;
+}
+/* ボタン高さ end */
+/* datatableの行高さを制御する start */
+
+.THIS .slds-modal__container__desktop__c .div_datatable__c {
+    min-height: 75%;
+    max-height: 80%;
+    height: 75%;
+}
+/* レスポンシブ対応 start */
+/* ポップアップ周辺の余白をなくす */
+.THIS .slds-modal__container__app__c{
+    margin:0px;
+    padding:0px;
+}
+.THIS .slds-modal__container__app__c .slds-table_header-fixed_container{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.THIS .slds-modal__container__app__c .slds-table_header-fixed{
+    padding-top: 30px;
+}
+.THIS .slds-modal__container__app__c .slds-modal__header__c{
+    height: 0px;
+}
+.THIS .slds-modal__container__app__c .input-group__c {
+    padding-top: 15px;
+    min-height: 35%;
+}
+/* datatable要素のレイアウト調整 start */
+.THIS .slds-modal__container__app__c .slds-row-number{
+    float: left;
+    padding-left: 20px;
+}
+.THIS .slds-modal__container__app__c .div_datatable__c {
+    height: 60%;
+}
+/* ローディングアイコン end */
+/* 上部入力エリアを２列で表示させる */
+@media (max-width:1362px){
+    .THIS .slds-x-medium-size_1-of-5{
+        width:80%;
+    }
+}
+/* レスポンシブ対応 end */
+.THIS .uiInput--input.input[disabled]{
+    min-width: 100px;
+    text-align: right;
+    font-size: xx-small;
+    min-height: max-content;
+    height: 17px;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+}
+.THIS .slds-button.slds-button_neutral{
+    line-height: 15px;
+    font-size: xx-small;
+}
+
+/* .THIS .slds-modal__container {
+    max-width: 1382.4px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+} */
+/* レスポンシブ対応 start */
+/* @media (min-width:768px){
+    .THIS .slds-modal__container{
+        margin:0 auto;
+        width:100%;
+        max-width: 1382.4px !important;
+    }
+} */
+/* @media (max-width:768px){
+    .THIS .slds-modal__container{
+        margin:0px;
+        padding:0px;
+        width:100%;
+        max-width:40rem;
+        min-width:20rem;
+        max-width: 1382.4px !important;
+    }
+}
+@media (max-height:544px){
+    .THIS .slds-modal__container{
+        margin:0px;
+        padding:0px;
+    }
+} */
+/* レスポンシブ対応 end */
+/* .THIS .size__c .forceStyle .slds-is-editing .slds-form-element {
+    margin-bottom: 0;
+}
+.THIS .size__c .slds-form-element_horizontal:not(.slds-form-element_readonly) {
+    margin-bottom: 0;
+} */

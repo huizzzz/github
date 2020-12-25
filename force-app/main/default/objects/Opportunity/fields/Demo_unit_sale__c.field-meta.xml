@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_unit_sale__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Will the order be executed by supplying an existing demo unit ?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Will we ship a demo unit to this customer ?</inlineHelpText>
+    <label>Demo unit sale</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>PU5</label>
+    <protected>false</protected>
+    <values>
+        <field>COWO_PriceBook_Name__c</field>
+        <value xsi:type="xsd:string">Process_Pricebook</value>
+    </values>
+    <values>
+        <field>COWO_SecondHierarchyText__c</field>
+        <value xsi:type="xsd:string">PU5</value>
+    </values>
+    <values>
+        <field>COWO_ThirdHierarchyText__c</field>
+        <value xsi:type="xsd:string">PU5_Dummy1,PU5_Dummy2,PU5_Dummy3,PU5_Dummy4,PU5_Dummy5</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reach__c</fullName>
+    <externalId>false</externalId>
+    <label>Reach</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ZR (80km)</fullName>
+                <default>false</default>
+                <label>ZR (80km)</label>
+            </value>
+            <value>
+                <fullName>ER (40/30km)</fullName>
+                <default>false</default>
+                <label>ER (40/30km)</label>
+            </value>
+            <value>
+                <fullName>LR (10km)</fullName>
+                <default>false</default>
+                <label>LR (10km)</label>
+            </value>
+            <value>
+                <fullName>FR (2km)</fullName>
+                <default>false</default>
+                <label>FR (2km)</label>
+            </value>
+            <value>
+                <fullName>CLR (2km)</fullName>
+                <default>false</default>
+                <label>CLR (2km)</label>
+            </value>
+            <value>
+                <fullName>DR (500m)</fullName>
+                <default>false</default>
+                <label>DR (500m)</label>
+            </value>
+            <value>
+                <fullName>SR (&lt;500m)</fullName>
+                <default>false</default>
+                <label>SR (&lt;500m)</label>
+            </value>
+            <value>
+                <fullName>Unknown/Others</fullName>
+                <default>false</default>
+                <label>Unknown/Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

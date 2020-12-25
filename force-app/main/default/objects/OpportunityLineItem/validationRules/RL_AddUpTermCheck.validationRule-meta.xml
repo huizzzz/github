@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RL_AddUpTermCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>ABS((VALUE(LEFT(EndMonth__c,4)) - VALUE(LEFT(StartMonth__c,4))) * 12 +
+(VALUE(RIGHT(EndMonth__c,2)) - VALUE(RIGHT(StartMonth__c,2)))) &lt;
+CASE(AddUpTerm__c,
+&quot;3ヶ月&quot;, 2,
+&quot;6ヶ月&quot;, 5,
+&quot;1年&quot;, 11,
+0)</errorConditionFormula>
+    <errorDisplayField>AddUpTerm__c</errorDisplayField>
+    <errorMessage>計上期間は、開始月と終了月の期間より短い値に設定してください。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_S4LinkagePrice__c</fullName>
+    <description>&quot;会計上の金額
+直販：合計金額/総TC合計×総TC
+海外商流：フロント仕入合計/総TC合計×総TC&quot;</description>
+    <externalId>false</externalId>
+    <label>S/4連携金額</label>
+    <precision>13</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

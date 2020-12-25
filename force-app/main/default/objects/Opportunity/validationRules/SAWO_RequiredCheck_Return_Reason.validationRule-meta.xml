@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_RequiredCheck_Return_Reason</fullName>
+    <active>true</active>
+    <description>DXレコードタイプ、承認申請区分「04,05→03(フェーズ戻し申請)」のとき、差し戻し理由を必須入力とする</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &#39;SAWO_DX_Opportunity&#39;,
+ISBLANK( SAWO_Return_Reason__c  ),
+ISPICKVAL( SAWO_Approval_Category__c, &quot;04,05→03(フェーズ戻し申請)&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>SAWO_Return_Reason__c</errorDisplayField>
+    <errorMessage>フェーズ戻し申請を行う場合、[承認申請区分],[差し戻し理由] を入力してください。</errorMessage>
+</ValidationRule>

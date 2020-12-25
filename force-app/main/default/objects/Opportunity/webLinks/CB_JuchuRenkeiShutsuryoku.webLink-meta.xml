@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CB_JuchuRenkeiShutsuryoku</fullName>
+    <availability>online</availability>
+    <description>受注情報の連携用データを出力する</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>受注連携情報出力</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>if(&apos;{!Opportunity.RecordTypeId}&apos; == &apos;{!$Label.AP06_CONST_0018}&apos;){
+location.href = &quot;/00O0K000009s1Zq?pv0={!Opportunity.Id}&amp;export=1&amp;enc=UTF-8&amp;xf=xls&quot;;
+}else{ 
+location.href = &quot;/00O28000005vWhN?pv0={!Opportunity.Id}&amp;csv=1&quot;;
+}</url>
+</WebLink>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RealDiscount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISBLANK(PurchaseDiscountValue__c),  
+    PurchaseDiscountPercent__c,
+     PurchaseDiscountValue__c /  PurchasePrice__c 
+  )</formula>
+    <label>Real Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>

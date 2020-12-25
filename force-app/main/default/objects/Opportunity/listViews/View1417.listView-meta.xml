@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>View1417</fullName>
+    <columns>HikiaiId__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>UriageYoteiBi__c</columns>
+    <columns>HannyuYoteiDate__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>HHS_ProductFamilys__c</columns>
+    <columns>BudgetStats__c</columns>
+    <columns>HHS_BudgetExistence__c</columns>
+    <columns>BudgetAccuracy__c</columns>
+    <columns>Agency__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.HHS</value>
+    </filters>
+    <label>HHS_引合/案件（個人別）</label>
+    <sharedTo>
+        <group>HHSGroup</group>
+    </sharedTo>
+</ListView>

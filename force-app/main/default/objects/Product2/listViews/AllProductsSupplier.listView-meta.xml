@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllProductsSupplier</fullName>
+    <columns>Supplier__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>PartNumber__c</columns>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>MainProduct__c</columns>
+    <columns>PurchasePrice__c</columns>
+    <columns>JapanPurchase__c</columns>
+    <columns>EuCustomsRate__c</columns>
+    <columns>OverseasFreightCosts__c</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>AvaliableForDemo__c</columns>
+    <columns>PRODUCT2.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Products by supplier</label>
+    <language>en_US</language>
+</ListView>

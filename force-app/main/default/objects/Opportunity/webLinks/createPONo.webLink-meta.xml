@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>createPONo</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>PO予約番号発番</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/35.0/connection.js&apos;)};
+{!REQUIRESCRIPT(&apos;/soap/ajax/35.0/apex.js&apos;)};
+query = &quot;SELECT Id, POhatsubanflg__c, POShinseiFlg__c FROM Opportunity WHERE Id=&apos;{!Opportunity.ID_18__c}&apos;&quot;,
+records = sforce.connection.query(query).getArray(&apos;records&apos;);
+
+if (records.length === 0) {
+alert(&apos;请联系给系统管理负责人。&apos;);
+} else if (records[0].POhatsubanflg__c == &quot;true&quot;) {
+alert(&apos;PO预约编号是已经被发行了。&apos;);
+} else if (records[0].POShinseiFlg__c == &quot;false&quot;) {
+alert(&apos;首先需要从代理商通过销售登记的申请。&apos;);
+} else {
+var objs = [];
+var obj = new sforce.SObject(&apos;Opportunity&apos;);
+obj.id = records[0].Id;
+obj.POhatsubanflg__c = &quot;true&quot;;
+objs.push(obj);
+
+var results = sforce.connection.update(objs);
+window.location.reload();
+}</url>
+</WebLink>

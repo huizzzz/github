@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HHT_Stage_Opportunity</fullName>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>HHTchububranch__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.OC_KELK</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>引合入手＆仕様検討,作図指示,図面承認,見積要求,(顧客へ)見積提案,PO受注 (FAI/MP),化学物質情報要求,品質確認レポート要求,量産認定,FA要求,最終確認</value>
+    </filters>
+    <label>(HHT)Stage Opportunity</label>
+    <sharedTo>
+        <group>OC_KELK</group>
+    </sharedTo>
+</ListView>

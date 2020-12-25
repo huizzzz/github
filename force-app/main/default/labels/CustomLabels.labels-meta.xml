@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>COWO_LBL_TrgInstRsrvsFixed</fullName>
+        <language>ja</language>
+        <protected>false</protected>
+        <shortDescription>選択設定画面</shortDescription>
+        <value>CnAMT (Z790:Trg Inst Rsrvs Fixed) (MTE)</value>
+    </labels>
+</CustomLabels>

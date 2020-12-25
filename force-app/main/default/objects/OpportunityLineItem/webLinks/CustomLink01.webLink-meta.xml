@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CustomLink01</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>受注機器の登録</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://ap.salesforce.com/a0T/e?retURL=%2F{!OpportunityLineItem.Id} 
+&amp;CF00N2800000HQE4c={!Account.Name} 
+&amp;CF00N2800000HQE4c_lkid={!Account.Id} 
+&amp;CF00N2800000HQE4c_lkold={!Account.Name} 
+&amp;CF00N2800000HQE4c_lktp=001 
+&amp;CF00N2800000HQE4c_lspf=0 
+&amp;CF00N2800000HQE4c_mod=0 
+&amp;Name={!OpportunityLineItem.HikiaiHinmei__c} 
+&amp;CF00N2800000HQE5N={!Opportunity.Name} 
+&amp;CF00N2800000HQE5N_lkid={!Opportunity.Id} 
+&amp;CF00N2800000HQE5N_lkold={!Opportunity.Name} 
+&amp;CF00N2800000HQE5N_lktp=001&amp;CF00N2800000HQE5N_lspf=0 
+&amp;CF00N2800000HQE5N_mod=0 
+&amp;00N2800000HQE5G={!OpportunityLineItem.MakerName__c} 
+&amp;00N2800000HQE5Q={!OpportunityLineItem.PartsNo__c} 
+&amp;00N2800000HQE5a={!OpportunityLineItem.Specification__c} 
+&amp;00N2800000HQE4x={!OpportunityLineItem.InheritingTransferHistory__c} 
+&amp;00N2800000HQE5I={!OpportunityLineItem.MedicalInstrumentProductName__c} 
+&amp;00N2800000HQE5O={!OpportunityLineItem.JuchuYoteiNen__c}
+&amp;00N2800000HQE4y={!Opportunity.BeforeMakerName__c}
+&amp;00N2800000HQE4z={!Opportunity.DeliveryDevice_ref__c}</url>
+</WebLink>

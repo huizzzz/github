@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POhatsubanflg__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>PO発番ボタンを押下した際に、trueに設定する
+また、案件トリガ内での条件で利用する</description>
+    <externalId>false</externalId>
+    <label>PO発番フラグ</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

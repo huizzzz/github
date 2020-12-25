@@ -1,0 +1,54 @@
+.THIS .button_small__c{
+    font-size: xx-small;
+}
+.THIS .slds-button.slds-button_neutral{
+line-height: 15px;
+font-size: xx-small;
+}
+/* ボタン高さ start */
+.THIS .slds-modal__container__app__c .button_small__c{
+    line-height: 25px;
+}
+.THIS .button_small__c{
+    line-height: 15px;
+}
+/* .THIS .slds-select{
+    height: 20px;
+} */
+.THIS .slds-form-element__label{
+    font-size: xx-small;
+}
+.THIS .input_label__c{
+    font-size: xx-small;
+}
+.THIS .input_text__c{
+    text-align: right;
+    font-size: xx-small;
+    min-height: 17px;
+}
+/* 上部入力エリアを２列で表示させる */
+@media (min-width:900px) and (max-width:1252px){
+    .THIS .slds-size_1-of-12{
+        width:30%;
+        /* min-width: 100px;
+        max-width: 100px; */
+    }
+    .THIS .slds-size_2-of-12{
+        width:30%;
+        /* min-width: 200px;
+        max-width: 200px; */
+    }
+}
+@media (min-width:530px) and (max-width:900px){
+    .THIS .slds-size_1-of-12{
+        width:60%;
+        /* min-width: 100px;
+        max-width: 100px; */
+    }
+    .THIS .slds-size_2-of-12{
+        width:60%;
+        /* min-width: 200px;
+        max-width: 200px; */
+    }
+}
+/* レスポンシブ対応 end */

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_RequiredCheck_Account</fullName>
+    <active>true</active>
+    <description>DXレコードタイプ、フェーズ00以外
+の場合、会社名を必須入力とする</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;SAWO_DX_Opportunity&apos;,
+NOT(ISPICKVAL( StageName, &quot;00&quot;)),
+ISBLANK( AccountId )
+)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>[取引先] を選択してください。</errorMessage>
+</ValidationRule>

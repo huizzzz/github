@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalCustomerPriceFromOpp__c</fullName>
+    <externalId>false</externalId>
+    <formula>Opportunity.TotalCustomerPrice__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Sum of the Opportunity Products&apos; Total Price (including given Discount). Excluding Products marked as Hidden or Option.</inlineHelpText>
+    <label>Total Customer Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

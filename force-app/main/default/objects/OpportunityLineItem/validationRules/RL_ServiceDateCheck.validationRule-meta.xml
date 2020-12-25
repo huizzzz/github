@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RL_ServiceDateCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>(VALUE(LEFT(StartMonth__c,4)) - YEAR(ServiceDate)) * 12 + 
+(VALUE(RIGHT(StartMonth__c,2)) - MONTH(ServiceDate)) &lt; 0</errorConditionFormula>
+    <errorDisplayField>ServiceDate</errorDisplayField>
+    <errorMessage>提供日は、開始月より前の年月は入力できません。</errorMessage>
+</ValidationRule>

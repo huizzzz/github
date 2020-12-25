@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_FollowApprovalDeadLine__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*追認されてれば緑*/
+IF( COWO_FollowApproval__c,
+&quot;/img/samples/flag_green.gif&quot;,
+/*5日経過後の画像*/
+IF ( TODAY() - DATEVALUE(COWO_LastApproveDate__c) &gt;= 5 ,
+&quot;/img/samples/flag_red.gif&quot;,
+/*5日以内の画像*/
+IF ( TODAY() - DATEVALUE(COWO_LastApproveDate__c) &lt; 5 ,
+&quot;/img/samples/flag_green.gif&quot;,
+/*その他用*/
+&quot;&quot;)
+)
+)</formula>
+    <label>追認締切</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

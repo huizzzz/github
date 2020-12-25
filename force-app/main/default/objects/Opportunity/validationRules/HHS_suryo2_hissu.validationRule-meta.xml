@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HHS_suryo2_hissu</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+
+RecordType.DeveloperName = $Label.AP04_CONST_0005 /* HHS商談*/ 
+,
+!ISPICKVAL(HHS_Model2__c, &quot;&quot;), 
+ISBLANK(HHS_Quantity2__c)
+)</errorConditionFormula>
+    <errorDisplayField>HHS_Quantity2__c</errorDisplayField>
+    <errorMessage>数量を入力してください</errorMessage>
+</ValidationRule>

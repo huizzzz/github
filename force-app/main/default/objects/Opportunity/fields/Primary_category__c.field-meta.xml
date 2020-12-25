@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_category__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the main product for this opportunity.</inlineHelpText>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SEM FE</fullName>
+                <default>false</default>
+                <label>SEM FE</label>
+            </value>
+            <value>
+                <fullName>SEM W</fullName>
+                <default>false</default>
+                <label>SEM W</label>
+            </value>
+            <value>
+                <fullName>SEM TM</fullName>
+                <default>false</default>
+                <label>SEM TM</label>
+            </value>
+            <value>
+                <fullName>TEM 120kV</fullName>
+                <default>false</default>
+                <label>TEM 120kV</label>
+            </value>
+            <value>
+                <fullName>(S)TEM 200/300kV</fullName>
+                <default>false</default>
+                <label>(S)TEM 200/300kV</label>
+            </value>
+            <value>
+                <fullName>FIB-SEM</fullName>
+                <default>false</default>
+                <label>FIB-SEM</label>
+            </value>
+            <value>
+                <fullName>FIB</fullName>
+                <default>false</default>
+                <label>FIB</label>
+            </value>
+            <value>
+                <fullName>EDS</fullName>
+                <default>false</default>
+                <label>EDS</label>
+            </value>
+            <value>
+                <fullName>EBSD</fullName>
+                <default>false</default>
+                <label>EBSD</label>
+            </value>
+            <value>
+                <fullName>CL</fullName>
+                <default>false</default>
+                <label>CL</label>
+            </value>
+            <value>
+                <fullName>Cryo</fullName>
+                <default>false</default>
+                <label>Cryo</label>
+            </value>
+            <value>
+                <fullName>AFM</fullName>
+                <default>false</default>
+                <label>AFM</label>
+            </value>
+            <value>
+                <fullName>TA</fullName>
+                <default>false</default>
+                <label>TA</label>
+            </value>
+            <value>
+                <fullName>EDXRF</fullName>
+                <default>false</default>
+                <label>EDXRF</label>
+            </value>
+            <value>
+                <fullName>Prep IonBeam</fullName>
+                <default>false</default>
+                <label>Prep IonBeam</label>
+            </value>
+            <value>
+                <fullName>Used Instrument</fullName>
+                <default>false</default>
+                <label>Used Instrument</label>
+            </value>
+            <value>
+                <fullName>CD-SEM</fullName>
+                <default>false</default>
+                <label>CD-SEM</label>
+            </value>
+            <value>
+                <fullName>DR-SEM</fullName>
+                <default>false</default>
+                <label>DR-SEM</label>
+            </value>
+            <value>
+                <fullName>Optical Wafer Inspection</fullName>
+                <default>false</default>
+                <label>Optical Wafer Inspection</label>
+            </value>
+            <value>
+                <fullName>Sample prep</fullName>
+                <default>false</default>
+                <label>Sample prep</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>SIMS</fullName>
+                <default>false</default>
+                <label>SIMS</label>
+            </value>
+            <value>
+                <fullName>XRD</fullName>
+                <default>false</default>
+                <label>XRD</label>
+            </value>
+            <value>
+                <fullName>XRF</fullName>
+                <default>false</default>
+                <label>XRF</label>
+            </value>
+            <value>
+                <fullName>XPS</fullName>
+                <default>false</default>
+                <label>XPS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

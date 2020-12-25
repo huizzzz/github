@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_MAIN_ADST_EXCH__c</fullName>
+    <description>本体なのか改造なのかを示す</description>
+    <externalId>false</externalId>
+    <label>MAIN/ADST/EXCH</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MAIN</fullName>
+                <default>false</default>
+                <label>MAIN</label>
+            </value>
+            <value>
+                <fullName>ADST</fullName>
+                <default>false</default>
+                <label>ADST</label>
+            </value>
+            <value>
+                <fullName>EXCH</fullName>
+                <default>false</default>
+                <label>EXCH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

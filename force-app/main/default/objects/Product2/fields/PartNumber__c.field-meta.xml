@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PartNumber__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>This field is a duplicate of Part Number(API Product Code) and is maintained for older processes. Develop for ProductCode, as this field should be removed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is a duplicate of Part Number(API Product Code) and is maintained for older processes. Develop for ProductCode, as this field should be removed.</inlineHelpText>
+    <label>PartNumber</label>
+    <length>80</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

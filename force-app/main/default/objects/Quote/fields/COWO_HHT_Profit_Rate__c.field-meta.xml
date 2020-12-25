@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_HHT_Profit_Rate__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+OR(
+COWO_Final_Amount__c == 0
+, ISBLANK(COWO_Final_Amount__c)
+, ISNULL(COWO_Final_Amount__c)
+),
+0 ,
+COWO_HHT_Total_Profit__c /  COWO_Final_Amount__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>HHT利益率</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>

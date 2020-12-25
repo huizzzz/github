@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CO_ovcPostDate_PIR_MTE__c</fullName>
+    <description>SAP Posting Date of Purchasing Info Record for MTE</description>
+    <externalId>false</externalId>
+    <label>SAP Post Date PIR MTE</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

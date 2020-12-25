@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>HSL_計装_HTS</label>
+    <protected>false</protected>
+    <values>
+        <field>COWO_PriceBook_Name__c</field>
+        <value xsi:type="xsd:string">HSL計装価格表</value>
+    </values>
+    <values>
+        <field>COWO_SecondHierarchyText__c</field>
+        <value xsi:type="xsd:string">HTS</value>
+    </values>
+    <values>
+        <field>COWO_ThirdHierarchyText__c</field>
+        <value xsi:type="xsd:string">共通(3014094398～3100118960),共通(3100118964～3200044031),共通(3200044033～3200265007),共通(3200265033～3200585463),ENDA-5XXX(3014037245～3030055719),ENDA-5XXX(3030055728～3200637756)</value>
+    </values>
+</CustomMetadata>

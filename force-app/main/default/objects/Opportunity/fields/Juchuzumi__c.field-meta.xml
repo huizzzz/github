@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Juchuzumi__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( NOT(SAPrenkeizumifuragu__c)  ,
+if(  TEXT(StageName)  = &apos;売上→クローズ&apos; ,TRUE ,
+if(  TEXT(StageName)  = &apos;落札、注文・契約書入手&apos; ,TRUE ,
+if(  TEXT(StageName)  = &apos;注文・契約書入手&apos; ,TRUE , FALSE)))
+,TRUE)</formula>
+    <label>受注済</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

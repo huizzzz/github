@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_RejectionReason_MTE__c</fullName>
+    <description>MTE用連携項目
+STE用の拒否理由がZ1の場合20を設定する。
+
+Cooperation items for MTE
+Set 20 when the reason for STE rejection is Z1.</description>
+    <externalId>false</externalId>
+    <formula>IF (  ISPICKVAL(SAWO_RejectionReason__c, &apos;Z1&apos;),&apos;20&apos;,&apos;&apos;)</formula>
+    <label>拒否理由(MTE)</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Costs for installation, training and warranty (in addition to items in the product list). --></help>
+    <label><!-- Installation &amp; Warranty --></label>
+    <name>InstallationWarranty__c</name>
+</CustomFieldTranslation>

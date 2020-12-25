@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Suiteikeiyakujiki_kongetsu__c</fullName>
+    <externalId>false</externalId>
+    <label>推定契約時期（今月）</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>17年1Q（1-3月）</fullName>
+                <default>false</default>
+                <label>17年1Q（1-3月）</label>
+            </value>
+            <value>
+                <fullName>17年2Q（4-6月）</fullName>
+                <default>false</default>
+                <label>17年2Q（4-6月）</label>
+            </value>
+            <value>
+                <fullName>17年3Q（7-9月）</fullName>
+                <default>false</default>
+                <label>17年3Q（7-9月）</label>
+            </value>
+            <value>
+                <fullName>17年4Q（10-12月）</fullName>
+                <default>false</default>
+                <label>17年4Q（10-12月）</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

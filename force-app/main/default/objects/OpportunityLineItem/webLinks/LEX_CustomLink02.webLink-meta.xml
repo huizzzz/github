@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LEX_CustomLink02</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>他決機器の登録</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/CustomLink02Page
+?AccountId={!Account.Id}
+&amp;Name={!OpportunityLineItem.TaketsuTashaHinmei__c}
+&amp;OpportunityId={!Opportunity.Id}
+&amp;MakerName={!OpportunityLineItem.TaketsuTashamei__c}
+&amp;Field3={!Opportunity.BeforeMakerName__c}
+&amp;Field4={!Opportunity.DeliveryDevice_ref__c}
+&amp;Id={!OpportunityLineItem.Id}</url>
+</WebLink>

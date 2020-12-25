@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KELK_Stage_Opportunity</fullName>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>KelkCharge__c</columns>
+    <columns>KelkSalesCharge__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.OC_KELK</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>仕様提案,図面提案,見積提案,化学物質情報提出,品質確認レポート提出,FA回答</value>
+    </filters>
+    <label>(KELK)Stage Opportunity</label>
+    <language>ja</language>
+    <sharedTo>
+        <group>OC_KELK</group>
+    </sharedTo>
+</ListView>

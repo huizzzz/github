@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>application__c</fullName>
+    <externalId>false</externalId>
+    <label>アプリケーション</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Source Laser</fullName>
+                <default>false</default>
+                <label>Source Laser</label>
+            </value>
+            <value>
+                <fullName>Tunable Laser</fullName>
+                <default>false</default>
+                <label>Tunable Laser</label>
+            </value>
+            <value>
+                <fullName>Pump Laser</fullName>
+                <default>false</default>
+                <label>Pump laser</label>
+            </value>
+            <value>
+                <fullName>LN Modulator</fullName>
+                <default>false</default>
+                <label>LN Modulator</label>
+            </value>
+            <value>
+                <fullName>Sensor</fullName>
+                <default>false</default>
+                <label>Sensor</label>
+            </value>
+            <value>
+                <fullName>LiDAR</fullName>
+                <default>false</default>
+                <label>LiDAR</label>
+            </value>
+            <value>
+                <fullName>Medical</fullName>
+                <default>false</default>
+                <label>Medical</label>
+            </value>
+            <value>
+                <fullName>Unknown/Others</fullName>
+                <default>false</default>
+                <label>Unknown/Others</label>
+            </value>
+            <value>
+                <fullName>Access/Mobile</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Access/Mobile</label>
+            </value>
+            <value>
+                <fullName>Data center</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Data center</label>
+            </value>
+            <value>
+                <fullName>ICR</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ICR</label>
+            </value>
+            <value>
+                <fullName>ITLA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ITLA</label>
+            </value>
+            <value>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Industrial</label>
+            </value>
+            <value>
+                <fullName>Other Telecom</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Telecom</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Science</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Science</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

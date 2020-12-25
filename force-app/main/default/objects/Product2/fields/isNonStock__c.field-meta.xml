@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isNonStock__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check this if the material is excluded from stock calculations (ie Labour, Travel expenses etc)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this if the material is excluded from stock calculations (ie Labour, Travel expenses etc)</inlineHelpText>
+    <label>Non Stock Material</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

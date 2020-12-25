@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>HHS_FT</label>
+    <protected>false</protected>
+    <values>
+        <field>COWO_PriceBook_Name__c</field>
+        <value xsi:type="xsd:string">HHS価格表</value>
+    </values>
+    <values>
+        <field>COWO_SecondHierarchyText__c</field>
+        <value xsi:type="xsd:string">FT</value>
+    </values>
+    <values>
+        <field>COWO_ThirdHierarchyText__c</field>
+        <value xsi:type="xsd:string">FT110シリーズ（国内）,FT110シリーズ（海外）,FT110シリーズ（欧州）,FT150シリーズ（国内）,FT150シリーズ（海外）,FT150シリーズ（欧州）,FT160シリーズ（国内）,FT160シリーズ（海外）,FT160シリーズ（韓国）,FT160シリーズ（中国）,FT9000シリーズ（国内）,FT9000シリーズ（海外）,FT共通品（国内）,FT共通品（海外）,FT共通品（欧州）,FT標準物質（国内）,FT標準物質（海外）,FT標準物質(韓国),FT標準物質(中国),FT標準物質（欧州）,サービス（点検、保証、保守）_FT,FTその他</value>
+    </values>
+</CustomMetadata>

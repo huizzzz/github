@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_ListPrice__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>HHTで設定している顧客への希望小売価格</description>
+    <externalId>false</externalId>
+    <label>希望価格</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,102 @@
+.THIS .modal-body__c {
+    font-size:xx-small;
+}
+.THIS .slds-modal__header {
+    height: 10%;
+}
+.THIS .title_aera__c {
+    height: max-content;
+    max-height: 15%;
+}
+.THIS .modal-body__c {
+    font-size:xx-small;
+}
+/*.THIS .slds-form-element_horizontal .slds-form-element__label {
+    max-width: initial;
+    font-size:xx-small;
+}
+/* レスポンシブ対応 start */
+/* Ipadのポップアップ周辺の余白をなくす */
+.THIS .slds-modal__container__app__c{
+    margin:0px;
+    padding:0px;
+}
+.THIS .slds-modal__container__app__c .slds-table_header-fixed_container{
+    padding-top:0px;
+    padding-bottom:0px;
+}
+.THIS .slds-modal__container__app__c .slds-table_header-fixed{
+    padding-top:30px;
+}
+.THIS .slds-form-element__control{
+    min-width: 150px;
+}
+/* ボタン高さ start */
+.THIS .slds-modal__container__app__c .button_small__c{
+    line-height: 25px;
+    font-size: xx-small;
+}
+.THIS .button_small__c{
+    line-height: 15px;
+    font-size: xx-small;
+}
+/* レスポンシブ対応 end */
+
+/* datatableの行高さを制御する start */
+.THIS .slds-table th, .THIS .slds-table td{
+    padding-left:0px;
+    padding-right:0px;
+}
+.THIS .slds-th__action {
+    padding-left:0px;
+    padding-right:0px;
+}
+.THIS .div_datatable__c .slds-input {
+    text-align: left;
+}
+/* datatableの高さを固定にする必要があります、
+    設定しないと、ドラッグすることはできなくなったり、行追加するたびに高さも変更されたりします。 */
+.THIS .div_datatable__c {
+    height: 75%;
+    font-size: xx-small;
+}
+.THIS .div_datatable__c span{
+    font-size: xx-small;
+}
+.THIS .slds-p-around--medium{
+    padding-bottom:0px;
+    
+}
+.THIS .label__c{
+    min-width: 190px;
+    max-width: 150px;
+    font-size: xx-small;
+}
+/* datatableの行高さを制御する end */
+.THIS .slds-form-element__label{
+    font-size:xx-small;
+    max-width: initial;
+}
+.THIS .slds-p-top_xx-small{
+    margin-top:15px;
+}
+.THIS .slds-button__c{
+    margin-top: 10px;
+}
+.THIS .slds-grid_align-end{
+    justify-content:inherit;
+}
+.THIS .slds-select{
+    height: 17px;
+}
+/* .THIS .slds-select_container{
+    display: inline-flex;
+    content:inherit;
+} */
+.THIS .slds-input{
+    line-height: 17px;
+    min-height: inherit;
+}
+.THIS .slds-form-element{
+    display:inline-block;
+}

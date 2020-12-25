@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome" 
+                access="global" >
+
+    <aura:html tag="style">
+        .closeIcon {
+            display:none !important;
+        }
+    </aura:html>
+
+    <aura:attribute name="isLoadedCOWOQuoteLineItemBulkEdit" type="Boolean" default="false" />
+    <aura:attribute name="isLoadedCOWOQLISupport" type="Boolean" default="false" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:handler name="openCOWOQLISupport" event="c:COWO_QLISupportEvent" action="{!c.openCOWOQLISupport}" />
+    <aura:handler name="closeCOWOQLISupport" event="c:COWO_QLISupportEvent" action="{!c.closeCOWOQLISupport}" />
+    <aura:handler name="reflectEditedValues" event="c:COWO_QLISupportEvent" action="{!c.reflectEditedValues}" />
+
+
+    <div onkeyup="{!c.formPress}">
+        <!-- call the OpportunityLineItemBulkEdit component -->
+        <div aura:id="COWOQuoteLineItemBulkEdit"></div>
+        <!-- call the SelectPickList component -->
+        <div aura:id="COWOQLISupport"></div>
+    </div>
+</aura:component>

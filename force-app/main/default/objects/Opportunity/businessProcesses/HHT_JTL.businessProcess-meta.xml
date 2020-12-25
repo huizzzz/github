@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HHT_JTL</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>作業実施</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>受注%EF%BC%88作業前%EF%BC%89</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>失注%EF%BC%88作業中止%EF%BC%89</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>案件</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>案件化%EF%BC%88見積%EF%BC%89</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>案件消滅</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>請求依頼%EF%BC%88作業完了%EF%BC%89</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

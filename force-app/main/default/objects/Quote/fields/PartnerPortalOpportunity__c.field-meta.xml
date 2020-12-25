@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PartnerPortalOpportunity__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE ( 
+Opportunity.RecordType.DeveloperName, 
+&quot;PartnerOpportunity&quot;, IMAGE (&quot;/img/msg_icons/warning24.png&quot;,&quot;!!! Partner Opportunity please verify Contact&apos;s Email Adress&quot;), &quot;Not defined&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>WARNING! Partner Portal Opportunity</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

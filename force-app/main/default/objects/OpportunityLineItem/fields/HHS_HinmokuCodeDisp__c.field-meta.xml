@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HHS_HinmokuCodeDisp__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( FreeProductFlag__c , HinmokuCode__c ,PricebookEntry.Product2.SapCode__c)</formula>
+    <label>品目コード(帳票用)</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

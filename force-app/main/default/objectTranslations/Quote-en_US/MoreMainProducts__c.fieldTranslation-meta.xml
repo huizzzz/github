@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- System will display exclamation mark icon if there is more than 1 Main Products selected to the Quote. Please verify EU Customs Rate and Overseas Freight Costs on Quote Line Item level --></help>
+    <label><!-- More Main Products? --></label>
+    <name>MoreMainProducts__c</name>
+</CustomFieldTranslation>

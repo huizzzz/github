@@ -1,0 +1,6 @@
+<aura:event type="COMPONENT" description="Event of OpportunityLineItemBulkEdit">
+    <aura:attribute name="opportunityId" type="String" />
+    <aura:attribute name="pricebook2Id" type="String" />
+    <aura:attribute name="selectedProducts" type="List" />
+    <aura:attribute name="isPSGHHTUser" type="Boolean" />
+</aura:event>

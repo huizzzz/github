@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_Approval_Category_Check</fullName>
+    <active>true</active>
+    <description>フェーズ毎に選択できる承認申請区分のチェック
+フェーズ04,05の場合03→04の申請はNG
+フェーズ00～03の場合04,05→06、04,05→03、04,05→06の申請はNG</description>
+    <errorConditionFormula>OR(
+    AND(ISPICKVAL(SAWO_Approval_Category__c,&quot;03→04(仮受注申請)&quot;),
+        OR(ISPICKVAL(StageName,&quot;04&quot;),
+            ISPICKVAL(StageName,&quot;05&quot;)
+            ),
+        ISCHANGED(SAWO_Approval_Category__c)
+     ),
+
+    AND(OR(ISPICKVAL(SAWO_Approval_Category__c,&quot;04,05→06-受注(受注申請)&quot;),
+                ISPICKVAL(SAWO_Approval_Category__c,&quot;04,05→03(フェーズ戻し申請)&quot;),
+                ISPICKVAL(SAWO_Approval_Category__c,&quot;04,05→06-失注(失注申請)&quot;)
+            ),
+           OR(ISPICKVAL(StageName,&quot;00&quot;),
+                ISPICKVAL(StageName,&quot;01&quot;),
+                ISPICKVAL(StageName,&quot;02&quot;),
+                ISPICKVAL(StageName,&quot;03&quot;)
+            ),
+            ISCHANGED(SAWO_Approval_Category__c)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>SAWO_Approval_Category__c</errorDisplayField>
+    <errorMessage>本フェーズではこの承認申請区分は選択できません。</errorMessage>
+</ValidationRule>

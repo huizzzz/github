@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FreeHousePrice__c</fullName>
+    <externalId>false</externalId>
+    <formula>FOB_Price__c + OverseasFreightCostsEditable__c + BankCharges__c + EuCustoms__c + HandlingCost__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Free House Price = CIF Price + EU Customs + Handling Cost + Reservation</inlineHelpText>
+    <label>Free House Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Desired Delivery Date of sales person</label>
+    <name>COWO_Sales_Desired_Delivery_Date__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SectionCode__c</fullName>
+    <description>CAS用項目</description>
+    <externalId>false</externalId>
+    <label>部門コード</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>CAS_SupplierName__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>30</fullName>
+                <default>true</default>
+                <label>30</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>那珂医用</controllingFieldValue>
+            <controllingFieldValue>HFD</controllingFieldValue>
+            <controllingFieldValue>HHS</controllingFieldValue>
+            <controllingFieldValue>SAS</controllingFieldValue>
+            <controllingFieldValue>東洋紡</controllingFieldValue>
+            <controllingFieldValue>オルガノ</controllingFieldValue>
+            <controllingFieldValue>東京部品/他</controllingFieldValue>
+            <controllingFieldValue>その他</controllingFieldValue>
+            <valueName>30</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

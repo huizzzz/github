@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HHS_Required_Size_Measure</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+$Profile.Name = &#39;HHS_ラボ&#39; /* HHS_ラボ */
+,$Profile.Name = &#39;HHS_営業&#39; /* HHS_営業 */
+,$Profile.Name = &#39;HHS_事業推進&#39;/* HHS_事業推進 */
+,$Profile.Name = &#39;HHS_小山&#39; /* HHS_小山 */
+,$Profile.Name = &#39;HHS_代理店&#39; /* HHS_代理店 */
+,$Profile.Name = &#39;HHS_那珂&#39; /* HHS_那珂 */
+,$Profile.Name = &#39;HHS_サービス&#39; /* HHS_サービス */
+)
+,AND(NOT(ISBLANK(  HHS_Size_Measure__c  )), ( REGEX( HHS_Size_Measure__c  , &quot;[^ -~｡-ﾟ]*&quot;) ))
+)</errorConditionFormula>
+    <errorDisplayField>HHS_Size_Measure__c</errorDisplayField>
+    <errorMessage>サイズ/寸法には、半角のみを入力して下さい。</errorMessage>
+</ValidationRule>

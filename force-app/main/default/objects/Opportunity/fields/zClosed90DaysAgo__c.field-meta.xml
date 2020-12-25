@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zClosed90DaysAgo__c</fullName>
+    <externalId>false</externalId>
+    <formula>IsClosed &amp;&amp;  ( CloseDate = TODAY() - 90 )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>True if Closed and Close date was 90 days ago. Used in Flow for updates.</inlineHelpText>
+    <label>zClosed90DaysAgo</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

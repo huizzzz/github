@@ -1,0 +1,94 @@
+.THIS .input-group .lightningInput {
+    display: inline-block;
+    margin-right: 10px;
+}
+.THIS .lightning-spinner__c {
+    top: 111px;
+    bottom: 55px;
+}
+.THIS .modal-body__c {
+    font-size:xx-small;
+}
+.THIS .input-group__c {
+    padding-top: 0px;
+    min-height: max-content;
+}
+.THIS .button_small__c{
+        font-size: xx-small;
+    }
+.THIS .slds-button.slds-button_neutral{
+    line-height: 15px;
+    font-size: xx-small;
+}
+/* datatableの行高さを制御する start */
+.THIS .slds-table th, .THIS .slds-table td{
+    padding:0px;
+}
+.THIS .slds-th__action {
+    padding:0px;
+}
+.THIS .div_datatable__c {
+    /* datatableの高さを固定にする必要があります、設定しないと、ドラッグすることはできなくなったり、行追加するたびに高さも変更されたりします。 */
+    height: 75%;
+}
+.THIS .slds-modal__container__desktop__c .div_datatable__c {
+    min-height: 20%;
+    max-height: 75%;
+}
+.THIS .slds-modal__footer {
+    min-height: fit-content;
+}
+.THIS .div_datatable__c .slds-input {
+    text-align: left;
+}
+.THIS .div_datatable__c span{
+    font-size: xx-small;
+}
+/*.THIS .slds-grid_align-end{
+    justify-content:inherit;
+}*/
+/* datatableの行高さを制御する end */
+@media (max-width:30em){
+    .THIS .slds-modal__container{
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+    .THIS .button_small__c{
+        font-size: x-small;
+    }
+    .THIS .slds-table_header-fixed_container{
+        padding-top:0px;
+        padding-bottom:0px;
+    }
+    .THIS .slds-table_header-fixed{
+        padding-top:30px;
+    }
+}
+@media (max-height:30em){
+    .THIS .slds-modal__container{
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+    .THIS .button_small__c{
+        font-size: xx-small;
+    }
+    .THIS .slds-table_header-fixed_container{
+        padding-top:0px;
+        padding-bottom:0px;
+    }
+    .THIS .slds-table_header-fixed{
+        padding-top:30px;
+    }
+}
+/* datatable要素のレイアウト調整 start */
+.THIS .slds-modal__container__app__c .slds-row-number{
+    float: left;
+    padding-left: 20px;
+}
+/* ボタン高さ start */
+.THIS .slds-modal__container__app__c .button_small__c{
+    line-height: 25px;
+}
+.THIS .button_small__c{
+    line-height: 15px;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Modulation__c</fullName>
+    <externalId>false</externalId>
+    <label>Modulation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PAM2</fullName>
+                <default>false</default>
+                <label>PAM2</label>
+            </value>
+            <value>
+                <fullName>PAM4</fullName>
+                <default>false</default>
+                <label>PAM4</label>
+            </value>
+            <value>
+                <fullName>PAM8</fullName>
+                <default>false</default>
+                <label>PAM8</label>
+            </value>
+            <value>
+                <fullName>PAM16</fullName>
+                <default>false</default>
+                <label>PAM16</label>
+            </value>
+            <value>
+                <fullName>Mach Zender</fullName>
+                <default>false</default>
+                <label>Mach Zender</label>
+            </value>
+            <value>
+                <fullName>Unknown/Others</fullName>
+                <default>false</default>
+                <label>Unknown/Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

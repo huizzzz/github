@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_TotalPrice__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>販売価格-明細値引
+一括編集時に設定される</description>
+    <externalId>false</externalId>
+    <label>合計金額</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

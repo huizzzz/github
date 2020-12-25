@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DelOppLFlg__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>商談商品のトリガで付与</description>
+    <externalId>false</externalId>
+    <label>商談商品一括編集画面判定フラグ</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

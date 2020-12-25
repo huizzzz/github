@@ -1,0 +1,43 @@
+<aura:component 
+implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="public">
+　<aura:attribute name="showSpinner" type="Boolean" default="true" />   
+    <aura:attribute name="quoteLineItemId" type="String" />
+    <aura:attribute name="description" type="String" default=""/>
+    <aura:attribute name="device" type="String" default="DESKTOP" description="ユーザが使用しているデバイスを保持する"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <!-- Component Method -->
+    <aura:method name="open" action="{!c.onOpenCalled}" />
+
+    <!-- registerEvent -->
+    <aura:registerEvent name="openCOWOQLISupport" type="c:COWO_QLISupportEvent"/>
+    <aura:registerEvent name="closeCOWOQLISupport" type="c:COWO_QLISupportEvent"/>
+    <aura:registerEvent name="reflectEditedValues" type="c:COWO_QLISupportEvent"/>
+
+    <div class="panel slds-modal slds-fade-in-open">
+        <div class="modal-container slds-modal__container">
+            <!-- Display spinner -->
+            <!-- <lightning:spinner aura:id="spinner" variant="brand" size="large" alternativeText="page loading" class="{! 'lightning-spinner__c' + if(v.showSpinner, '', ' slds-hide')}"/> -->
+    
+            <div class=" modal-body modal-body__c slds-modal__content">
+                <!-- <header class="slds-modal__header">
+                    <h2 class="title slds-text-heading-medium slds-hyphenate">摘要入力画面</h2>
+                </header> -->
+                
+
+                <lightning:recordEditForm aura:id="recordViewForm" objectApiName="COWO_QuoteLineItem__c">
+                    <!-- 摘要 -->
+                    <lightning:inputField aura:id="COWO_Description__c" fieldName="COWO_Description__c" value="{!v.description}"/>
+                </lightning:recordEditForm>
+
+            </div>
+            <div class="modal-footer slds-modal__footer" >
+                <div class="forceModalActionContainer--footerAction forceModalActionContainer" data-aura-class="forceModalActionContainer--footerAction forceModalActionContainer">
+                    <lightning:button label="{! $Label.c.COWO_LBL_Cancel}" onclick="{!c.onCloseClicked}" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c"/>
+                    <lightning:button label="{! $Label.c.COWO_LBL_Add}" onclick="{!c.doReflectEditedValues}" variant="brand" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

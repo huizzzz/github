@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_RequiredCheck_Loss_Reason</fullName>
+    <active>true</active>
+    <description>DXレコードタイプ、承認申請区分「04,05→06-失注(失注申請)」
+またはフェーズ「06.失注」
+の場合、失注理由を必須入力とする</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;SAWO_DX_Opportunity&apos;,
+ ISBLANK( SAWO_Order_Reason__c  ),
+ OR(
+  ISPICKVAL( SAWO_Approval_Category__c, &quot;04,05→06-失注(失注申請)&quot;),
+  ISPICKVAL( StageName, &quot;06Lost&quot;),
+  ISPICKVAL( StageName, &quot;06Cancel&quot;)
+ )
+)</errorConditionFormula>
+    <errorDisplayField>SAWO_Order_Reason__c</errorDisplayField>
+    <errorMessage>失注とする場合、[受他決理由] を選択してください。</errorMessage>
+</ValidationRule>

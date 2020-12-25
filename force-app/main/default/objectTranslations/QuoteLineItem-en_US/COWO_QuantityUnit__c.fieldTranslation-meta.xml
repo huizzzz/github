@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Base Quantity UOM</label>
+    <name>COWO_QuantityUnit__c</name>
+    <picklistValues>
+        <masterLabel>CV</masterLabel>
+        <translation><!-- CV --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MT:後で修正</masterLabel>
+        <translation>MT: Fixed later</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PC</masterLabel>
+        <translation><!-- PC --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

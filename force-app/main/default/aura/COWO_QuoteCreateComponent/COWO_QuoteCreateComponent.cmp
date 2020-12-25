@@ -1,0 +1,22 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="Quote_CreateByOpportunityClass">
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="setMessage" type="String"/>
+    
+    <force:recordData aura:id="recordLoader"
+      recordId="{!v.recordId}"
+      layoutType="FULL"
+      targetRecord="{!v.record}"
+      targetFields="{!v.simpleRecord}"
+      targetError="{!v.recordError}"
+      recordUpdated="{!c.QuoteCreate}"
+      fields="IsClosed"               
+    />
+    
+    <ui:message severity="warning" closable="false">
+      <ui:outputText value="{!v.setMessage}" />
+    </ui:message>
+    <br/>
+	
+</aura:component>

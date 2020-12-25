@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_Stage_Change_03</fullName>
+    <active>true</active>
+    <description>フェーズ04,05のレコードが承認申請実行以外のタイミングでフェーズ03に遷移できないように設定する。</description>
+    <errorConditionFormula>AND(SAWO_ApprovalStage4Flag__c = true,
+     OR(ISPICKVAL( StageName, &quot;00&quot;),
+        ISPICKVAL( StageName, &quot;01&quot;),
+        ISPICKVAL( StageName, &quot;02&quot;),
+        ISPICKVAL( StageName, &quot;03&quot;)
+    ) ,
+
+    /*商談フェーズ移動承認を特定の職制がスキップするための一時的な設定*/
+    NOT(CONTAINS($Label.SAWO_Opp_Approval_Skip , $User.Shokusei__c))
+
+)</errorConditionFormula>
+    <errorMessage>フェーズを04,05から00～03に変更するには承認申請が必要です。</errorMessage>
+</ValidationRule>

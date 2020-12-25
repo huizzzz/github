@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Sign Export</label>
+    <name>Company_Information__c</name>
+    <picklistValues>
+        <masterLabel>中部支店 材料部</masterLabel>
+        <translation>Materials Department, Chubu Branch Office</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>名古屋</masterLabel>
+        <translation>Nagoya</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>大阪</masterLabel>
+        <translation>Osaka</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>本社</masterLabel>
+        <translation>Headquaters</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>神奈川</masterLabel>
+        <translation>Kanagawa</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>豊田</masterLabel>
+        <translation>Toyota</translation>
+    </picklistValues>
+</CustomFieldTranslation>

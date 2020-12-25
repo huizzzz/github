@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Confirmation Approver</label>
+    <name>COWO_FollowApprover__c</name>
+    <relationshipLabel>Quote (Confirmation Approver)</relationshipLabel>
+</CustomFieldTranslation>

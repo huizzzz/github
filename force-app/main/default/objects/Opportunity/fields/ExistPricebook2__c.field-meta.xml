@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExistPricebook2__c</fullName>
+    <description>価格表設定済みか確認用を行う。
+※カスタムボタンからPricebook2Idが参照できなかったため数式として設定。</description>
+    <externalId>false</externalId>
+    <formula>IF (Pricebook2.Id !=&apos;&apos;, true, false)</formula>
+    <label>価格表設定済み</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

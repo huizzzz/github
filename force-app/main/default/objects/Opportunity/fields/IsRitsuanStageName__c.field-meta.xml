@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsRitsuanStageName__c</fullName>
+    <externalId>false</externalId>
+    <formula>NOT(
+  OR(
+    ISPICKVAL(StageName, &apos;売上&apos;),
+    ISPICKVAL(StageName, &apos;クローズ&apos;),
+    ISPICKVAL(StageName, &apos;売上→クローズ&apos;),
+    ISPICKVAL(StageName, &apos;既納品フォロー&apos;),
+    ISPICKVAL(StageName, &apos;他決&apos;),
+    ISPICKVAL(StageName, &apos;消滅&apos;)
+  )
+)</formula>
+    <label>立案対象(フェーズ)フラグ</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

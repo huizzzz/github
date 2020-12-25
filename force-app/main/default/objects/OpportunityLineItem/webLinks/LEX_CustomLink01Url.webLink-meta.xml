@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LEX_CustomLink01Url</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>受注機器の登録</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/CustomLink01UrlPage?AccountId={!Account.Id}
+&amp;Name={!OpportunityLineItem.HikiaiHinmei__c}
+&amp;OpportunityId={!Opportunity.Id}
+&amp;MakerName={!OpportunityLineItem.MakerName__c}
+&amp;PartsNo={!OpportunityLineItem.PartsNo__c}
+&amp;Specification={!OpportunityLineItem.Specification__c}
+&amp;Field2={!OpportunityLineItem.InheritingTransferHistory__c}
+&amp;MedicalInstrumentProductName={!OpportunityLineItem.MedicalInstrumentProductName__c}
+&amp;OrderYear={!OpportunityLineItem.JuchuYoteiNen__c}
+&amp;Field3={!Opportunity.BeforeMakerName__c}
+&amp;Field4={!Opportunity.DeliveryDevice_ref__c}
+&amp;Id={!OpportunityLineItem.Id}</url>
+</WebLink>

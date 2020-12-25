@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ApexAccessRestriction__c</fullName>
+    <externalId>false</externalId>
+    <formula>$Setup.ProfileConfig__c.ApexAccessRestriction__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>アドオン機能アクセス制限</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

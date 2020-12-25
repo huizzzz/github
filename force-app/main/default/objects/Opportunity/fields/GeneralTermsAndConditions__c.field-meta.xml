@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GeneralTermsAndConditions__c</fullName>
+    <externalId>false</externalId>
+    <label>General Terms and Conditions</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>GeneralConditionLanguage__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB)</fullName>
+                <default>false</default>
+                <label>ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB)</label>
+            </value>
+            <value>
+                <fullName>CONDITIONS GÉNÉRALES (CG)</fullName>
+                <default>false</default>
+                <label>CONDITIONS GÉNÉRALES (CG)</label>
+            </value>
+            <value>
+                <fullName>GENERAL TERMS AND CONDITIONS (GT&amp;C)</fullName>
+                <default>false</default>
+                <label>GENERAL TERMS AND CONDITIONS (GT&amp;C)</label>
+            </value>
+            <value>
+                <fullName>GENERAL TERMS AND CONDITIONS FOR PURCHASE</fullName>
+                <default>true</default>
+                <label>GENERAL TERMS AND CONDITIONS FOR PURCHASE</label>
+            </value>
+            <value>
+                <fullName>CONDITIONS GÉNÉRALES D&apos;ACHAT</fullName>
+                <default>false</default>
+                <label>CONDITIONS GÉNÉRALES D&apos;ACHAT</label>
+            </value>
+            <value>
+                <fullName>ALLGEMEINE LIEFERBEDINGUNGEN</fullName>
+                <default>false</default>
+                <label>ALLGEMEINE LIEFERBEDINGUNGEN</label>
+            </value>
+            <value>
+                <fullName>DISTRIBUTOR</fullName>
+                <default>false</default>
+                <label>DISTRIBUTOR</label>
+            </value>
+            <value>
+                <fullName>Nordic GTC</fullName>
+                <default>false</default>
+                <label>Nordic GTC</label>
+            </value>
+            <value>
+                <fullName>UK GTC</fullName>
+                <default>false</default>
+                <label>UK GTC</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>English</controllingFieldValue>
+            <controllingFieldValue>French</controllingFieldValue>
+            <controllingFieldValue>German</controllingFieldValue>
+            <valueName>GENERAL TERMS AND CONDITIONS (GT&amp;C)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>English</controllingFieldValue>
+            <controllingFieldValue>French</controllingFieldValue>
+            <controllingFieldValue>German</controllingFieldValue>
+            <valueName>GENERAL TERMS AND CONDITIONS FOR PURCHASE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>English</controllingFieldValue>
+            <valueName>DISTRIBUTOR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>English</controllingFieldValue>
+            <valueName>Nordic GTC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>English</controllingFieldValue>
+            <valueName>UK GTC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>French</controllingFieldValue>
+            <valueName>CONDITIONS GÉNÉRALES (CG)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>French</controllingFieldValue>
+            <valueName>CONDITIONS GÉNÉRALES D&apos;ACHAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>German</controllingFieldValue>
+            <valueName>ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>German</controllingFieldValue>
+            <valueName>ALLGEMEINE LIEFERBEDINGUNGEN</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

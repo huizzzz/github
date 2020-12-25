@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_FollowApprover__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>見積の追認実施者が設定されます。</description>
+    <externalId>false</externalId>
+    <label>追認承認者</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>FollowApproverUsers</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

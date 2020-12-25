@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ItemORMaintenance__c</fullName>
+    <externalId>false</externalId>
+    <label>製品 / 保守</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>製品</fullName>
+                <default>false</default>
+                <label>製品</label>
+            </value>
+            <value>
+                <fullName>保守</fullName>
+                <default>false</default>
+                <label>保守</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

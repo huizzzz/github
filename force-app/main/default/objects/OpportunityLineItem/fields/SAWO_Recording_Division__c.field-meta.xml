@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_Recording_Division__c</fullName>
+    <description>DX要件で追加</description>
+    <externalId>false</externalId>
+    <label>計上区分</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Z0</fullName>
+                <default>true</default>
+                <label>Z0:完納</label>
+            </value>
+            <value>
+                <fullName>Z1</fullName>
+                <default>false</default>
+                <label>Z1:分納</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

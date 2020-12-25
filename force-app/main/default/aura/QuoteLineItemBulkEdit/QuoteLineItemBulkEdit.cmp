@@ -1,0 +1,456 @@
+<aura:component controller="QuoteLineItemBulkEditController" 
+                implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" 
+                access="global" >
+
+    <aura:html tag="style">
+        .slds-modal__container {
+            max-width: 1500px !important;
+        	padding-top: 0px;
+        	padding-bottom: 0px;
+        }
+        /* レスポンシブ対応 start */
+        @media (min-width:768px){
+            .slds-modal__container{
+                margin:0 auto;
+                width:100%;
+                max-width:40rem;
+                min-width:20rem
+            }
+        }
+        @media (max-width:768px){
+            .slds-modal__container{
+                margin:0px;
+                padding:0px;
+                width:100%;
+                max-width:40rem;
+                min-width:20rem
+            }
+        }
+        @media (max-height:544px){
+            .slds-modal__container{
+        		/*margin:0px;*/
+                padding:0px;
+            }
+        }
+        /* レスポンシブ対応 end */
+        .size__c .forceStyle .slds-is-editing .slds-form-element {
+            margin-bottom: 0;
+        }
+        .size__c .slds-form-element_horizontal:not(.slds-form-element_readonly) {
+            margin-bottom: 0;
+        }
+    </aura:html>
+    
+    <!-- Privte Attributes -->
+    <!-- attributes -->
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="canEditProduct2" type="Boolean" default="false" />
+    <aura:attribute name="currencyIsoCode" type="String" />
+    <aura:attribute name="hasChanged" type="Boolean" default="false" />
+    <aura:attribute name="columns" type="List" default="[]"/>
+    <aura:attribute name="originalData" type="List" default="[]"/>
+    <aura:attribute name="data" type="List" default="[]"/>
+    <aura:attribute name="deletedData" type="List" default="[]"/>
+    <aura:attribute name="keyField" type="String" default="Id"/>
+    <aura:attribute name="hideCheckboxColumn" type="Boolean" default="false"/>
+    <!-- <aura:attribute name="selectedRowsCount" type="Integer" default="0"/> -->
+    <aura:attribute name="selectedRows" type="List" default="[]"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="resizeColumnDisabled" type="Boolean" default="false"/>
+    <aura:attribute name="minColumnWidth" type="Integer"/>
+    <aura:attribute name="maxColumnWidth" type="Integer"/>
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="String"/>
+    <aura:attribute name="defaultSortDirection" type="String"/>
+    <aura:attribute name="showRowNumberColumn" type="Boolean" default="true"/>
+    <aura:attribute name="rowNumberOffset" type="Integer" default="0"/>
+    <aura:attribute name="initialRows" type="Integer" default="10"/>
+    <aura:attribute name="rowsToAdd" type="Integer" default="10"/>
+    <aura:attribute name="dataTableSchema" type="Object"/>
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+    <aura:attribute name="isLoaded" type="Boolean" default="false" />
+    <aura:attribute name="suppressBottomBar" type="Boolean" default="true" />
+    <aura:attribute name="quoteLineItemParams" type="Object" default="[]"/>
+    <aura:attribute name="pricebook2Id" type="String"/>
+    <aura:attribute name="originDatas" type="List"/>
+    <aura:attribute name="digits" type="Integer" default="2"/>
+    <aura:attribute name="digitsInput" type="Decimal" default="0.01"/>
+    <aura:attribute name="format" type="String"/>
+    <aura:attribute name="symbol" type="String"/>
+    <aura:attribute name="device" type="String" default="DESKTOP" description="ユーザが使用しているデバイスを保持する"/>
+    <aura:attribute name="copyFrom" type="Object" default=""/>
+    
+    <!-- 計算セクション -->
+    <aura:attribute name="shokei" type="Decimal"/>
+    <aura:attribute name="shohizeiRitsu" type="String"/>
+    <aura:attribute name="riekiGokei" type="Decimal"/>
+    <aura:attribute name="nebikiKingaku" type="Decimal"/>
+    <aura:attribute name="shohizeiGokei" type="Currency"/>
+    <aura:attribute name="riekiRitsu" type="String"/>
+    <aura:attribute name="saisyuKingaku" type="Decimal"/>
+    <aura:attribute name="mcGokei" type="Decimal"/>
+    <aura:attribute name="hhtRieki" type="Decimal"/>
+    <aura:attribute name="tcGokei" type="Decimal"/>
+    <aura:attribute name="hhtRiekiritsu" type="String"/>
+    <aura:attribute name="furontoKakaku" type="Decimal"/>
+    <aura:attribute name="ararieki" type="Decimal"/>
+    <aura:attribute name="genpoTCGokei" type="Decimal"/>
+    <aura:attribute name="arariekiRitsu" type="String"/>
+    <aura:attribute name="headerNebikiritsu" type="Decimal"/>
+    <aura:attribute name="headerNebiki01" type="Decimal"/>
+    <aura:attribute name="headerNebiki02" type="Decimal"/>
+    <aura:attribute name="fertilityDiscountTitle1" type="String"/>
+    <aura:attribute name="fertilityDiscountTitle2" type="String"/>
+    <aura:attribute name="syuseiNebiki01" type="Decimal"/>
+    <aura:attribute name="syuseiNebiki02" type="Decimal"/>
+    <aura:attribute name="mesainebikiGokei" type="Decimal"/>
+    <aura:attribute name="zeikomiCheck" type="Boolean"/>
+    <aura:attribute name="ishikiCheck" type="Boolean" default="false"/>
+    <aura:attribute name="saisyuKingakuZeikomi" type="Decimal"/>
+    <aura:attribute name="localCorporationTCProfit" type="Decimal"/>
+    <aura:attribute name="localCorporationTCProfitRate" type="Decimal"/>
+    <aura:attribute name="discountRate" type="Decimal"/>
+    <aura:attribute name="delete0Idx" type="Integer"/>
+    <aura:attribute name="maxLength" type="Integer"/>
+    <aura:attribute name="qliReflectCheck" type="Boolean" default="false"/>
+    <aura:attribute name="isPSGHHTUser" type="Boolean" default="true"/>
+    <!--選択リスト値コピーパラメータ-->
+    <aura:attribute name="selectQuantityUnit" type="String" default=""/>
+    <aura:attribute name="selectDetailCategory" type="String" default=""/>
+    <aura:attribute name="selectDetailCategoryMTE" type="String" default=""/>
+    <aura:attribute name="selectRejectionReason" type="String" default=""/>
+    <aura:attribute name="selectPlantCode" type="String" default=""/>
+    <aura:attribute name="selectPlantCodeMTE" type="String" default=""/>
+    <aura:attribute name="selectStorageLocation" type="String" default=""/>
+    <aura:attribute name="selectStorageLocationMTE" type="String" default=""/>
+    <aura:attribute name="selectCurrency" type="String" default=""/>
+    <aura:attribute name="selectRecordingDivision" type="String" default=""/>
+    <aura:attribute name="selectProfitCenter" type="String" default=""/>
+    <aura:attribute name="selectProfitCenterMTE" type="String" default=""/>
+    <aura:attribute name="selectMaterialGroup1" type="String" default=""/>
+    
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <!-- registerEvent -->
+    <aura:registerEvent name="openSearchProduct" type="c:QuoteLineItemBulkEditEvent"/>
+    <aura:registerEvent name="openQLIPickListSupport" type="c:QLIPickListSupportEvent"/>
+
+    <!-- Component Method -->
+    <aura:method name="open" action="{!c.onOpenCalled}" />
+
+    <div class="panel slds-modal slds-fade-in-open" onkeyup="{!c.formPress}">
+        <div class="{! 'modal-container slds-modal__container' + if(v.device=='DESKTOP', ' slds-modal__container__desktop__c', ' slds-modal__container__app__c')}">
+            <!-- Display spinner -->
+            <lightning:spinner aura:id="spinner" variant="brand" size="large" alternativeText="page loading" class="{! 'lightning-spinner__c' + if(v.showSpinner, '', ' slds-hide')}"/>
+            
+            <!-- Display a header with details -->
+            <header class="slds-modal__header">
+                <lightning:buttonIcon size="large" class="slds-modal__close" iconName="utility:close" variant="bare-inverse" title="close" alternativeText="Close window" onclick="{!c.onCloseClicked}"/>
+                <h2 class="title slds-text-heading--medium slds-hyphenate">{! $Label.c.COWO_LBL_BulkEdit}</h2>
+            </header>
+            
+            <ui:scrollerWrapper aura:id="scrollerTop" class="slds-scrollable modal-body slds-modal__content scrollerWrapper title_aera__c">
+                <div aura:id="messages"></div>
+                
+                <div class="slds-p-around--x-small">
+                    <div class="slds-box slds-p-around_none">
+
+                        <lightning:layout multipleRows="true">
+                            <!--小計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_Shokei}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.shokei}" disabled="true" format="{!v.format}" class="field" placeholder="0"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--TC合計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="{! 'slds-x-medium-size_6-of-12__c ' + if(!v.isPSGHHTUser, ' slds-hide')}">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_TCGoukei}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.tcGokei}" disabled="true" format="{!v.format}" class="field" />
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="{! 'slds-x-medium-size_6-of-12__c ' + if(v.isPSGHHTUser, ' slds-hide')}">
+                                <div class="slds-grid">
+                                    <div class="slds-col_bump-right">
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <!--MC合計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="{! 'slds-x-medium-size_6-of-12__c ' + if(!v.isPSGHHTUser, ' slds-hide')}">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_MCGoukei}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.mcGokei}" disabled="true" format="{!v.format}" class="field" />
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="{! 'slds-x-medium-size_6-of-12__c ' + if(v.isPSGHHTUser, ' slds-hide')}">
+                                <div class="slds-grid">
+                                    <div class="slds-col_bump-right">
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <!--値引金額-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_Nebikikingaku}" class="slds-form-element__label label__c"/>
+                                    <div>
+                                        <ui:inputCurrency value="{!v.nebikiKingaku}" disabled="true" format="{!v.format}" class="field" placeholder="0"/>
+                                    </div>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputNumber format="0.00%" value="{!v.discountRate}" class="field__c" placeholder="0" disabled="true"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--HHT利益合計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="{! 'slds-x-medium-size_6-of-12__c ' + if(!v.isPSGHHTUser, ' slds-hide')}">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_HHTRieki}" class="slds-form-element__label label__c"/>
+                                    <div>
+                                        <ui:inputCurrency value="{!v.hhtRieki}" disabled="true" format="{!v.format}" class="field" />
+                                    </div>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputNumber format="0.00%" value="{!v.hhtRiekiritsu}"  placeholder="0" disabled="true" class="field__c"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="{! 'slds-x-medium-size_6-of-12__c ' + if(v.isPSGHHTUser, ' slds-hide')}">
+                                <div class="slds-grid">
+                                    <div class="slds-col_bump-right">
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <!--粗利益合計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="{! 'slds-x-medium-size_6-of-12__c ' + if(!v.isPSGHHTUser, ' slds-hide')}">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_Ararieki}" class="slds-form-element__label label__c"/>
+                                    <div>
+                                        <ui:inputCurrency value="{!v.ararieki}" disabled="true" format="{!v.format}" class="field" placeholder="0"/>
+                                    </div>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputNumber format="0.00%" value="{!v.arariekiRitsu}" class="field__c" placeholder="0" disabled="true"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="{! 'slds-x-medium-size_6-of-12__c ' + if(v.isPSGHHTUser, ' slds-hide')}">
+                                <div class="slds-grid">
+                                    <div class="slds-col_bump-right">
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--最終金額-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_Saisyukingaku}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.saisyuKingaku}" disabled="true" format="{!v.format}" class="field" />
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <div class="slds-col_bump-right">
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <div class="slds-col_bump-right">
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--消費税合計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_Shohizeigoukei}" class="slds-form-element__label label__c"/>
+                                    <div>
+                                        <ui:inputCurrency value="{!v.shohizeiGokei}" disabled="true" format="{!v.format}" class="field" placeholder="0"/>
+                                    </div>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputNumber format="0%" value="{!v.shohizeiRitsu}" class="field__c" placeholder="0" disabled="true"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--現法TC合計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_GenpoTCgoukei}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.genpoTCGokei}" disabled="true" format="{!v.format}" class="field" placeholder="0"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--フロント価格合計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_Furontokakaku}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.furontoKakaku}" disabled="true" format="{!v.format}" class="field" placeholder="0"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--最終金額(税込)-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_SaisyukingakuZeikomi}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.saisyuKingakuZeikomi}" disabled="true" format="{!v.format}" class="field" />
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--現法利益合計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_localCorporationTCProfit}" class="slds-form-element__label label__c"/>
+                                    <div>
+                                        <ui:inputCurrency value="{!v.localCorporationTCProfit}" disabled="true" format="{!v.format}" class="field" />
+                                    </div>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputNumber format="0.00%" value="{!v.localCorporationTCProfitRate}" class="field__c" placeholder="0" disabled="true"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--利益合計-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_Riekigoukei}" class="slds-form-element__label label__c"/>
+                                    <div>
+                                        <ui:inputCurrency value="{!v.riekiGokei}" disabled="true" format="{!v.format}" class="field" placeholder="0"/>
+                                    </div>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputNumber format="0.00%" value="{!v.riekiRitsu}" class="field__c" placeholder="0" disabled="true"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </div>
+
+                    <div class="slds-box slds-p-around_none slds-m-top_x-small">
+
+                        <lightning:layout multipleRows="true">
+                            <!--ヘッダ値引率-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_Headernebikiritsu}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputNumber format="0%" value="{!v.headerNebikiritsu}" class="field" placeholder="0"  updateOn="change" change="{!c.changeRecal}" />
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--出精値引01-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid" id="fertilityDiscountTitle">
+                                    <!--<ui:outputText value="{! $Label.c.COWO_LBL_Syuseinebiki01}" class="slds-form-element__label label__c"/>-->
+                                    <lightning:input onchange="{!c.changeFDTitle}" value="{!v.fertilityDiscountTitle1}" class="slds-form-element__label label__c slds-input__c" maxlength="{!v.maxLength}" variant="label-hidden"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.syuseiNebiki01}" format="{!v.format}" class="field" placeholder="0" updateOn="change" change="{!c.changeRecal}" />
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            
+                            <!--一式チェック-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_ishikiCheck}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <lightning:input type="checkbox" checked="{!v.ishikiCheck}" onchange="{!c.changeIshiki}"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+
+                            <!--ヘッダ値引01-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_Headernebiki01}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.headerNebiki01}" format="{!v.format}" class="field" placeholder="0" updateOn="change" change="{!c.changeRecal}" />
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            <!--出精値引02-->
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <!--<ui:outputText value="{!$Label.c.COWO_LBL_Syuseinebiki02}" class="slds-form-element__label label__c"/>-->
+                                    <lightning:input onchange="{!c.changeFDTitle}" value="{!v.fertilityDiscountTitle2}" class="slds-form-element__label label__c slds-input__c" maxlength="{!v.maxLength}" variant="label-hidden"/>
+                                    <div class="slds-col_bump-right">
+                                        <ui:inputCurrency value="{!v.syuseiNebiki02}" format="{!v.format}" class="field" placeholder="0"  updateOn="change" change="{!c.changeRecal}" />
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            
+                            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDevicesize="4" flexibility="no-shrink" class="slds-x-medium-size_6-of-12__c">
+                                <div class="slds-grid">
+                                    <ui:outputText value="{!$Label.c.COWO_LBL_ItemReflect}" class="slds-form-element__label label__c"/>
+                                    <div class="slds-col_bump-right">
+                                        <lightning:input type="checkbox" checked="{!v.qliReflectCheck}" onchange="{!c.changeIshiki}"/>
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                            
+                        </lightning:layout>
+                    </div>
+                </div>
+            </ui:scrollerWrapper>
+
+            <!-- toolbox -->
+            <div class="input-group input-group__c slds-p-around--x-small slds-modal__content">
+                <!-- <lightning:input type="number" label="Rows To Add" name="inputRowsToAdd" value="{! v.rowsToAdd }"/> -->
+                <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_AddRows}" onclick="{! c.addRowsToEnd }" disabled="{! or(v.showSpinner, !v.canEditProduct2)}"/>
+                <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_AddLineItem}" onclick="{! c.addLineItem }" disabled="{! or(v.showSpinner, !v.canEditProduct2)}"/>
+                <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_DeleteRows}" onclick="{! c.deleteRows }" disabled="{! or(v.showSpinner, !v.canEditProduct2)}"/>
+                <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_SelectCopyFrom}" onclick="{! c.chooseCopyFrom }" disabled="{! or(v.showSpinner, !v.canEditProduct2)}"/>
+                <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_Paste}" onclick="{! c.selectValueCopy }" disabled="{! or(v.showSpinner, !v.canEditProduct2)}"/>
+                <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_SAWOItemNumberSet}" onclick="{! c.setItemNumber }" disabled="{! v.showSpinner}"/>
+                <!-- <lightning:button label="列幅自動調整" onclick="{! c.resetColumns }"/> -->
+            </div>
+            
+            <!-- the container element determine the height of the datatable -->
+            <div class="div_datatable__c">
+                <lightning:datatable
+                    aura:id="datatable"
+                    columns="{! v.columns }"
+                    data="{! v.data }"
+                    draftValues="{ !v.draftValues }"
+                    hideCheckboxColumn="{! v.hideCheckboxColumn }"
+                    keyField="{! v.keyField }"
+                    resizeColumnDisabled="{! v.resizeColumnDisabled }"
+                    rowNumberOffset="{! v.rowNumberOffset }"
+                    showRowNumberColumn="{! v.showRowNumberColumn }"
+                    sortedBy="{! v.sortedBy }"
+                    sortedDirection="{! v.sortedDirection }"
+                    oncancel="{! c.handleCancel }"
+                    oncellchange="{! c.handleCellchange }"
+                    onresize="{! c.storeColumnWidths }"
+                    onrowaction="{! c.handleRowAction }"
+                    onrowselection="{! c.updateSelectedText }"
+                    onsave="{! c.handleSave }"
+                    hideTableHeader="false"
+                    suppressBottomBar="{! v.suppressBottomBar }" 
+                    wrapTextMaxLines="5"
+                    />
+            </div>
+            <div class="modal-footer slds-modal__footer" >
+                <div class="forceModalActionContainer--footerAction forceModalActionContainer" data-aura-class="forceModalActionContainer--footerAction forceModalActionContainer">
+                    <!-- <lightning:button label="破棄" onclick="{!c.handleCancel}" class="slds-button slds-button- --> <!-- -neutral uiButton forceActionButton" disabled="{! or(!v.hasChanged, v.showSpinner)}"/> -->
+                    <lightning:button label="{! $Label.c.COWO_LBL_Cancel}" onclick="{!c.onCloseClicked}" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c" disabled="{! v.showSpinner}"/>
+                    <lightning:button label="{! $Label.c.COWO_LBL_Save}" onclick="{!c.handleSave}" variant="brand" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c" disabled="{! or(!v.hasChanged, v.showSpinner)}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Sum of the Opportunity Products&apos; List Price. Excluding Products marked as Option. --></help>
+    <label><!-- Total List Price --></label>
+    <name>TotalListPrice__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Item Category (MTE) --></label>
+    <name>COWO_DetailCategory_MTE__c</name>
+    <picklistValues>
+        <masterLabel>CB1:Drop ship w Not.</masterLabel>
+        <translation><!-- CB1:Drop ship w Not. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CB:2:Drop ship w/out Not.</masterLabel>
+        <translation><!-- CB:2:Drop ship w/out Not. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DB1:DwnPmt Drop Ship w Not.</masterLabel>
+        <translation><!-- DB1:DwnPmt Drop Ship w Not. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TAN:Distribution</masterLabel>
+        <translation><!-- TAN:Distribution --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

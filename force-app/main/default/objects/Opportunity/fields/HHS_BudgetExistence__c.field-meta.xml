@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HHS_BudgetExistence__c</fullName>
+    <externalId>false</externalId>
+    <label>予算有無</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>予算有り、または有力　1か月以内</fullName>
+                <default>false</default>
+                <label>予算有り、または有力　1か月以内</label>
+            </value>
+            <value>
+                <fullName>予算有り、または有力　3ヶ月以内</fullName>
+                <default>false</default>
+                <label>予算有り、または有力　3ヶ月以内</label>
+            </value>
+            <value>
+                <fullName>予算有り、または有力　6か月以内</fullName>
+                <default>false</default>
+                <label>予算有り、または有力　6か月以内</label>
+            </value>
+            <value>
+                <fullName>予算申請中　（または6カ月以上）</fullName>
+                <default>false</default>
+                <label>予算申請中　（または6カ月以上）</label>
+            </value>
+            <value>
+                <fullName>予算無し</fullName>
+                <default>false</default>
+                <label>予算無し</label>
+            </value>
+            <value>
+                <fullName>予算不明</fullName>
+                <default>false</default>
+                <label>予算不明</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

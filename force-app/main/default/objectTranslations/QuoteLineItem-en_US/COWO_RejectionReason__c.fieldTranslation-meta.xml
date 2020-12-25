@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>reason for rejection</label>
+    <name>COWO_RejectionReason__c</name>
+    <picklistValues>
+        <masterLabel>00:Assigned by the System (Internal)</masterLabel>
+        <translation>00: Assigned by the System (Internal)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z1:キャンセル</masterLabel>
+        <translation>Z1: Cancel</translation>
+    </picklistValues>
+</CustomFieldTranslation>

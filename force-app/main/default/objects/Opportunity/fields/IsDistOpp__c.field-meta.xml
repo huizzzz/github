@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsDistOpp__c</fullName>
+    <externalId>false</externalId>
+    <formula>NOT(ISBLANK( Distributor_Agent__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>True if a Distributor Opportunity, ie the Distributor Agent field is not empty.</inlineHelpText>
+    <label>IsDistOpp</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,32 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome" 
+                access="global" >
+
+    <aura:html tag="style">
+        .closeIcon {
+            display:none !important;
+        }
+    </aura:html>
+
+    <aura:attribute name="isLoadedOpportunityLineItemBulkEdit" type="Boolean" default="false" />
+    <aura:attribute name="isLoadedSearchProduct" type="Boolean" default="false" />
+    <aura:attribute name="isLoadedPickListSupport" type="Boolean" default="false" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:handler name="openSearchProduct" event="c:OpportunityLineItemBulkEditEvent" action="{!c.openSearchProduct}" />
+    <aura:handler name="closeSearchProduct" event="c:OpportunityLineItemBulkEditEvent" action="{!c.closeSearchProduct}" />
+    <aura:handler name="reflectSearchProduct" event="c:OpportunityLineItemBulkEditEvent" action="{!c.reflectSearchProduct}" />
+    <aura:handler name="openOLIPickListSupport" event="c:OLIPickListSupportEvent" action="{!c.openOLIPickListSupport}" />
+    <aura:handler name="closeOLIPickListSupport" event="c:OLIPickListSupportEvent" action="{!c.closeOLIPickListSupport}" />
+    <aura:handler name="reflectSelectedPicklistValues" event="c:OLIPickListSupportEvent" action="{!c.reflectSelectPickListValues}" />
+
+
+    <div onkeyup="{!c.formPress}">
+        <!-- call the OpportunityLineItemBulkEdit component -->
+        <div aura:id="OpportunityLineItemBulkEdit"></div>
+
+        <!-- call the SearchProduct component -->
+        <div aura:id="SearchProduct"></div>
+
+        <!-- call the SelectPickList component -->
+        <div aura:id="OLIPickListSupport"></div>
+    </div>
+</aura:component>

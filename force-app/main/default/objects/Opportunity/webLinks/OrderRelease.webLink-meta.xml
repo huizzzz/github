@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OrderRelease</fullName>
+    <availability>online</availability>
+    <description>Order Release form from 360 systems</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Order Release</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>http://forms.hhteu.intra/Forms/CreateForm?t=OrderRelease&amp;Edit=True&amp;p=1&amp;CurrencySelect={!Opportunity.Currency360__c}&amp;OrdCustomerName={!Account.Name}&amp;Type=&quot;Public&quot;+&quot;Entity&quot;&amp;BusinessAreaId={!User.Department__c}&amp;SalesOrg={!User.Division__c}&amp;OrdSAPCode={!Account.SAP_Bill_To__c}&amp;OrdProduct={!Opportunity.MainProductText__c}&amp;OrdAmount={!Opportunity.TotalCustomerPrice__c}&amp;OrdOrderDate={!Opportunity.CloseDate}&amp;OrdDeliveryDate={!Opportunity.Requested_Delivery_Date__c}&amp;OrdPaymentTerms={!Opportunity.PaymentTerms__c}</url>
+</WebLink>

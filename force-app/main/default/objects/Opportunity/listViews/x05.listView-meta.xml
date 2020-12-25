@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>x05</fullName>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.CLOSED</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.WON</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.SFDCMobileLayout</value>
+    </filters>
+    <label>05. 成立引合</label>
+    <sharedTo>
+        <roleAndSubordinates>S179</roleAndSubordinates>
+        <roleAndSubordinates>Z999</roleAndSubordinates>
+    </sharedTo>
+</ListView>

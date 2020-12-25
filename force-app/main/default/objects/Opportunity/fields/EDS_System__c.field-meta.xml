@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EDS_System__c</fullName>
+    <description>We need to plan for which EDS system they might order, specially for TM and FlexSEM</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Which EDS system will they probably select ?</inlineHelpText>
+    <label>EDS System</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AZtec One (TM)</fullName>
+                <default>false</default>
+                <label>AZtec One (TM)</label>
+            </value>
+            <value>
+                <fullName>AZtec One Go (TM)</fullName>
+                <default>false</default>
+                <label>AZtec One Go (TM)</label>
+            </value>
+            <value>
+                <fullName>AZtec One (Flex)</fullName>
+                <default>false</default>
+                <label>AZtec One (Flex)</label>
+            </value>
+            <value>
+                <fullName>AZtec One Go (Flex)</fullName>
+                <default>false</default>
+                <label>AZtec One Go (Flex)</label>
+            </value>
+            <value>
+                <fullName>AZtec Std</fullName>
+                <default>false</default>
+                <label>AZtec Std</label>
+            </value>
+            <value>
+                <fullName>AZtec Adv</fullName>
+                <default>false</default>
+                <label>AZtec Adv</label>
+            </value>
+            <value>
+                <fullName>AZtec Auto</fullName>
+                <default>false</default>
+                <label>AZtec Auto</label>
+            </value>
+            <value>
+                <fullName>AZtec One Go</fullName>
+                <default>false</default>
+                <label>AZtec One Go</label>
+            </value>
+            <value>
+                <fullName>AZtec One</fullName>
+                <default>false</default>
+                <label>AZtec One</label>
+            </value>
+            <value>
+                <fullName>Q75</fullName>
+                <default>false</default>
+                <label>Q75</label>
+            </value>
+            <value>
+                <fullName>Q80</fullName>
+                <default>false</default>
+                <label>Q80</label>
+            </value>
+            <value>
+                <fullName>Quantax 200</fullName>
+                <default>false</default>
+                <label>Quantax 200</label>
+            </value>
+            <value>
+                <fullName>Quantax 400</fullName>
+                <default>false</default>
+                <label>Quantax 400</label>
+            </value>
+            <value>
+                <fullName>Quantax 800</fullName>
+                <default>false</default>
+                <label>Quantax 800</label>
+            </value>
+            <value>
+                <fullName>EDAX</fullName>
+                <default>false</default>
+                <label>EDAX</label>
+            </value>
+            <value>
+                <fullName>Thermo</fullName>
+                <default>false</default>
+                <label>Thermo</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

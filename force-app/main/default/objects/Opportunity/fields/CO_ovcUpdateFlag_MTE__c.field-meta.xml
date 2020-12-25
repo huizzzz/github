@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CO_ovcUpdateFlag_MTE__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( isBlank(CO_SAPSalesOrderNumber_MTE__c), &apos;I&apos;, &apos;U&apos; )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Update Flag (MTE)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

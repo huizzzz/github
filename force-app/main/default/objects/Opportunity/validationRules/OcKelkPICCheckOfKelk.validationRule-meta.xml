@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OcKelkPICCheckOfKelk</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+BEGINS(RecordType.DeveloperName, &apos;OC_KELK&apos;), 
+ISPICKVAL(PRIORVALUE(StageName) , &apos;仕様提案&apos;) , 
+ISPICKVAL(StageName , &apos;作図指示&apos;),
+ISBLANK( KelkCharge__c ) 
+)</errorConditionFormula>
+    <errorDisplayField>KelkCharge__c</errorDisplayField>
+    <errorMessage>Complete this field</errorMessage>
+</ValidationRule>

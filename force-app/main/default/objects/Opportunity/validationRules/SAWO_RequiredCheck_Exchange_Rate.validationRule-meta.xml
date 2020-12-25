@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_RequiredCheck_Exchange_Rate</fullName>
+    <active>false</active>
+    <description>DXレコードタイプ、フェーズ04,05,06
+の場合、換算レートを必須入力とする</description>
+    <errorConditionFormula>AND(
+ RecordType.DeveloperName = &apos;SAWO_DX_Opportunity&apos;,
+ OR(ISPICKVAL( StageName, &quot;04&quot;),
+  ISPICKVAL( StageName, &quot;05&quot;),
+  ISPICKVAL( StageName, &quot;06Won&quot;),
+  ISPICKVAL( SAWO_Approval_Category__c, &quot;03→04(仮受注申請)&quot;) 
+ ),
+ ISBLANK( SAWO_Exchange_Rate__c )
+)</errorConditionFormula>
+    <errorMessage>[換算レート]を入力してください。</errorMessage>
+</ValidationRule>

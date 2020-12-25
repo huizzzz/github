@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_LastApproveDate__c</fullName>
+    <description>最後に見積承認が実施された日時が設定される</description>
+    <externalId>false</externalId>
+    <formula>IF ( ISBLANK(  COWO_ApprovalDate2__c ) , COWO_ApprovalDate1__c, COWO_ApprovalDate2__c)</formula>
+    <label>見積承認日時最終</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,197 @@
+<aura:component controller="SearchProductController" 
+                implements="force:hasSObjectName,flexipage:availableForRecordHome" access="public">
+    
+    
+    <aura:html tag="style">
+        .slds-modal__container {
+            max-width: 1400px !important;
+        	padding-top: 0px;
+        	padding-bottom: 0px;
+        }
+    </aura:html>
+    
+    <!-- Privte Attributes -->
+    <aura:attribute access="private" type="Boolean" name="showSpinner" default="true" />
+    <aura:attribute access="private" type="Boolean" name="isOnload" default="false" />
+    <!-- Privte Attributes for form check -->
+    <aura:attribute access="private" type="Boolean" name="hasFormError" default="false" />
+    <!-- attributes -->
+    <aura:attribute name="opportunityId" type="String" />
+    <aura:attribute name="pricebook2Id" type="String" />
+    <aura:attribute name="isPSGHHTUser" type="Boolean"/>
+    <aura:attribute name="columns" type="List" default="[]"/>
+    <aura:attribute name="data" type="List" default="[]"/>
+    <aura:attribute name="keyField" type="String" default="Id"/>
+    <aura:attribute name="hideCheckboxColumn" type="Boolean" default="false"/>
+    <aura:attribute name="selectedRows" type="List" default="[]"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="resizeColumnDisabled" type="Boolean" default="false"/>
+    <aura:attribute name="minColumnWidth" type="Integer"/>
+    <aura:attribute name="maxColumnWidth" type="Integer"/>
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="String"/>
+    <aura:attribute name="defaultSortDirection" type="String"/>
+    <aura:attribute name="showRowNumberColumn" type="Boolean" default="true"/>
+    <aura:attribute name="rowNumberOffset" type="Integer" default="0"/>
+    <aura:attribute name="initialRows" type="Integer" default="10"/>
+    <aura:attribute name="rowsToAdd" type="Integer" default="10"/>
+    <aura:attribute name="dataTableSchema" type="Object"/>
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+    <aura:attribute name="isLoaded" type="Boolean" default="false" />
+    <aura:attribute name="CountryModeOptions" type="List" default="[
+                                                                   {'label': 'A', 'value': 'A'},
+                                                                   {'label': 'J', 'value': 'J'},
+                                                                   {'label': 'W', 'value': 'W'},
+                                                                   ]"/>
+    <aura:attribute name="KatashikiOptions" type="List"/>
+    <aura:attribute name="selectKatashiki" type="String" default=""/>
+    <aura:attribute name="device" type="String" default="DESKTOP" description="ユーザが使用しているデバイスを保持する"/>
+    <aura:attribute name="currencyIsoCode" type="String" />
+    <aura:attribute name="digits" type="Integer" default="2"/>
+    <aura:attribute name="firstHierarchyOptions" type="list" default="[]" description="to store controller field values"/>
+    <aura:attribute name="secondHierarchyOptions" type="list" default="['--- None ---']" description="to store dependent field values"/>
+    <aura:attribute name="thirdHierarchyOptions" type="list" default="['--- None ---']" description="to store dependent field values"/>
+
+    <aura:attribute name="secondHierarchyMap" type="map" description="map to store dependent values with controlling value"/>
+    <aura:attribute name="thirdHierarchyMap" type="map" description="map to store sub dependent values with controlling value"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <!-- registerEvent -->
+    <aura:registerEvent name="closeSearchProduct" type="c:OpportunityLineItemBulkEditEvent"/>
+    <aura:registerEvent name="reflectSearchProduct" type="c:OpportunityLineItemBulkEditEvent"/>
+    <!-- Component Method -->
+    <aura:method name="open" action="{!c.onOpenCalled}" />
+    
+    <!-- User Interface -->
+    <div class="panel slds-modal slds-fade-in-open" onkeyup="{!c.formPress}">
+        <div class="{!'modal-container slds-modal__container' + if(v.device=='DESKTOP', '', ' slds-modal__container__app__c')}">
+            <!-- Display spinner -->
+            <lightning:spinner aura:id="spinner" variant="brand" size="large" alternativeText="page loading" class="{! 'lightning-spinner__c' + if(or(v.isOnload, v.showSpinner), '', ' slds-hide')}"/>
+            
+            <!-- Display a header with details -->
+            <header class="slds-modal__header">
+                <h2 class="slds-text-heading_medium slds-hyphenate">{! $Label.c.COWO_LBL_Product2Search}</h2>
+            </header>
+            <ui:scrollerWrapper aura:id="scrollerTop" class="slds-scrollable modal-body modal-body__c slds-modal__content title_aera__c slds-p-around--x-small">
+                <!-- toolbox -->
+                <lightning:layout  multipleRows="true">
+                    <lightning:layoutItem flexibility="auto">
+                    <lightning:select aura:id="firstLayer" name="firstLayer" label="{!$Label.c.COWO_LBL_FirstHierarchy}" value="" onchange="{!c.changefirstLayer}">
+                        <!--<option value="" text="第一階層"/>-->
+                        <aura:iteration var="firstHierarchy" items="{!v.firstHierarchyOptions}">
+                            <option value="{!firstHierarchy.value}" text="{!firstHierarchy.label}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto">
+                    <!--<lightning:combobox aura:id="CountryMode__c" name="CountryMode__c" label="{! $Label.c.CountryMode}" value="" placeholder="{! $Label.c.CountryMode}" options="{! v.CountryModeOptions }" />-->
+                    <lightning:select aura:id="secondLayer" name="secondLayer" label="{!$Label.c.COWO_LBL_SecondHierarchy}" value=""  onchange="{!c.changeSecondLayer}" >
+                        <aura:iteration var="secondHierarchy" items="{!v.secondHierarchyOptions}">
+                            <option value="{!secondHierarchy.value}" text="{!secondHierarchy.label}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto">
+                    <lightning:select aura:id="thaadLayer" name="thaadLayer" label="{!$Label.c.COWO_LBL_ThirdHierarchy}" value="" >
+                        <aura:iteration var="thirdHierarchy" items="{!v.thirdHierarchyOptions}">
+                            <option value="{!thirdHierarchy.value}" text="{!thirdHierarchy.label}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </lightning:layoutItem>
+
+                <!--<lightning:layoutItem flexibility="auto">
+                    <lightning:select aura:id="firstSearchLogic" name="firstSearchLogic" label="検索条件" value="">
+                        <option value="and" text="and"/>
+                        <option value="or" text="or"/>
+                    </lightning:select>
+                </lightning:layoutItem>-->
+                    <!--
+                    <lightning:layoutItem flexibility="auto">
+                        <!-<lightning:combobox aura:id="CountryMode__c" name="CountryMode__c" label="{! $Label.c.CountryMode}" value="" placeholder="{! $Label.c.CountryMode}" options="{! v.CountryModeOptions }" / ->
+                        <lightning:select aura:id="CountryMode__c" name="CountryMode__c" label="{!$Label.c.COWO_LBL_CountryMode}" value="">
+                            <option value="" text="{!$Label.c.COWO_LBL_AllCountryMode}"/>    
+                            <aura:iteration var="CountryMode" items="{!v.CountryModeOptions}">
+                                <option value="{!CountryMode.value}" text="{!CountryMode.label}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="auto">
+                        <!-<lightning:combobox aura:id="Katashiki__c" name="Katashiki__c" label="{! $Label.c.Katashiki}" value="" placeholder="{! $Label.c.Katashiki}" options="{! v.KatashikiOptions }" />->
+                        <lightning:select aura:id="Katashiki__c" name="Katashiki__c" label="{!$Label.c.COWO_LBL_Katashiki}" value="{!v.selectKatashiki}" >
+                            <aura:iteration var="Katashiki" items="{!v.KatashikiOptions}">
+                                <option value="{!Katashiki.value}" text="{!Katashiki.label}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+                    -->
+                    <!--
+                    <lightning:layoutItem flexibility="auto">
+                        <lightning:input aura:id="ProductCalledName__c" name="ProductCalledName__c" label="{! $Label.c.COWO_LBL_ProductCalledName}" value=""/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="auto">
+                        <lightning:input aura:id="StructureSortNo__c" name="StructureSortNo__c" label="{! $Label.c.COWO_LBL_StructureSortNo}" value=""/>
+                    </lightning:layoutItem>
+                    -->
+                    <lightning:layoutItem flexibility="auto">
+                        <lightning:input aura:id="PartsNo__c" name="PartsNo__c" label="{! $Label.c.COWO_LBL_CASPartsNo}" value=""/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="auto">
+                        <lightning:input aura:id="product2_Name" name="product2_Name" label="{! $Label.c.COWO_LBL_ItemName}" value=""/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem flexibility="auto" alignmentBump="left">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label slds-no-flex" />
+                            <div class="slds-form-element__control slds-grow">
+                                <lightning:button label="{! $Label.c.COWO_LBL_Search}" onclick="{! c.doSearch }" class="slds-button__c button_small__c"/>
+                            </div>
+                        </div>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </ui:scrollerWrapper>
+            <!-- <div class="slds-m-horizontal_small">
+                    <div class="input-group">
+                        <lightning:layout>
+                            <lightning:layoutItem class="slds-p-horizontal_xxx-small slds-p-top_xx-small">
+                                <div class="header-column">
+                                    <lightning:button label="列幅自動調整" onclick="{! c.resetColumns }"/>
+                                </div>
+                            </lightning:layoutItem> 
+
+                        </lightning:layout>
+                    </div>
+                </div>-->
+            
+            <!-- the container element determine the height of the datatable -->
+            <div class="div_datatable__c">
+                <lightning:datatable
+                                     aura:id="datatable"
+                                     columns="{! v.columns }"
+                                     data="{! v.data }"
+                                     defaultSortDirection="{! v.defaultSortDirection }"
+                                     draftValues="{ !v.draftValues }"
+                                     hideCheckboxColumn="{! v.hideCheckboxColumn }"
+                                     keyField="{! v.keyField }"
+                                     minColumnWidth="{! v.minColumnWidth }"
+                                     maxColumnWidth="{! v.maxColumnWidth }"
+                                     resizeColumnDisabled="{! v.resizeColumnDisabled }"
+                                     resizeStep="20"
+                                     rowNumberOffset="{! v.rowNumberOffset }"
+                                     showRowNumberColumn="{! v.showRowNumberColumn }"
+                                     oncancel="{! c.handleCancel }"
+                                     oncellchange="{! c.handleCellchange }"
+                                     onresize="{! c.storeColumnWidths }"
+                                     onrowaction="{! c.handleRowAction }"
+                                     onrowselection="{! c.updateSelectedText }"
+                                     onsave="{! c.handleSave }"
+                                     />
+            </div>
+            
+            <div class="modal-footer slds-modal__footer" >
+                <div class="forceModalActionContainer--footerAction forceModalActionContainer" data-aura-class="forceModalActionContainer--footerAction forceModalActionContainer">
+                    <lightning:button label="{! $Label.c.COWO_LBL_Cancel}" aura:id="closeButton" onclick="{!c.onCloseClicked}" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c" disabled="{! or(v.isOnload, v.showSpinner)}"/>
+                    <lightning:button label="{! $Label.c.COWO_LBL_Add}" onclick="{!c.doAddProducts}" variant="brand" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c" disabled="{! or(v.isOnload, v.showSpinner)}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- If selected, Part Number column will not be visible in PDF file. --></help>
+    <label><!-- Hide Part Numbers --></label>
+    <name>HidePartNumber__c</name>
+</CustomFieldTranslation>

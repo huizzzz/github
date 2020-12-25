@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Line Category</label>
+    <name>COWO_DetailCategory__c</name>
+    <picklistValues>
+        <masterLabel>Z100:在庫引当</masterLabel>
+        <translation>Z 100: Reservation</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Z110:直送</masterLabel>
+        <translation>Z 110: Direct delivery</translation>
+    </picklistValues>
+</CustomFieldTranslation>

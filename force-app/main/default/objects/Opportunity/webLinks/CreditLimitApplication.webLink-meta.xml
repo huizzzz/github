@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CreditLimitApplication</fullName>
+    <availability>online</availability>
+    <description>Credit Limit Application form from 360 systems</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Credit Limit Application</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>http://forms.hhteu.intra/Forms/CreateForm?t=
+CreditLimitApplication&amp;Edit=True&amp;p=1&amp;&amp;CurrencySelect={!Opportunity.Currency360__c}&amp;Type=&quot;Spot&quot;&amp;BusinessAreaId={!User.Department__c}&amp;SalesOrg={!User.Division__c}&amp;CusSAPCode={!Account.SAP_Bill_To__c}&amp;CusName={!Account.Name}&amp;CusStreetHouseNo={!Account.BillingStreet}&amp;CusZipCode={!Account.BillingPostalCode}&amp;CusCity={!Account.BillingCity}&amp;CusCountry={!Account.BillingCountry}&amp;CusTelephone={!Account.Phone}&amp;CusTelefax={!Account.Phone}&amp;CusCompanyRegistrationNumber={!Account.Registration_No__c}&amp;CusIsCompanyPublic={!Account.CompanyPublic__c}&amp;BusProductName={!Opportunity.MainProductText__c}&amp;BusUnitPrice={!Opportunity.MainProductUnitPrice__c}&amp;BusQuantity={!Opportunity.Number0fMainProducts__c}&amp;BusProductionLeadTime={!Opportunity.Leadtime__c}&amp;BusCustomerPaymentTerm={!Opportunity.Leadtime__c}&amp;BusExpectedOrderReceiptDate={!Opportunity.CloseDate}&amp;BusExpectedShippingDate={!Opportunity.Requested_Delivery_Date__c}&amp;BusDeliveryPoint={!Account.ShippingCity}&amp;BusOrderProfitOrProfitRatio={!Opportunity.ProfitPercent__c}</url>
+</WebLink>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QuoteFileName__c</fullName>
+    <description>「見積番号_案件名」</description>
+    <externalId>false</externalId>
+    <formula>QuoteNumber  + &quot;_&quot; +  Opportunity.Name</formula>
+    <label>見積書ファイル名</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

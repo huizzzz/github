@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HFS_opp_cray</fullName>
+    <fields>Name</fields>
+    <fields>AccountId</fields>
+    <fields>CloseDate</fields>
+    <fields>HFS_OrderAmount__c</fields>
+    <fields>Amount</fields>
+    <fields>OwnerId</fields>
+    <fields>IqScore</fields>
+    <label>HFS_コンパクトレイアウト</label>
+</CompactLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CopyIKoukanri</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>意向管理表項目コピー</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/35.0/connection.js&apos;)};
+{!REQUIRESCRIPT(&apos;/soap/ajax/35.0/apex.js&apos;)};
+query = &quot;SELECT Id, Suiteikeiyaku__c, Shintenjoukyo__c, Keiyakukanousei__c, Koushojoukyo__c, Mondai_Juyosien__c FROM Opportunity WHERE Id=&apos;{!Opportunity.ID_18__c}&apos;&quot;,
+records = sforce.connection.query(query).getArray(&apos;records&apos;);
+
+var objs = [];
+var obj = new sforce.SObject(&apos;Opportunity&apos;);
+obj.id = records[0].Id;
+obj.Suiteikeiyakujiki__c = records[0].Suiteikeiyaku__c;
+obj.Shintenjoukyo_sengetsu__c = records[0].Shintenjoukyo__c;
+obj.Keiyakukanousei_Sengetsu__c = records[0].Keiyakukanousei__c;
+obj.Kousyojoukyo_Sengetsu__c = records[0].Koushojoukyo__c;
+obj.MondaiJuyosien_Sengetsu__c = records[0].Mondai_Juyosien__c;
+objs.push(obj);
+
+var results = sforce.connection.update(objs);
+window.location.reload();</url>
+</WebLink>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_DetailCategory_MTE__c</fullName>
+    <description>S/4の明細カテゴリ</description>
+    <externalId>false</externalId>
+    <label>Item Category (MTE)</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CB1</fullName>
+                <default>false</default>
+                <label>CB1:Drop ship w Not.</label>
+            </value>
+            <value>
+                <fullName>CB2</fullName>
+                <default>false</default>
+                <label>CB:2:Drop ship w/out Not.</label>
+            </value>
+            <value>
+                <fullName>TAN</fullName>
+                <default>true</default>
+                <label>TAN:Distribution</label>
+            </value>
+            <value>
+                <fullName>DB1</fullName>
+                <default>false</default>
+                <label>DB1:Milst請求Pl+3Pw/ASN</label>
+            </value>
+            <value>
+                <fullName>DB2</fullName>
+                <default>false</default>
+                <label>DB2:Milst請求Pl+3Pw/oASN</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

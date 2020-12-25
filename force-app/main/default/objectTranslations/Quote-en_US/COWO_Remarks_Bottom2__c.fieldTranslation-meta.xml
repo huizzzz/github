@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>It is written in the second line of the remarks column under the quotation line. Please enter no more than 100 characters.</help>
+    <label>Note below the table 2</label>
+    <name>COWO_Remarks_Bottom2__c</name>
+</CustomFieldTranslation>

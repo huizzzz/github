@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalPriceMain__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Total Price excluding options and hidden prices/products</inlineHelpText>
+    <label>Total Price</label>
+    <summarizedField>QuoteLineItem.TotalPrice__c</summarizedField>
+    <summaryFilterItems>
+        <field>QuoteLineItem.ProductType__c</field>
+        <operation>notEqual</operation>
+        <value>Hidden Price, Hidden, Option</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>QuoteLineItem.Option__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

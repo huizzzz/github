@@ -1,0 +1,404 @@
+<aura:component controller="OLIPickListSupportController" 
+implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="public">
+<aura:html tag="style">
+    .slds-modal__container {
+        max-width: 1382.4px !important;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    /* レスポンシブ対応 start */
+    @media (min-width:768px){
+        .slds-modal__container{
+            margin:0 auto;
+            width:100%;
+            max-width:40rem;
+            min-width:20rem
+        }
+    }
+    @media (max-width:768px){
+        .slds-modal__container{
+            margin:0px;
+            padding:0px;
+            width:100%;
+            max-width:40rem;
+            min-width:20rem
+        }
+    }
+    @media (max-height:544px){
+        .slds-modal__container{
+            /*margin:0px;*/
+            padding:0px;
+        }
+    }
+    /* レスポンシブ対応 end */
+    .size__c .forceStyle .slds-is-editing .slds-form-element {
+        margin-bottom: 0;
+    }
+    .size__c .slds-form-element_horizontal:not(.slds-form-element_readonly) {
+        margin-bottom: 0;
+    }
+</aura:html>
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />   
+    <aura:attribute name="oppLineItemId" type="String" />
+    <aura:attribute name="currencyISOCode" type="String" />
+    <aura:attribute name="quantityUnitOptions" type="List"/>
+    <aura:attribute name="detailCategoryOptions" type="List"/>
+    <aura:attribute name="detailCategoryMTEOptions" type="List"/>
+    <aura:attribute name="rejectionReasonOptions" type="List"/>
+    <aura:attribute name="plantCodeOptions" type="List"/>
+    <aura:attribute name="plantCodeMTEOptions" type="List"/>
+    <aura:attribute name="storageLocationOptions" type="List"/>
+    <aura:attribute name="storageLocationMTEOptions" type="List"/>
+    <aura:attribute name="currencyOptions" type="List"/>
+    <aura:attribute name="recordingDivisionOptions" type="List"/>
+    <aura:attribute name="profitCenterOptions" type="List"/>
+    <aura:attribute name="profitCenterMTEOptions" type="List"/>
+    <aura:attribute name="materialGroup1Options" type="List"/>
+    <aura:attribute name="salesUnitOptions" type="List"/>
+    <aura:attribute name="selectQuantityUnit" type="String" default=""/>
+    <aura:attribute name="selectDetailCategory" type="String" default=""/>
+    <aura:attribute name="selectDetailCategoryMTE" type="String" default=""/>
+    <aura:attribute name="selectRejectionReason" type="String" default=""/>
+    <aura:attribute name="selectPlantCode" type="String" default=""/>
+    <aura:attribute name="selectPlantCodeMTE" type="String" default=""/>
+    <aura:attribute name="selectStorageLocation" type="String" default=""/>
+    <aura:attribute name="selectStorageLocationMTE" type="String" default=""/>
+    <aura:attribute name="selectCurrency" type="String" default=""/>
+    <aura:attribute name="selectRecordingDivision" type="String" default=""/>
+    <aura:attribute name="selectProfitCenter" type="String" default=""/>
+    <aura:attribute name="selectProfitCenterMTE" type="String" default=""/>
+    <aura:attribute name="selectMaterialGroup1" type="String" default=""/>
+    <aura:attribute name="selectSalesUnit" type="String" default=""/>
+    <aura:attribute name="shippingInstructions" type="String" default=""/>
+    <aura:attribute name="salesNoteCustome" type="String" default=""/>
+    <aura:attribute name="conditionRateInsurance" type="Decimal"/>
+    <aura:attribute name="insuranceFee" type="Decimal"/>
+    <aura:attribute name="conditionRateTaxes" type="Decimal"/>
+    <aura:attribute name="freight" type="Decimal"/>
+    <aura:attribute name="conditionDeliveryCost" type="Decimal"/>
+    <aura:attribute name="otherDuties" type="Decimal"/>
+    <aura:attribute name="reserversFixed" type="Decimal"/>
+    <aura:attribute name="trgInstRsrvsFixed" type="Decimal"/>
+    <aura:attribute name="conditionRateTotal" type="Decimal"/>
+    <aura:attribute name="cnAMTTOTAL" type="Decimal"/>
+    <aura:attribute name="device" type="String" default="DESKTOP" description="ユーザが使用しているデバイスを保持する"/>
+    <!-- 画面表示用変数 -->
+    <aura:attribute name="format" type="String"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <!-- Component Method -->
+    <aura:method name="open" action="{!c.onOpenCalled}" />
+
+    <!-- registerEvent -->
+    <aura:registerEvent name="closeOLIPickListSupport" type="c:OLIPickListSupportEvent"/>
+    <aura:registerEvent name="reflectSelectedPicklistValues" type="c:OLIPickListSupportEvent"/>
+
+    <div class="panel slds-modal slds-fade-in-open">
+        <div class="modal-container slds-modal__container">
+            <!-- Display spinner -->
+            <lightning:spinner aura:id="spinner" variant="brand" size="large" alternativeText="page loading" class="{! 'lightning-spinner__c' + if(v.showSpinner, '', ' slds-hide')}"/>
+
+            <ui:scrollerWrapper class="slds-scrollable modal-body modal-body__c slds-modal__content title_aera__c">
+    
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon size="large" class="slds-modal__close" iconName="utility:close" variant="bare-inverse" title="close" alternativeText="Close window" onclick="{!c.onCloseClicked}"/>
+                    <h2 class="title slds-text-heading--medium slds-hyphenate">{! $Label.c.COWO_LBL_SetPicklist}</h2>
+                </header>
+                <lightning:recordEditForm aura:id="recordViewForm" objectApiName="OpportunityLineItem">
+                <lightning:layout multipleRows="true">
+    
+                    <!-- 基本数量単位 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_QuantityUnit__c" name="SAWO_QuantityUnit__c" label="{! $Label.c.COWO_LBL_QuantityUnit}" value="{!v.selectQuantityUnit}" >
+                            <aura:iteration var="quantityUnit" items="{!v.quantityUnitOptions}">
+                                <option value="{!quantityUnit.label}" text="{!quantityUnit.value}" selected="{!quantityUnit.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+                    
+                    <!-- 販売単位 --> 
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_SalesUnit__c" name="SAWO_SalesUnit__c" label="{! $Label.c.COWO_LBL_SalesUnit}" value="{!v.selectSalesUnit}" >
+                            <aura:iteration var="salesUnit" items="{!v.salesUnitOptions}">
+                                <option value="{!salesUnit.label}" text="{!salesUnit.value}" selected="{!salesUnit.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+    
+                    <!-- 拒否理由 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_RejectionReason__c" name="SAWO_RejectionReason__c" label="{! $Label.c.COWO_LBL_RejectionReason}" value="{!v.selectRejectionReason}" >
+                            <aura:iteration var="rejectionReason" items="{!v.rejectionReasonOptions}">
+                                <option value="{!rejectionReason.label}" text="{!rejectionReason.value}" selected="{!rejectionReason.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+
+                    <!-- 通貨(伝票通貨) -->
+                    <!--<lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_Currency__c" name="SAWO_Currency__c" label="{! $Label.c.COWO_LBL_Currency}" value="{!v.selectCurrency}" >
+                            <aura:iteration var="currency" items="{!v.currencyOptions}">
+                                <option value="{!currency.label}" text="{!currency.value}" selected="{!currency.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>-->
+
+                    <!-- 条件グループ１ -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_Recording_Division__c" name="SAWO_Recording_Division__c" label="{! $Label.c.COWO_LBL_RecordingDivision}" value="{!v.selectRecordingDivision}" >
+                            <aura:iteration var="recordingDivision" items="{!v.recordingDivisionOptions}">
+                                <option value="{!recordingDivision.label}" text="{!recordingDivision.value}" selected="{!recordingDivision.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+
+                    <!-- 品目グループ1 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_MaterialGroup1__c" name="SAWO_MaterialGroup1__c" label="{! $Label.c.COWO_LBL_MaterialGroup1}" value="{!v.selectMaterialGroup1}" >
+                            <aura:iteration var="materialGroup1" items="{!v.materialGroup1Options}">
+                                <option value="{!materialGroup1.label}" text="{!materialGroup1.value}" selected="{!materialGroup1.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+
+                    <!-- 条件レート(保険料) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <div class="slds-col_bump-right">
+                            <ui:inputCurrency aura:id="SAWO_ConditionRate_Insurance__c" label="{! $Label.c.COWO_LBL_ConditionRateInsurance}" labelClass="input_label__c" format="{!v.format}"  class="input_text__c" value="{!v.conditionRateInsurance}" placeholder="0" updateOn="change" change="{!c.doCalculate}"/>
+                        </div>
+                    </lightning:layoutItem>
+
+                    <!-- CnAMT (FIN1:Insurance fee) (MTE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <ui:inputCurrency aura:id="SA_Insurance_fee__c" label="{! $Label.c.COWO_LBL_CnAMTInsurancefee}" labelClass="input_label__c" format="{!v.format}"  value="{!v.insuranceFee}"  class="input_text__c" placeholder="0" updateOn="change" change="{!c.doCalculate}" />
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 利益センタ(MTE) -->
+                    <!--<lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_ProfitCenter_MTE__c" name="SAWO_ProfitCenter_MTE__c" label="{! $Label.c.COWO_LBL_ProfitCenter_MTE}" value="{!v.selectProfitCenterMTE}" >
+                            <aura:iteration var="profitCenterMTE" items="{!v.profitCenterMTEOptions}">
+                                <option value="{!profitCenterMTE.label}" text="{!profitCenterMTE.value}" selected="{!profitCenterMTE.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>-->
+                                        
+                    <!-- 明細カテゴリ(STE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_DetailCategory__c" name="SAWO_DetailCategory__c" label="{! $Label.c.COWO_LBL_DetailCategory_STE}" value="{!v.selectDetailCategory}" >
+                            <aura:iteration var="detailCategory" items="{!v.detailCategoryOptions}">
+                                <option value="{!detailCategory.label}" text="{!detailCategory.value}" selected="{!detailCategory.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+
+                    <!-- プラント(STE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_PlantCode__c" name="SAWO_PlantCode__c" label="{! $Label.c.COWO_LBL_PlantCode}" value="{!v.selectPlantCode}" onchange="{!c.changePlantste}">
+                            <aura:iteration var="plantCode" items="{!v.plantCodeOptions}">
+                                <option value="{!plantCode.label}" text="{!plantCode.value}" selected="{!plantCode.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+
+                    <!-- 保管場所(STE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_StorageLocation__c" name="SAWO_StorageLocation__c" label="{! $Label.c.COWO_LBL_StorageLocation}" value="{!v.selectStorageLocation}" >
+                            <aura:iteration var="storageLocation" items="{!v.storageLocationOptions}">
+                                <option value="{!storageLocation.label}" text="{!storageLocation.value}" selected="{!storageLocation.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+
+                    <!-- 利益センタ(STE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_ProfitCenter__c" name="SAWO_ProfitCenter__c" label="{! $Label.c.COWO_LBL_ProfitCenter}" value="{!v.selectProfitCenter}" >
+                            <aura:iteration var="profitCenter" items="{!v.profitCenterOptions}">
+                                <option value="{!profitCenter.label}" text="{!profitCenter.value}" selected="{!profitCenter.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 条件レート(諸税) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <ui:inputCurrency aura:id="SAWO_ConditionRate_Taxes__c" label="{! $Label.c.	COWO_LBL_ConditionRateTaxes}" labelClass="input_label__c" format="{!v.format}" class="input_text__c"  value="{!v.conditionRateTaxes}" placeholder="0" updateOn="change" change="{!c.doCalculate}" />    
+                    </lightning:layoutItem>
+
+                    <!-- CnAMT (YBHD:Freight) (MTE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <ui:inputCurrency aura:id="SA_Freight__c" label="{! $Label.c.COWO_LBL_Freight}" labelClass="input_label__c" format="{!v.format}"  value="{!v.freight}" class="input_text__c" placeholder="0" updateOn="change" change="{!c.doCalculate}" /> 
+                    </lightning:layoutItem>
+                    
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 明細カテゴリ(MTE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_DetailCategory_MTE__c" name="SAWO_DetailCategory_MTE__c" label="{! $Label.c.COWO_LBL_DetailCategory}" value="{!v.selectDetailCategoryMTE}" >
+                            <aura:iteration var="detailCategoryMTE" items="{!v.detailCategoryMTEOptions}">
+                                <option value="{!detailCategoryMTE.label}" text="{!detailCategoryMTE.value}" selected="{!detailCategoryMTE.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+
+                    <!-- プラント(MTE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_PlantCode_MTE__c" name="SAWO_PlantCode_MTE__c" label="{! $Label.c.COWO_LBL_PlantCode_MTE}" value="{!v.selectPlantCodeMTE}" >
+                            <aura:iteration var="plantCodeMTE" items="{!v.plantCodeMTEOptions}">
+                                <option value="{!plantCodeMTE.label}" text="{!plantCodeMTE.value}" selected="{!plantCodeMTE.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+
+                    <!-- 保管場所(MTE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:select aura:id="SAWO_StorageLocation_MTE__c" name="SAWO_StorageLocation_MTE__c" label="{! $Label.c.COWO_LBL_StorageLocation_MTE}" value="{!v.selectStorageLocationMTE}" >
+                            <aura:iteration var="storageLocationMTE" items="{!v.storageLocationMTEOptions}">
+                                <option value="{!storageLocationMTE.label}" text="{!storageLocationMTE.value}" selected="{!storageLocationMTE.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>  
+                    
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                     <!-- 予備 -->
+                     <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                     <!-- 条件レート(運賃/諸掛) -->
+                     <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <ui:inputCurrency aura:id="SAWO_ConditionRate_DeliveryCost__c" label="{! $Label.c.COWO_LBL_ConditionDeliveryCost}" labelClass="input_label__c" format="{!v.format}"  class="input_text__c" value="{!v.conditionDeliveryCost}" placeholder="0" updateOn="change" change="{!c.doCalculate}" />
+                    </lightning:layoutItem>
+
+                    <!-- CnAMT (Z739:Other Duties(%)) (MTE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <ui:inputNumber format="0.00%" aura:id="SA_Other_Duties__c" label="{! $Label.c.COWO_LBL_OtherDuties}" labelClass="input_label__c" value="{!v.otherDuties}" class="input_text__c" placeholder="0" />
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+            
+                    <!-- 出荷指図 -->    
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:inputField aura:id="SAWO_ShippingInstructions__c" fieldName="SAWO_ShippingInstructions__c" value="{!v.shippingInstructions}"/>    
+                    </lightning:layoutItem>
+                        
+                    <!-- 得意先の販売ノート -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                        <lightning:inputField aura:id="SAWO_SalesNoteCustome__c" fieldName="SAWO_SalesNoteCustome__c" value="{!v.salesNoteCustome}"/>
+                    </lightning:layoutItem>
+
+                     <!-- 予備 -->
+                     <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                     <!-- 予備 -->
+                     <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                     <!-- 予備 -->
+                     <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                     <!-- 予備 -->
+                     <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- CnAMT (Z789:Reservers Fixed) (MTE)  -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <ui:inputCurrency aura:id="SA_Reservers_Fixed__c" label="{! $Label.c.COWO_LBL_ReserversFixed}" labelClass="input_label__c"  class="input_text__c" format="{!v.format}" value="{!v.reserversFixed}" placeholder="0" updateOn="change" change="{!c.doCalculate}" />   
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- CnAMT (Z790:Trg Inst Rsrvs Fixed) (MTE) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <ui:inputCurrency aura:id="SA_TrgInstRsrvsFixed__c" label="{! $Label.c.COWO_LBL_TrgInstRsrvsFixed}" labelClass="input_label__c" format="{!v.format}"  class="input_text__c" value="{!v.trgInstRsrvsFixed}" placeholder="0" updateOn="change" change="{!c.doCalculate}" />       
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 予備 -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="1" largeDevicesize="1" flexibility="no-shrink" class="slds-size_1-of-12 slds-m-around_small">
+                    </lightning:layoutItem>
+
+                    <!-- 条件レート(合計) -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <ui:inputCurrency aura:id="ConditionRate_Total" label="{! $Label.c.COWO_LBL_ConditionRate_Total}" labelClass="input_label__c" format="{!v.format}" class="input_text__c" value="{!v.conditionRateTotal}" disabled="true"/>       
+                    </lightning:layoutItem>
+
+                    <!-- CnAMT TOTAL -->
+                    <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="2" largeDevicesize="2" flexibility="no-shrink" class="slds-size_2-of-12 slds-m-around_small">
+                        <ui:inputCurrency aura:id="CnAMT_TOTAL" label="{! $Label.c.COWO_LBL_CnAMT_TOTAL}" labelClass="input_label__c" format="{!v.format}"  class="input_text__c" value="{!v.cnAMTTOTAL}" disabled="true"/>       
+                    </lightning:layoutItem>
+
+
+            </lightning:layout>  
+                
+        </lightning:recordEditForm>
+
+            </ui:scrollerWrapper>
+    
+            <div class="modal-footer slds-modal__footer" >
+                <div class="forceModalActionContainer--footerAction forceModalActionContainer" data-aura-class="forceModalActionContainer--footerAction forceModalActionContainer">
+                    <lightning:button label="{! $Label.c.COWO_LBL_Cancel}" aura:id="closeButton" onclick="{!c.onCloseClicked}" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c"/>
+                    <lightning:button label="{! $Label.c.COWO_LBL_Add}" onclick="{!c.doSelectPicvalues}" variant="brand" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

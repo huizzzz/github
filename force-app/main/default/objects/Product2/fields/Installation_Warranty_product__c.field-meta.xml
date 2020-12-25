@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Installation_Warranty_product__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is this an installation and warranty cost ?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is this an installation and warranty cost ?</inlineHelpText>
+    <label>Installation&amp;Warranty_product</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

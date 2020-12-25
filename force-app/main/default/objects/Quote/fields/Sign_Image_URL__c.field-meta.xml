@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sign_Image_URL__c</fullName>
+    <description>「出力署名」によって出力する署名画像のファイル名をここで作成。</description>
+    <externalId>false</externalId>
+    <formula>&quot;JTL_&quot; +   TEXT( Company_Information__c )  + &quot;署名.jpg&quot;</formula>
+    <label>署名画像URL</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

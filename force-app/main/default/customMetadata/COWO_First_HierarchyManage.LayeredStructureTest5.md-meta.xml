@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>親5</label>
+    <protected>false</protected>
+    <values>
+        <field>COWO_FirstHierarchyText__c</field>
+        <value xsi:type="xsd:string">親5</value>
+    </values>
+    <values>
+        <field>COWO_PriceBook_Name__c</field>
+        <value xsi:type="xsd:string">LayeredStructureTest</value>
+    </values>
+    <values>
+        <field>COWO_SecondHierarchyText__c</field>
+        <value xsi:type="xsd:string">子5-1</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decision_group_need_names</fullName>
+    <active>false</active>
+    <description>More than one person has to be defined in the decision making group for this flag to be set.</description>
+    <errorConditionFormula>AND(  Decision_Maker_Known__c, 
+      Number_of_Contacts_Roles_Assigned__c &lt; 2)</errorConditionFormula>
+    <errorDisplayField>Decision_Maker_Known__c</errorDisplayField>
+    <errorMessage>More than one person has to be defined in the decision making group for this flag to be set.</errorMessage>
+</ValidationRule>

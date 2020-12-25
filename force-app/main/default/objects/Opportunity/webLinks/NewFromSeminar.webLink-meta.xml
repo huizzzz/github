@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewFromSeminar</fullName>
+    <availability>online</availability>
+    <description>展示会・セミナー情報の関連リストから引合を作成します。</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>新規</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>https://ap.salesforce.com/006/e?
+CF00N2800000HQE6T={!CampaignHistory__c.Name}&amp;
+CF00N2800000HQE6T_lkid={!CampaignHistory__c.Id}&amp;
+retURL=%2F{!CampaignHistory__c.Id}&amp;
+opp4_lkid={!CampaignHistory__c.Account_refId__c}&amp;
+opp4_lkold=null&amp;
+opp4_lktp=001&amp;
+opp4_lspf=0&amp;
+opp4_mod=0&amp;
+accid={!CampaignHistory__c.Account_refId__c}&amp;
+opp9={!TODAY()}</url>
+</WebLink>

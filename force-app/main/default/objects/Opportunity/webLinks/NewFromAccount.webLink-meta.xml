@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewFromAccount</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>新規</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>https://ap.salesforce.com/006/e?
+accid={! Account.Id  }&amp;
+opp4={!Account.Name}&amp;
+opp4_lkid={!Account.Id}&amp;
+retURL=%2F{!Account.Id}&amp;</url>
+</WebLink>

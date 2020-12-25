@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RL_StartMonthInputCheck</fullName>
+    <active>true</active>
+    <description>開始月 &lt; 受注予定月</description>
+    <errorConditionFormula>(VALUE(LEFT(StartMonth__c,4)) - VALUE(LEFT(OrdersYoteiDate__c ,4))) * 12 + 
+(VALUE(RIGHT(StartMonth__c,2)) - VALUE(RIGHT(OrdersYoteiDate__c ,2))) &lt; 0</errorConditionFormula>
+    <errorDisplayField>StartMonth__c</errorDisplayField>
+    <errorMessage>開始月は受注予定月より前の年月は入力できません。</errorMessage>
+</ValidationRule>

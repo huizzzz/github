@@ -1,0 +1,202 @@
+.THIS .modal-container{
+    max-width: 1500px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.THIS .slds-modal__container{
+    max-width: 1500px !important;
+
+}
+/* レスポンシブ対応 start */
+@media (min-width:768px){
+    .THIS .slds-modal__container{
+        margin:0 auto;
+        width:100%;
+        max-width:1500px !important;
+        min-width:750px !important;
+    }
+}
+@media (max-width:768px){
+    .THIS .slds-modal__container{
+        margin:0px;
+        padding:0px;
+        width:100%;
+        max-width:1500px !important;
+        min-width:750px !important;
+    }
+}
+@media (max-height:544px){
+    .THIS .slds-modal__container{
+        /*margin:0px;*/
+        padding:0px;
+    }
+}
+/* レスポンシブ対応 end */
+.THIS .size__c .forceStyle .slds-is-editing .slds-form-element {
+    margin-bottom: 0;
+}
+.THIS .size__c .slds-form-element_horizontal:not(.slds-form-element_readonly) {
+    margin-bottom: 0;
+}
+/* レスポンシブ対応 start */
+/* ポップアップ周辺の余白をなくす */
+.THIS .slds-modal__container__app__c{
+    margin:0px;
+    padding:0px;
+}
+.THIS .slds-modal__container__app__c .slds-table_header-fixed_container{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.THIS .slds-modal__container__app__c .slds-table_header-fixed{
+    padding-top: 30px;
+}
+.THIS .slds-modal__container__app__c .slds-table th, .THIS .slds-modal__container__app__c .slds-table td{
+    padding: 0px;
+}
+/* ボタン高さ start */
+.THIS .slds-modal__container__app__c .button_small__c{
+    line-height: 25px;
+}
+.THIS .button_small__c{
+    line-height: 15px;
+}
+.THIS .slds-button.slds-button_neutral{
+    line-height: 15px;
+    font-size: xx-small;
+}
+/* ボタン高さ end */
+/*.THIS .slds-modal__container__app__c .slds-m-horizontal_xxx-small{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}*/
+/* datatable要素のレイアウト調整 start */
+.THIS .slds-modal__container__app__c .slds-row-number{
+    float: left;
+    padding-left: 20px;
+}
+/* datatable要素のレイアウト調整 end */
+/* ローディングアイコン start 
+.THIS .lightning-spinner__c {
+    top: 10px;
+    bottom: 20px;
+}*/
+/* ローディングアイコン end */
+/* 上部入力エリアを２列で表示させる */
+@media (min-width:900px) and (max-width:1252px){
+    .THIS .slds-x-medium-size_6-of-12__c{
+        width:50%;
+    }
+}
+@media (min-width:530px) and (max-width:900px){
+    .THIS .slds-x-medium-size_6-of-12__c{
+        width:80%;
+    }
+}
+/* レスポンシブ対応 end */
+
+/* datatableの行高さを制御する start */
+.THIS .slds-table th, .THIS .slds-table td{
+    padding:0px;
+}
+.THIS .slds-th__action {
+    padding:0px;
+}
+/* datatableの行高さを制御する end */
+/* ボタングループの仕様 start */
+.THIS .input-group__c {
+    padding-top: 0px;
+    min-height: max-content;
+}
+/* ボタングループの仕様 end */
+
+/* ボタン文字サイズ start */
+.THIS .button_small__c{
+    font-size: xx-small;
+}
+/* ボタン文字サイズ start */
+
+.THIS .lightning-spinner__c {
+    top: 111px;
+    bottom: 55px;
+}
+/*.THIS .slds-grid_align-end{
+    justify-content:inherit;
+}*/
+/*
+@media (min-width:1023px) and (max-width:1460px){
+    .THIS .title_aera__c {
+    min-height: 10%;
+}
+}
+@media (min-width:1460px){
+    .THIS .title_aera__c {
+        max-height: max-content;
+        min-height: 30%;
+    }
+}
+*/
+.THIS .title_aera__c {
+    min-height: 10%;
+}
+@media (min-height:600px){
+    .THIS .slds-modal__container__desktop__c .title_aera__c {
+        min-height: max-content;
+    }
+}
+@media (max-height:600px){
+    .THIS .slds-modal__container__desktop__c .title_aera__c {
+        min-height: 10%;
+    }
+}
+.THIS .div_title__c .slds-input {
+    text-align: right;
+}
+.THIS .slds-modal__header {
+    min-height: fit-content;
+}
+.THIS .div_datatable__c {
+    /* datatableの高さを固定にする必要があります、設定しないと、ドラッグすることはできなくなったり、行追加するたびに高さも変更されたりします。 */
+    height: 55%;
+}
+.THIS .slds-modal__container__desktop__c .div_datatable__c {
+    min-height: 20%;
+    max-height: 55%;
+}
+.THIS .slds-modal__footer {
+    min-height: fit-content;
+}
+.THIS .div_datatable__c .slds-input {
+    text-align: left;
+}
+.THIS .div_datatable__c span{
+    font-size: xx-small;
+}
+.THIS .label__c{
+    min-width: 190px;
+    max-width: 150px;
+    font-size: xx-small;
+}
+.THIS .uiInput{
+    min-width: 100px;
+    text-align: right;
+    font-size: xx-small;
+    min-height: max-content;
+    height: 17px;
+}
+.THIS .field__c{
+    width: 80px;
+    min-width: 0px;
+ }
+ .THIS .slds-input{
+    min-height: max-content;
+    line-height: 17px;
+ }
+
+ .THIS .slds-input__c{
+    padding-top:1.5px;
+    padding-right:0.5rem;
+    min-width: 190px;
+    max-width: 150px;
+    font-size: xx-small;
+ }

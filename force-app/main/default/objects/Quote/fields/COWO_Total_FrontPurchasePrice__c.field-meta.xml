@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_Total_FrontPurchasePrice__c</fullName>
+    <externalId>false</externalId>
+    <label>フロント仕入価格合計</label>
+    <summarizedField>QuoteLineItem.COWO_TotalFrontPurchasePrice__c</summarizedField>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Science_J</label>
+    <protected>false</protected>
+    <values>
+        <field>COWO_FirstHierarchyText__c</field>
+        <value xsi:type="xsd:string">J</value>
+    </values>
+    <values>
+        <field>COWO_PriceBook_Name__c</field>
+        <value xsi:type="xsd:string">科学価格表</value>
+    </values>
+    <values>
+        <field>COWO_SecondHierarchyText__c</field>
+        <value xsi:type="xsd:string">SU7000,IM4000,HF5000,AMETEK EDAX EDX,HT7800,HHS_WI他,HHS_VS1330,HHS_VS1530,HHS_VS1540,HHS_VS1550,HHS_AFM5200S,HHS_AFM5300E,HT7830,N-6000,NE4000,NP6800,SU8100,SU9000,SU3500(4MD),SU3500(5MD),FlexSEM1000,NB5000,SEMカラム(α）,IM5000,HILEM,SU3800,SU3900,S-3700N,FlexSEM1000Ⅱ,S-3400N,SU8220(Regulus),SU8230(Regulus),SU8240(Regulus),IM4000PLUS,冷却付 IM4000PLUS,冷却付 IM5000,MC1000,AZtecOne,HF5000（CS付）,HT7820,HHS_AFM5100N,HHS_AFM5400L,HHS_AFM5500M,HHS_AFM他,HHS_MI4050,HHS_NX2000,HHS_NX5000,HHS_NX9000,HHS_VS1800,TM4000Plus,TM4000,Bruker Quantax,FB-2100,H-9500,HD-2700A,HD-2700B,Oxford AZtec Energy,Quantax,SEMカラム(β）,SU5000,他(SEM/周辺),堀場 EMAX Evolution,Aztec Energy,0,SU8010,SU-70,SU8200,SU8220,FB2200,NX2000,SU1510,SU3500,S-3700,TM3030Plus,HT7700,HD2700,HD-2700,HF-3300,Zoneクリーナー,その他（SEM/周辺）,AE1500,その他（TEM/FIB）,SU8230,SU8240,TM3030,AQUILA-β,Thermo Noran System 7,Quantax70,冷却付 IM4000,MI4050,HHS_AFM5000,Quantax75,AZtecLiveOne,TM4000PlusII,TM4000II,NBFB-TEM共用ホルダー</value>
+    </values>
+</CustomMetadata>

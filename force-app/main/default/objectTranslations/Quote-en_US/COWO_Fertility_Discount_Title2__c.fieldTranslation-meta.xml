@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Enter up to 16 characters (8 full-pitch characters) of the text you want to appear in the E-Quote as a Discount 2 title.</help>
+    <label>Discount 2 _ Title</label>
+    <name>COWO_Fertility_Discount_Title2__c</name>
+</CustomFieldTranslation>

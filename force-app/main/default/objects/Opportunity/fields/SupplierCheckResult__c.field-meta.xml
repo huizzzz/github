@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SupplierCheckResult__c</fullName>
+    <externalId>false</externalId>
+    <label>仕入先チェック結果</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>未チェック</fullName>
+                <default>false</default>
+                <label>未チェック</label>
+            </value>
+            <value>
+                <fullName>OK</fullName>
+                <default>false</default>
+                <label>OK</label>
+            </value>
+            <value>
+                <fullName>NG</fullName>
+                <default>false</default>
+                <label>NG</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

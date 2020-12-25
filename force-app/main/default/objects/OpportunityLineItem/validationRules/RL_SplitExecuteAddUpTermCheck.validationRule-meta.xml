@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RL_SplitExecuteAddUpTermCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>SplitExecuteFlg__c &amp;&amp; ISBLANK(TEXT(AddUpTerm__c))</errorConditionFormula>
+    <errorDisplayField>AddUpTerm__c</errorDisplayField>
+    <errorMessage>計上期間は按分実施フラグがONの場合必須です。</errorMessage>
+</ValidationRule>

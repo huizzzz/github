@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_Stage_Change_06</fullName>
+    <active>true</active>
+    <description>承認申請実行以外のタイミングでフェーズが06に遷移できないように設定する。
+06失注へはフェーズ04,05から遷移できないように設定する。</description>
+    <errorConditionFormula>AND(
+    OR(
+        AND(ISPICKVAL( StageName, &quot;06Won&quot;),
+            OR(SAWO_ApprovalStage6Flag__c = false,
+               ISPICKVAL(PRIORVALUE( StageName), &quot;06LOST&quot;),
+               ISPICKVAL(PRIORVALUE( StageName), &quot;06Cancel&quot;)
+            )
+        ),
+        AND(ISPICKVAL( StageName, &quot;06Lost&quot;),
+            OR( ISPICKVAL(PRIORVALUE( StageName), &quot;04&quot;),
+                ISPICKVAL(PRIORVALUE( StageName), &quot;05&quot;),
+                ISPICKVAL(PRIORVALUE( StageName), &quot;06Won&quot;),
+                ISPICKVAL(PRIORVALUE( StageName), &quot;06Cancel&quot;)
+            )
+        ),
+        AND(ISPICKVAL( StageName, &quot;06Cancel&quot;),
+            NOT(ISPICKVAL(PRIORVALUE( StageName), &quot;06Won&quot;))
+        )
+    ),
+    /*商談フェーズ移動承認を特定の職制がスキップするための一時的な設定*/
+    NOT(CONTAINS($Label.SAWO_Opp_Approval_Skip , $User.Shokusei__c))
+
+)</errorConditionFormula>
+    <errorMessage>フェーズを06に変更するには承認申請が必要です。</errorMessage>
+</ValidationRule>

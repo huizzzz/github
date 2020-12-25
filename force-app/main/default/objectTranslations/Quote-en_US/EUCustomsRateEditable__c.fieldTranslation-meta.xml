@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- System will copying the maximum value given on Quote Line Item level (EU Customs Rate (%) field). Editable. --></help>
+    <label><!-- EU Customs Rate (%) --></label>
+    <name>EUCustomsRateEditable__c</name>
+</CustomFieldTranslation>

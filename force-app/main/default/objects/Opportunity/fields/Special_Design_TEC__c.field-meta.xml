@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_Design_TEC__c</fullName>
+    <externalId>false</externalId>
+    <label>Special Design TEC</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PreTin Solder Coating</fullName>
+                <default>false</default>
+                <label>PreTin Solder Coating</label>
+            </value>
+            <value>
+                <fullName>Trace on Cold Side</fullName>
+                <default>false</default>
+                <label>Trace on Cold Side</label>
+            </value>
+            <value>
+                <fullName>Dual TEC or Multiple Zone TEC</fullName>
+                <default>false</default>
+                <label>Dual TEC or Multiple Zone TEC</label>
+            </value>
+            <value>
+                <fullName>Moisture Proof</fullName>
+                <default>false</default>
+                <label>Moisture Proof</label>
+            </value>
+            <value>
+                <fullName>Multi-Stage</fullName>
+                <default>false</default>
+                <label>Multi-Stage</label>
+            </value>
+            <value>
+                <fullName>Variant Configuration</fullName>
+                <default>false</default>
+                <label>Variant Configuration</label>
+            </value>
+            <value>
+                <fullName>Unknown/Others</fullName>
+                <default>false</default>
+                <label>Unknown/Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

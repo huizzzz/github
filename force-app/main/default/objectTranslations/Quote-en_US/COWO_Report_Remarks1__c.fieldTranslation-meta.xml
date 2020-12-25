@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Enter the first line of Attached Note within the 152 word limit.</help>
+    <label>Attached Note 1</label>
+    <name>COWO_Report_Remarks1__c</name>
+</CustomFieldTranslation>

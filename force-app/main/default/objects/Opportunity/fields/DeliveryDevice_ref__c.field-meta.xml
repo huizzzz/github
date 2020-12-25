@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeliveryDevice_ref__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>CAS用項目</description>
+    <externalId>false</externalId>
+    <label>納入装置</label>
+    <referenceTo>DeliveryDevice__c</referenceTo>
+    <relationshipLabel>商談</relationshipLabel>
+    <relationshipName>R00N10000000HM5WEAW</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JTL_Opportunity_HHT_JTLOpport</fullName>
+    <columns>QUOTE.NAME</columns>
+    <columns>QUOTE.ISSYNCING</columns>
+    <columns>QUOTE.EXPIRATIONDATE</columns>
+    <columns>QUOTE.SUBTOTAL</columns>
+    <columns>QUOTE.TOTALPRICE</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>QUOTE.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Quote.HHT_JTL</value>
+    </filters>
+    <filters>
+        <field>QUOTE.ISSYNCING</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>HHT_JTL案件</label>
+    <language>ja</language>
+    <sharedTo>
+        <roleAndSubordinatesInternal>JAPAN_TESTING_LABORATORIES</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>UserRole_zairyo_chubu</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

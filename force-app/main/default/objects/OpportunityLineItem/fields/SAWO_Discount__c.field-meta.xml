@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_Discount__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>特別に値引をする場合の金額</description>
+    <externalId>false</externalId>
+    <label>明細値引</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

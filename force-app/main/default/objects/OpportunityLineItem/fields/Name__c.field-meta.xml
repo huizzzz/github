@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name__c</fullName>
+    <description>HHS利用：見積商品のName(見積商品)を格納、商談から出す受注転送レポートで利用</description>
+    <externalId>false</externalId>
+    <label>見積商品名</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

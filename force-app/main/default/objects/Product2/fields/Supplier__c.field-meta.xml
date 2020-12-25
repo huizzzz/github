@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supplier__c</fullName>
+    <externalId>false</externalId>
+    <label>Supplier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bruker Nano</fullName>
+                <default>false</default>
+                <label>Bruker Nano</label>
+            </value>
+            <value>
+                <fullName>Cressington</fullName>
+                <default>false</default>
+                <label>Cressington</label>
+            </value>
+            <value>
+                <fullName>Deben</fullName>
+                <default>false</default>
+                <label>Deben</label>
+            </value>
+            <value>
+                <fullName>Delmic</fullName>
+                <default>false</default>
+                <label>Delmic</label>
+            </value>
+            <value>
+                <fullName>Gatan</fullName>
+                <default>false</default>
+                <label>Gatan</label>
+            </value>
+            <value>
+                <fullName>Leica</fullName>
+                <default>false</default>
+                <label>Leica</label>
+            </value>
+            <value>
+                <fullName>MicroToNano</fullName>
+                <default>false</default>
+                <label>MicroToNano</label>
+            </value>
+            <value>
+                <fullName>Oxford Nanoanalysis</fullName>
+                <default>false</default>
+                <label>Oxford Nanoanalysis</label>
+            </value>
+            <value>
+                <fullName>Quorum</fullName>
+                <default>false</default>
+                <label>Quorum</label>
+            </value>
+            <value>
+                <fullName>DigitalSurf</fullName>
+                <default>false</default>
+                <label>DigitalSurf</label>
+            </value>
+            <value>
+                <fullName>MediaCybernetics</fullName>
+                <default>false</default>
+                <label>MediaCybernetics</label>
+            </value>
+            <value>
+                <fullName>EMSIS</fullName>
+                <default>false</default>
+                <label>EMSIS</label>
+            </value>
+            <value>
+                <fullName>Spicer</fullName>
+                <default>false</default>
+                <label>Spicer</label>
+            </value>
+            <value>
+                <fullName>Applied Surface Technologies</fullName>
+                <default>false</default>
+                <label>Applied Surface Technologies</label>
+            </value>
+            <value>
+                <fullName>Kleindiek</fullName>
+                <default>false</default>
+                <label>Kleindiek</label>
+            </value>
+            <value>
+                <fullName>HTC</fullName>
+                <default>false</default>
+                <label>HTC</label>
+            </value>
+            <value>
+                <fullName>XEI</fullName>
+                <default>false</default>
+                <label>XEI</label>
+            </value>
+            <value>
+                <fullName>Applied Thermal Control</fullName>
+                <default>false</default>
+                <label>Applied Thermal Control</label>
+            </value>
+            <value>
+                <fullName>HHT</fullName>
+                <default>false</default>
+                <label>HHT</label>
+            </value>
+            <value>
+                <fullName>Spicer Consulting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Spicer Consulting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

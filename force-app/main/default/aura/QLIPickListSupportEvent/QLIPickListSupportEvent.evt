@@ -1,0 +1,19 @@
+<aura:event type="COMPONENT" description="Event of QuoteLineItemBulkEdit">
+    <aura:attribute name="quoteLineItemId" type="String" />
+    <aura:attribute name="selectQuantityUnit" type="Object" />
+    <aura:attribute name="selectDetailCategory" type="Object" />
+    <aura:attribute name="selectDetailCategoryMTE" type="Object" />
+    <aura:attribute name="selectRejectionReason" type="Object" />
+    <aura:attribute name="selectPlantCode" type="Object" />
+    <aura:attribute name="selectPlantCodeMTE" type="Object" />
+    <aura:attribute name="selectStorageLocation" type="Object" />
+    <aura:attribute name="selectStorageLocationMTE" type="Object" />
+    <aura:attribute name="selectCurrency" type="Object" />
+    <aura:attribute name="selectRecordingDivision" type="Object" />
+    <aura:attribute name="selectProfitCenter" type="Object" />
+    <aura:attribute name="selectProfitCenterMTE" type="Object" />
+    <aura:attribute name="selectMaterialGroup1" type="Object" />
+    <aura:attribute name="selectSalesUnit" type="Object" />
+    <aura:attribute name="shippingInstructions" type="String" />
+    <aura:attribute name="salesNoteCustome" type="String" />
+</aura:event>

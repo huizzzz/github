@@ -1,0 +1,32 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome" 
+                access="global" >
+
+    <aura:html tag="style">
+        .closeIcon {
+            display:none !important;
+        }
+    </aura:html>
+
+    <aura:attribute name="isLoadedQuoteLineItemBulkEdit" type="Boolean" default="false" />
+    <aura:attribute name="isLoadedSearchProduct" type="Boolean" default="false" />
+    <aura:attribute name="isLoadedPickListSupport" type="Boolean" default="false" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:handler name="openSearchProduct" event="c:QuoteLineItemBulkEditEvent" action="{!c.openSearchProduct}" />
+    <aura:handler name="closeSearchProduct" event="c:QuoteLineItemBulkEditEvent" action="{!c.closeSearchProduct}" />
+    <aura:handler name="reflectSearchProduct" event="c:QuoteLineItemBulkEditEvent" action="{!c.reflectSearchProduct}" />
+    <aura:handler name="openQLIPickListSupport" event="c:QLIPickListSupportEvent" action="{!c.openQLIPickListSupport}" />
+    <aura:handler name="closeQLIPickListSupport" event="c:QLIPickListSupportEvent" action="{!c.closeQLIPickListSupport}" />
+    <aura:handler name="reflectSelectedPicklistValues" event="c:QLIPickListSupportEvent" action="{!c.reflectSelectPickListValues}" />
+
+
+    <div onkeyup="{!c.formPress}">
+        <!-- call the QuoteLineItemBulkEdit component -->
+        <div aura:id="QuoteLineItemBulkEdit"></div>
+
+        <!-- call the SearchProduct component -->
+        <div aura:id="SearchProduct"></div>
+
+        <!-- call the SelectPickList component -->
+        <div aura:id="QLIPickListSupport"></div>
+    </div>
+</aura:component>

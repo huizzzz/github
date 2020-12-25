@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StatusDivision__c</fullName>
+    <description>CAS用項目</description>
+    <externalId>false</externalId>
+    <label>状態区分</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>引合</fullName>
+                <default>true</default>
+                <label>引合</label>
+            </value>
+            <value>
+                <fullName>受注</fullName>
+                <default>false</default>
+                <label>受注</label>
+            </value>
+            <value>
+                <fullName>他決</fullName>
+                <default>false</default>
+                <label>他決</label>
+            </value>
+            <value>
+                <fullName>消滅</fullName>
+                <default>false</default>
+                <label>消滅</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

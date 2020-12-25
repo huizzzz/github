@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Approcer2</label>
+    <name>COWO_Authorizer2__c</name>
+    <relationshipLabel>Quote (Approver2)</relationshipLabel>
+</CustomFieldTranslation>

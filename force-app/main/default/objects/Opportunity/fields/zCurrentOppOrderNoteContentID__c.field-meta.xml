@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zCurrentOppOrderNoteContentID__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The content ID for the current (latest) version of the Opportunity Order Note. Used to get the version number</inlineHelpText>
+    <label>zCurrentOppOrderNoteContentID</label>
+    <length>18</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

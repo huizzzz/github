@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_delivery_date_of_the_document__c</fullName>
+    <defaultValue>today()</defaultValue>
+    <externalId>false</externalId>
+    <label>納入日付(販売)</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

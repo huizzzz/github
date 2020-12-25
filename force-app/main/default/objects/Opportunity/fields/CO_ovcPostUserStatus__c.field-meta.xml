@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CO_ovcPostUserStatus__c</fullName>
+    <externalId>false</externalId>
+    <label>SAP Post User Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>E0001</fullName>
+                <default>false</default>
+                <label>E0001</label>
+            </value>
+            <value>
+                <fullName>E0002</fullName>
+                <default>false</default>
+                <label>E0002</label>
+            </value>
+            <value>
+                <fullName>E0003</fullName>
+                <default>false</default>
+                <label>E0003</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

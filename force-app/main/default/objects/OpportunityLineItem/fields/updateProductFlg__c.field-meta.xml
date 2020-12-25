@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>updateProductFlg__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( BEGINS( $Profile.Name ,&apos;HHS&apos;),
+false, 
+OR(
+MC__c / Quantity &lt;&gt;  PricebookEntry.Product2.MC__c ,
+Q__c / Quantity &lt;&gt;  PricebookEntry.Product2.Q__c ,
+TC__c / Quantity &lt;&gt;  PricebookEntry.Product2.TC__c
+)
+)</formula>
+    <label>製品マスタ更新フラグ</label>
+    <type>Checkbox</type>
+</CustomField>

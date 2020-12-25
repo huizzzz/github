@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_FrontProfitRate__c</fullName>
+    <description>利益（フロント）/合計金額
+一括編集時に計算される</description>
+    <externalId>false</externalId>
+    <label>利益率（フロント）</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

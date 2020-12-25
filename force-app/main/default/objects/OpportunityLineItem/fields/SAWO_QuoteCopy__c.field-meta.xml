@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAWO_QuoteCopy__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>オプションの種類毎に作成する場合、初版をコピーし利用するためのチェックボックス</description>
+    <externalId>false</externalId>
+    <label>見積コピー</label>
+    <type>Checkbox</type>
+</CustomField>

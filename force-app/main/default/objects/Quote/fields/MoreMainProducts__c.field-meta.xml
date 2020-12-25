@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MoreMainProducts__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  NumberOfMainProducts__c  &gt; 1, 
+IMAGE (&quot;/img/msg_icons/warning24.png&quot;, &quot;More than 1 Main Products&quot;), 
+IMAGE (&quot;/img/msg_icons/confirm24.png&quot;, &quot;1 or less Main Product&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>System will display exclamation mark icon if there is more than 1 Main Products selected to the Quote. Please verify EU Customs Rate and Overseas Freight Costs on Quote Line Item level</inlineHelpText>
+    <label>More Main Products?</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

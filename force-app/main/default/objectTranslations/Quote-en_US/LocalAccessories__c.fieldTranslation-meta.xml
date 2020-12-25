@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Cost of accessories not listed in the product list --></help>
+    <label><!-- Local Accessories --></label>
+    <name>LocalAccessories__c</name>
+</CustomFieldTranslation>

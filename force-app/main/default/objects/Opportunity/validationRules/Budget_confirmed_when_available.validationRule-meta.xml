@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budget_confirmed_when_available</fullName>
+    <active>false</active>
+    <description>Budget can only be confirmed when available</description>
+    <errorConditionFormula>AND (
+  OR (
+     ISPICKVAL(StageName, &quot;Inspire&quot;),
+     ISPICKVAL(StageName, &quot;Investigate&quot;),
+     ISPICKVAL(StageName, &quot;Get budget&quot;)),
+   Budget_Confirmed__c )</errorConditionFormula>
+    <errorDisplayField>Budget_Confirmed__c</errorDisplayField>
+    <errorMessage>You can only confirmed the budget when it is available.</errorMessage>
+</ValidationRule>

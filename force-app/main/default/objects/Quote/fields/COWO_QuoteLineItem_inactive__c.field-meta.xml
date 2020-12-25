@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_QuoteLineItem_inactive__c</fullName>
+    <externalId>false</externalId>
+    <label>見積品目無効チェック</label>
+    <summaryFilterItems>
+        <field>QuoteLineItem.COWO_QuoteLineItem_IsActive__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <type>Summary</type>
+</CustomField>

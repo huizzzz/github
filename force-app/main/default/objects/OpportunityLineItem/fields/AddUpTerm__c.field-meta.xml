@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AddUpTerm__c</fullName>
+    <externalId>false</externalId>
+    <label>計上期間</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1ヶ月</fullName>
+                <default>false</default>
+                <label>1ヶ月</label>
+            </value>
+            <value>
+                <fullName>3ヶ月</fullName>
+                <default>false</default>
+                <label>3ヶ月</label>
+            </value>
+            <value>
+                <fullName>6ヶ月</fullName>
+                <default>false</default>
+                <label>6ヶ月</label>
+            </value>
+            <value>
+                <fullName>1年</fullName>
+                <default>false</default>
+                <label>1年</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

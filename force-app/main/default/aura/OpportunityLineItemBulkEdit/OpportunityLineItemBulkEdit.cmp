@@ -1,0 +1,168 @@
+<aura:component controller="OpportunityLineItemBulkEditController" 
+                implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" 
+                access="global" >
+
+    <aura:html tag="style">
+        .slds-modal__container {
+            max-width: 1500px !important;
+        	padding-top: 0px;
+        	padding-bottom: 0px;
+        }
+        /* レスポンシブ対応 start */
+        @media (min-width:768px){
+            .slds-modal__container{
+                margin:0 auto;
+                width:100%;
+                max-width:40rem;
+                min-width:20rem
+            }
+        }
+        @media (max-width:768px){
+            .slds-modal__container{
+                margin:0px;
+                padding:0px;
+                width:100%;
+                max-width:40rem;
+                min-width:20rem
+            }
+        }
+        @media (max-height:544px){
+            .slds-modal__container{
+        		/*margin:0px;*/
+                padding:0px;
+            }
+        }
+        /* レスポンシブ対応 end */
+        .size__c .forceStyle .slds-is-editing .slds-form-element {
+            margin-bottom: 0;
+        }
+        .size__c .slds-form-element_horizontal:not(.slds-form-element_readonly) {
+            margin-bottom: 0;
+        }
+    </aura:html>
+    
+    <!-- Privte Attributes -->
+    <!-- attributes -->
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="canEditProduct2" type="Boolean" default="false" />
+    <aura:attribute name="hasChanged" type="Boolean" default="false" />
+    <aura:attribute name="columns" type="List" default="[]"/>
+    <aura:attribute name="originalData" type="List" default="[]"/>
+    <aura:attribute name="data" type="List" default="[]"/>
+    <aura:attribute name="deletedData" type="List" default="[]"/>
+    <aura:attribute name="keyField" type="String" default="Id"/>
+    <aura:attribute name="hideCheckboxColumn" type="Boolean" default="false"/>
+    <!-- <aura:attribute name="selectedRowsCount" type="Integer" default="0"/> -->
+    <aura:attribute name="selectedRows" type="List" default="[]"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="resizeColumnDisabled" type="Boolean" default="false"/>
+    <aura:attribute name="minColumnWidth" type="Integer"/>
+    <aura:attribute name="maxColumnWidth" type="Integer"/>
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="String"/>
+    <aura:attribute name="defaultSortDirection" type="String"/>
+    <aura:attribute name="showRowNumberColumn" type="Boolean" default="true"/>
+    <aura:attribute name="rowNumberOffset" type="Integer" default="0"/>
+    <aura:attribute name="initialRows" type="Integer" default="10"/>
+    <aura:attribute name="rowsToAdd" type="Integer" default="10"/>
+    <aura:attribute name="dataTableSchema" type="Object"/>
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+    <aura:attribute name="isLoaded" type="Boolean" default="false" />
+    <aura:attribute name="suppressBottomBar" type="Boolean" default="true" />
+    <aura:attribute name="pricebook2Id" type="String"/>
+    <aura:attribute name="currencyIsoCode" type="String"/>
+    <aura:attribute name="digits" type="Integer" default="2"/>
+    <aura:attribute name="digitsInput" type="Decimal" default="0.01"/>
+    <aura:attribute name="format" type="String"/>
+    <aura:attribute name="symbol" type="String"/>
+    <aura:attribute name="device" type="String" default="DESKTOP" description="ユーザが使用しているデバイスを保持する"/>
+    <aura:attribute name="copyFrom" type="Object" default=""/>
+    <aura:attribute name="isPSGHHTUser" type="Boolean" default="true" />
+    
+    <!--選択リスト値コピーパラメータ TODO-->
+    <aura:attribute name="selectQuantityUnit" type="String" default=""/>
+    <aura:attribute name="selectDetailCategory" type="String" default=""/>
+    <aura:attribute name="selectDetailCategoryMTE" type="String" default=""/>
+    <aura:attribute name="selectRejectionReason" type="String" default=""/>
+    <aura:attribute name="selectPlantCode" type="String" default=""/>
+    <aura:attribute name="selectPlantCodeMTE" type="String" default=""/>
+    <aura:attribute name="selectStorageLocation" type="String" default=""/>
+    <aura:attribute name="selectStorageLocationMTE" type="String" default=""/>
+    <aura:attribute name="selectCurrency" type="String" default=""/>
+    <aura:attribute name="selectRecordingDivision" type="String" default=""/>
+    <aura:attribute name="selectProfitCenter" type="String" default=""/>
+    <aura:attribute name="selectProfitCenterMTE" type="String" default=""/>
+    <aura:attribute name="selectMaterialGroup1" type="String" default=""/>
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <!-- registerEvent -->
+    <aura:registerEvent name="openSearchProduct" type="c:OpportunityLineItemBulkEditEvent"/>
+    <aura:registerEvent name="openOLIPickListSupport" type="c:OLIPickListSupportEvent"/>
+
+    <!-- Component Method -->
+    <aura:method name="open" action="{!c.onOpenCalled}" />
+
+    <div class="panel slds-modal slds-fade-in-open" onkeyup="{!c.formPress}">
+        <div class="{! 'modal-container slds-modal__container' + if(v.device=='DESKTOP', ' slds-modal__container__desktop__c', ' slds-modal__container__app__c')}">
+            <!-- Display spinner -->
+            <lightning:spinner aura:id="spinner" variant="brand" size="large" alternativeText="page loading" class="{! 'lightning-spinner__c' + if(v.showSpinner, '', ' slds-hide')}"/>
+    
+            <!-- Display a header with details -->
+            <header class="slds-modal__header">
+                <h2 class="title slds-text-heading--medium slds-hyphenate">{! $Label.c.COWO_LBL_OpportunityLineItemBulkEditHeader}</h2>
+            </header>
+    
+            <ui:scrollerWrapper aura:id="scrollerTop" class="slds-scrollable modal-body slds-modal__content">
+                <div aura:id="messages"></div>
+                <!-- toolbox -->
+                <div class="input-group input-group__c slds-p-around--x-small">
+                        <!-- <lightning:input type="number" label="Rows To Add" name="inputRowsToAdd" value="{! v.rowsToAdd }"/> -->
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_AddRows}" onclick="{! c.addRowsToEnd }" disabled="{! v.showSpinner}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_AddLineItem}" onclick="{! c.addLineItem }" disabled="{! v.showSpinner}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_DeleteRows}" onclick="{! c.deleteRows }" disabled="{! v.showSpinner}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_SelectCopyFrom}" onclick="{! c.chooseCopyFrom }" disabled="{! or(v.showSpinner, !v.canEditProduct2)}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_Paste}" onclick="{! c.selectValueCopy }" disabled="{! or(v.showSpinner, !v.canEditProduct2)}"/>
+                        <lightning:button class="button_small__c" label="{! $Label.c.COWO_LBL_SAWOItemNumberSet}" onclick="{! c.setItemNumber }" disabled="{! v.showSpinner}"/>
+                        <!-- <lightning:button label="列幅自動調整" onclick="{! c.resetColumns }"/> -->
+                </div>
+            </ui:scrollerWrapper>
+                <!-- the container element determine the height of the datatable -->
+                <div class="div_datatable__c">
+                    <lightning:datatable
+                        aura:id="datatable"
+                        columns="{! v.columns }"
+                        data="{! v.data }"
+                        defaultSortDirection="{! v.defaultSortDirection }"
+                        draftValues="{ !v.draftValues }"
+                        hideCheckboxColumn="{! v.hideCheckboxColumn }"
+                        keyField="{! v.keyField }"
+                        minColumnWidth="{! v.minColumnWidth }"
+                        maxColumnWidth="{! v.maxColumnWidth }"
+                        resizeColumnDisabled="{! v.resizeColumnDisabled }"
+                        resizeStep="20"
+                        rowNumberOffset="{! v.rowNumberOffset }"
+                        showRowNumberColumn="{! v.showRowNumberColumn }"
+                        oncancel="{! c.handleCancel }"
+                        oncellchange="{! c.handleCellchange }"
+                        onresize="{! c.storeColumnWidths }"
+                        onrowaction="{! c.handleRowAction }"
+                        onrowselection="{! c.updateSelectedText }"
+                        onsave="{! c.handleSave }"
+                        suppressBottomBar="{! v.suppressBottomBar }" 
+                        wrapTextMaxLines="5"
+                        />
+                </div>
+            
+    
+            <div class="modal-footer slds-modal__footer" >
+                <div class="forceModalActionContainer--footerAction forceModalActionContainer" data-aura-class="forceModalActionContainer--footerAction forceModalActionContainer">
+                    <!-- <lightning:button label="破棄" onclick="{!c.handleCancel}" class="slds-button slds-button- --> <!-- -neutral uiButton forceActionButton" disabled="{! or(!v.hasChanged, v.showSpinner)}"/> -->
+                    <lightning:button label="{! $Label.c.COWO_LBL_Cancel}" onclick="{!c.onCloseClicked}" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c" disabled="{! v.showSpinner}"/>
+                    <lightning:button label="{! $Label.c.COWO_LBL_Save}" onclick="{!c.handleSave}" variant="brand" class="slds-button slds-button--neutral uiButton forceActionButton button_small__c" disabled="{! or(!v.hasChanged, v.showSpinner)}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

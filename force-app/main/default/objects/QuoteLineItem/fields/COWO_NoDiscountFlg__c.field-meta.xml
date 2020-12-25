@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COWO_NoDiscountFlg__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True→按分計算外
+False→按分対象</description>
+    <externalId>false</externalId>
+    <label>値引対象外フラグ</label>
+    <type>Checkbox</type>
+</CustomField>

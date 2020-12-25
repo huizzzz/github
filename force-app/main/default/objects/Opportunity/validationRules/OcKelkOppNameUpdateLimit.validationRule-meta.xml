@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OcKelkOppNameUpdateLimit</fullName>
+    <active>true</active>
+    <description>引合案件名KELK側編集不可</description>
+    <errorConditionFormula>AND( 
+$Profile.Name = &apos;KELK&apos; ,
+ PRIORVALUE(Name)  &lt;&gt; Name
+)</errorConditionFormula>
+    <errorMessage>You do not have permission to update Opportunity Name</errorMessage>
+</ValidationRule>

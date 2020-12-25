@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HHS_Establishment__c</fullName>
+    <externalId>false</externalId>
+    <label>営業所</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>本社営業部門</fullName>
+                <default>false</default>
+                <label>本社営業部門</label>
+            </value>
+            <value>
+                <fullName>大阪営業所</fullName>
+                <default>false</default>
+                <label>大阪営業所</label>
+            </value>
+            <value>
+                <fullName>名古屋営業所</fullName>
+                <default>false</default>
+                <label>名古屋営業所</label>
+            </value>
+            <value>
+                <fullName>九州営業所</fullName>
+                <default>false</default>
+                <label>九州営業所</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

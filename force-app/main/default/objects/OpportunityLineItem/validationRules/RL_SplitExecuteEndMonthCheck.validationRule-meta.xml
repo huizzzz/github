@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RL_SplitExecuteEndMonthCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>SplitExecuteFlg__c &amp;&amp; EndMonth__c = null</errorConditionFormula>
+    <errorDisplayField>EndMonth__c</errorDisplayField>
+    <errorMessage>終了月は按分実施フラグがONの場合必須です。</errorMessage>
+</ValidationRule>

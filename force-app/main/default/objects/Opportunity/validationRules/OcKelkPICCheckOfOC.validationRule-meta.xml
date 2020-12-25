@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OcKelkPICCheckOfOC</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+BEGINS(RecordType.DeveloperName, &apos;OC_KELK&apos;), 
+ISPICKVAL(PRIORVALUE(StageName) , &apos;引合入手＆仕様検討&apos;) , 
+ISPICKVAL(StageName , &apos;仕様提案&apos;),
+ISBLANK( OcResponseRequestDay__c ) 
+)</errorConditionFormula>
+    <errorDisplayField>OcResponseRequestDay__c</errorDisplayField>
+    <errorMessage>Complete this field</errorMessage>
+</ValidationRule>

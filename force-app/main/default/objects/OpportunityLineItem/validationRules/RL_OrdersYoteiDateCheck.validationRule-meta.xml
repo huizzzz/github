@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RL_OrdersYoteiDateCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT( 
+OR( 
+ISBLANK(OrdersYoteiDate__c), 
+REGEX( OrdersYoteiDate__c , &quot;[0-9]{4}/(0[1-9]|1[0-2])&quot;) 
+) 
+)</errorConditionFormula>
+    <errorDisplayField>OrdersYoteiDate__c</errorDisplayField>
+    <errorMessage>受注月はyyyy/mm形式で入力してください。</errorMessage>
+</ValidationRule>

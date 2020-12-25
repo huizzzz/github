@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OpenBulkEdit_HHS</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>一括編集_HHS</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>if({!$Setup.ProfileConfig__c.ApexAccessRestriction__c}){
+alert(&apos;{!$Label.AP00_MSG_0004}&apos;);
+}else if(!{!Opportunity.ExistPricebook2__c}){
+alert(&apos;{!$Label.AP25_MSG_0001}&apos;);
+}else{
+var url = &quot;/apex/LineItemBulkEdit_HHS&quot;
+url += &quot;?Id={!Opportunity.Id}&quot;;
+top.location.href = url;
+}</url>
+</WebLink>

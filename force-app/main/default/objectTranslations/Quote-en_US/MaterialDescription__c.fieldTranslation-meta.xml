@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Select the material information that should be included on the quote: --></help>
+    <label><!-- Material Description --></label>
+    <name>MaterialDescription__c</name>
+    <picklistValues>
+        <masterLabel>Description</masterLabel>
+        <translation><!-- Description --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Description and Specification</masterLabel>
+        <translation><!-- Description and Specification --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation><!-- None --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specification</masterLabel>
+        <translation><!-- Specification --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

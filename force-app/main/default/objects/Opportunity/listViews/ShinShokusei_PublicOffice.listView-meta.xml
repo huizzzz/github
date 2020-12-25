@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShinShokusei_PublicOffice</fullName>
+    <columns>Shokusei__c</columns>
+    <columns>OwnerShokusei__c</columns>
+    <columns>ShinShokusei__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OpportunityNo__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Quantity__c</columns>
+    <columns>OrdersAmountM__c</columns>
+    <columns>BenefitM__c</columns>
+    <columns>Jucyuyoteigetsu__c</columns>
+    <columns>SalesDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.PublicOffice</value>
+    </filters>
+    <label>職制変更_大学・官公庁用</label>
+    <language>ja</language>
+    <sharedTo>
+        <role>S072</role>
+        <roleAndSubordinatesInternal>S168</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

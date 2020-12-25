@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BusinessUnit__c</fullName>
+    <defaultValue>CASE( $User.BusinessUnit__c , 
+&quot;01&quot;, &quot;01&quot;,
+&quot;02&quot;, &quot;02&quot;,
+&quot;03&quot;, &quot;03&quot;,
+&quot;04&quot;, &quot;04&quot;,
+&quot;05&quot;, &quot;05&quot;,
+&quot;&quot;)</defaultValue>
+    <externalId>false</externalId>
+    <label>BusinessUnit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>BusinessUnit</valueSetName>
+    </valueSet>
+</CustomField>
